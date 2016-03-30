@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[Qt编译出错--可选解决方法]]></title>
+      <url>http://yoursite.com/2015/06/01/Qt%E7%BC%96%E8%AF%91%E5%87%BA%E9%94%99--%E5%8F%AF%E9%80%89%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>1.错误：</p>
+<blockquote>
+<p>错误:C1041: 无法打开程序数据库“mypath\vc120.pdb”；如果要将多个 CL.EXE 写入同一个 .PDB 文件，请使用 /FS</p>
+</blockquote>
+<p>解决：</p>
+<blockquote>
+<p><img src="http://img.blog.csdn.net/20150504221903912" alt="这里写图片描述"></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Boost库问题：无法识别的外部符号……]]></title>
+      <url>http://yoursite.com/2015/05/04/Boost%E5%BA%93%E9%97%AE%E9%A2%98%EF%BC%9A%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E7%9A%84%E5%A4%96%E9%83%A8%E7%AC%A6%E5%8F%B7%E2%80%A6%E2%80%A6/</url>
+      <content type="html"><![CDATA[<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a><strong>问题</strong></h4><p>今天在用<strong>Qt</strong>可视化<strong>CGAL</strong>生成的图像的编程过程中遇到以下问题：<br>只要include了CGAL的头文件或者Boost库的头文件，编译就会出现“<strong>无法识别的外部符号</strong>”，“<strong>无法识别的外部命令</strong>”等错误。如下（由于我的问题已经解决，以下图片是我找的，并不是我当时出的问题）：</p>
+<blockquote>
+<p><img src="http://img.blog.csdn.net/20150504215548443" alt="错误信息"></p>
+</blockquote>
+<p>在查找资料后，一直无法解决，我当时想有两种可能：1、需要包含相关的boost头文件；2、需要链接相关库文件，特别是boost库文件。包含几个头文件后无效，就放弃第一种方法。着手第二种方法，该链接什么库文件？我的程序只需要两个库文件：</p>
+<blockquote>
+<p>libboost_thread-vc120-mt-gd-1_57.lib<br>libboost_system-vc120-mt-gd-1_57.lib</p>
+</blockquote>
+<p>妈蛋，什么问题？原来这两个库文件是32bit的，我在编译的时候疏忽了，没有加上<strong>address-model=64</strong></p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><strong>解决方法</strong></h4><p>重新编译这两个库文件</p>
+<p>参考1. <a href="http://blog.csdn.net/enotswn/article/details/5934938" target="_blank" rel="external">关于各种无法解析的外部符号问题的相应解决方案 </a></p>
+<ol>
+<li><a href="http://stackoverflow.com/questions/1066071/boost-linker-error-unresolved-external-symbol-class-boostsystemerror-categ/1067072" target="_blank" rel="external">Boost linker error: Unresolved external symbol “class boost::system::error_category const &amp; __cdecl boost::system::get_system_category(void)”</a></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MySql安装过程“Start Service”失败解决方法]]></title>
+      <url>http://yoursite.com/2015/04/19/MySql%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E2%80%9CStart%20Service%E2%80%9D%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h4 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h4><p>mariadb-5.5.25-winx64</p>
+<h4 id="问题产生过程及描述"><a href="#问题产生过程及描述" class="headerlink" title="问题产生过程及描述"></a><strong>问题产生过程及描述</strong></h4><p>在安装MySql过程中遇到MySql服务启动失败问题，提示信息如下：</p>
+<blockquote>
+<p>Error 1920 service failed to start. Verify that you have sufficient privileges to start system services</p>
+</blockquote>
+<p>导致MySql无法安装。软件无法自动启动，我就到<strong>控制面板–&gt;管理工具–&gt;服务</strong>下找到MySql服务，手动打开，结果too young too simple，无法打开，提示<strong>1067</strong>错误。 </p>
+<p>在网上查找资料，很多都是说<em>重新安装来解决</em>，由于<strong>数据库只能装一次，如果你在你第一次没有装成功的情况下，你必须要卸载干净才能装得上</strong>，我就清除与mysql相关文件及注册表，再重装，依然失败；Reboot，继续失败。</p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><strong>解决方法</strong></h4><p>我在安装过程中发现，可以先安装MySql而不安装MySql服务，我就想应该可以后来手动安装MySql服务。<br>于是将与mysql相关文件及注册表清除干净后，再次重装，在安装引导过程中，不勾选“<strong>install MySql service</strong>”，…，可以顺利安装完毕。<br>然后手动安装MySql Service：</p>
+<ol>
+<li>以<strong>管理员</strong>身份启动命令提示符窗口.</li>
+<li>切换到MySql安装目录的bin目录下（&gt;cd …\…\MariaDB\bin）。</li>
+<li>执行<strong>mysqld -install</strong>（&gt;mysqld -install），等待安装完毕。</li>
+<li>执行<strong>net start mysql</strong>（&gt;net start mysql），等待启动完毕。<br><img src="http://img.blog.csdn.net/20150419115448365" alt="这里写图片描述"></li>
+<li>安装完成。</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Visual Studio Command Prompt 工具配置方法]]></title>
+      <url>http://yoursite.com/2015/04/18/Visual%20Studio%20Command%20Prompt%20%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h4 id="软件版本：VS2013"><a href="#软件版本：VS2013" class="headerlink" title="软件版本：VS2013"></a>软件版本：VS2013</h4><h4 id="如何打开这个工具？"><a href="#如何打开这个工具？" class="headerlink" title="如何打开这个工具？"></a>如何打开这个工具？</h4><ol>
+<li>打开VS2013，在“<strong>工具</strong>“菜单下可以找到。</li>
+<li>打开”<strong>开始</strong>“，在程序菜单中找到VS2013，打开”<strong>Visual Studio Tools</strong>“，可以找到<strong>Visual Studio Command Prompt</strong></li>
+<li>百度一下，有更多方法。</li>
+</ol>
+<h4 id="如何增加这个工具"><a href="#如何增加这个工具" class="headerlink" title="如何增加这个工具"></a>如何增加这个工具</h4><p>如果实在找不到这个工具，那就是没有自动配置，我们可以手动增加这个工具：</p>
+<ol>
+<li>打开VS2013，”<strong>工具</strong>“ –&gt; ”<strong>外部工具</strong>“，如下窗口：<br><img src="http://img.blog.csdn.net/20150418221830238" alt="这里写图片描述"></li>
+<li>点击”添加“，设置标题，命令和参数：<br>标题：<strong>Visual Studio Command Prompt</strong><br>命令：<strong>C:\Windows\System32\cmd.exe</strong><br>参数：<strong>%comspec% /k “”D:\Development\VS2013\VC\vcvarsall.bat”” x86</strong></li>
+<li>点击”确定“，增加成功。</li>
+</ol>
+<h4 id="64-bit和32-bit"><a href="#64-bit和32-bit" class="headerlink" title="64-bit和32-bit"></a>64-bit和32-bit</h4><p>这个工具也分64位和32位，在不同情况下使用不同工具，应该要切换使用。<br>参考这篇文章<a href="https://msdn.microsoft.com/en-us/library/x4d2c09s.aspx" target="_blank" rel="external">How to: Enable a 64-Bit Visual C++ Toolset on the Command Line</a>，我们可以使用以下方法：</p>
+<ul>
+<li>打开命令行，切换到VS安装目录的VC目录下（…\…\Visual Studio 2013\VC），执行”<strong>vcvarsall amd64</strong>“，便可切换为64位工具。更多命令参考上面链接。</li>
+<li>另外，我们也可以在VS的外部工具管理窗口，对Visual Studio Command Prompt设置参数，来打开64位或者32位工具。如上添加Visual Studio Command Prompt过程中，设置工具参数：<br>”<strong>%comspec% /k “”D:\Development\VS2013\VC\vcvarsall.bat”” x86</strong>“  为32位<br>”<strong>%comspec% /k “”D:\Development\VS2013\VC\vcvarsall.bat”” amd64</strong>“  为64位</li>
+</ul>
+<p>注意，每次在使用前可以检查到底是64位还是32位，以免出错。检查方法：<br>打开Visual Studio Command Prompt后，执行<strong>cl.exe</strong></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[boost库编译参数小结]]></title>
+      <url>http://yoursite.com/2015/04/18/boost%E5%BA%93%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0%E5%B0%8F%E7%BB%93/</url>
+      <content type="html"><![CDATA[<h4 id="32位编译："><a href="#32位编译：" class="headerlink" title="32位编译："></a>32位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat<br>编译命令（例）：<br><code>bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release</code></p>
+<p><strong>toolset</strong>：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)<br><strong>stagedir</strong>:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。<br><strong>without/with</strong>：选择不编译/编译哪些库。<br><strong>address-model</strong>：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。<br><strong>threading</strong>：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。<br><strong>link</strong>：静态库版link=shared，动态库link=shared<br><strong>runtime-link</strong>：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。<br><strong>debug/release</strong>：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。</p>
+<h4 id="64位编译："><a href="#64位编译：" class="headerlink" title="64位编译："></a>64位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。<br>在编译命令中加入address-model=64属性</p>
+<h5 id="windows下boost库的命名特点："><a href="#windows下boost库的命名特点：" class="headerlink" title="windows下boost库的命名特点："></a>windows下boost库的命名特点：</h5><p><code>link=static runtime-link=static 得到 libboostxxxxx.lib
+link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p>
+<p>由以上的文件夹层次结构基本就可以得出结论：<br>１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。<br>２、有“d”的为debug版本，没有的则是release版本。<br>３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。<br>４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。</p>
+<hr>
+<p>本文参考：<a href="http://m.blog.csdn.net/blog/chenjh213/42265605" target="_blank" rel="external">vs2013 boost库编译小结</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Win8.1 x64 + VS2013 下CGAL安装及配置]]></title>
+      <url>http://yoursite.com/2015/04/15/Win8.1%20x64%20+%20VS2013%20%E4%B8%8BCGAL%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<p>本文基本参考CGAL官网提供的安装方法，但是重点在于在我安装过程中遇到的<strong>问题和解决方法</strong>。</p>
+<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><ul>
+<li>Windows8.1 x64</li>
+<li>VS2013 x64</li>
+<li><a href="http://www.cmake.org/download/" target="_blank" rel="external">CMake3.2.2</a></li>
+<li><a href="http://www.cgal.org/download.html" target="_blank" rel="external">CGAL4.6</a></li>
+<li><a href="http://www.boost.org/users/download/" target="_blank" rel="external">Boost1.57</a></li>
+<li><a href="http://www.qt.io/zh-hans/download-open-source/#section-2" target="_blank" rel="external">Qt4.8.6</a></li>
+<li><a href="http://www.libqglviewer.com/download.html" target="_blank" rel="external">libQGLViewer-2.6.1</a></li>
+</ul>
+<h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><h3 id="安装CMake"><a href="#安装CMake" class="headerlink" title="安装CMake"></a>安装CMake</h3><p>略</p>
+<hr>
+<h3 id="安装Boost"><a href="#安装Boost" class="headerlink" title="安装Boost"></a>安装Boost</h3><p>我下载的是boost_1_57源码，所以需要自己编译。执行下面动作：</p>
+<ol>
+<li>打开命令行窗口（Win + R）。</li>
+<li>切换到boost目录（&gt;cd …/…/boost_1_57）。</li>
+<li>执行bootstrap.bat（&gt;bootstrap.bat），等待执行完毕，目录会出现<strong>b2.exe</strong>、<strong>bjam.exe</strong>，查资料说他们基本一样，<strong>b2.exe</strong>是<strong>bjam.exe</strong>新版本而已。</li>
+<li>开始编译，执行<strong>b2.exe</strong>（&gt;b2.exe）。</li>
+<li>编译完毕。</li>
+</ol>
+<p>编译完毕之后要将boost相关目录加入环境变量<br>BOOST_LIBRARYDIR = …\…\boost_1_57\stage\lib<br>BOOST_INCLUDEDIR(or BOOST_ROOT)=…\…\boost_1_57</p>
+<p>而且将<strong>“…\…\boost_1_57\stage\lib”</strong>，加入到环境变量PATH中</p>
+<hr>
+<p><strong>可能会出现的问题及解决方法</strong><br>在编译CGAL的过程中有可能会出现下面问题<br><img src="http://img.blog.csdn.net/20150418161908130" alt="这里写图片描述"><br><strong>解决方法</strong><br>回到boost编译过程中，用以下命令：<br> “&gt;b2 –toolset=msvc-12.0 link=shared runtime-link=shared –with-system –with-thread”<br> 编译完毕之后，就可以在“…\…\boost_1_57”目录下看见：<br><img src="http://img.blog.csdn.net/20150418162316311" alt="这里写图片描述"></p>
+<hr>
+<h3 id="安装Qt"><a href="#安装Qt" class="headerlink" title="安装Qt"></a>安装Qt</h3><p>Qt是用来运行CGAL 3D demo的，可以不装。<br>注意，CGAL是不支持Qt5的，请不要尝试下载安装Qt5来编译。<br>32位Qt4可直接下载安装，但是没有64位的Qt4，需要自己编译。我下载的是<strong>qt-everywhere-opensource-src-4.8.6</strong>，以下是编译过程：</p>
+<ol>
+<li>打开<strong>Visual Studio  Command Prompt</strong> （建议看看<a href="">注意事项</a>）。</li>
+<li>切换到Qt源码目录（&gt;cd …/…/qt-everywhere-opensource-src-4.8.6）。</li>
+<li>执行<strong>Configure.exe</strong>（&gt;Configure.exe，你可以加入<a href="http://blog.csdn.net/dztaopao/article/details/9243269" target="_blank" rel="external">一些参数</a>），等待配置结束。</li>
+<li>执行<strong>nmake</strong>（&gt;nmake，你可以加入<a href="">一些参数</a>），等待编译结束，过程大概2-3小时。</li>
+<li>编译结束后记得执行<strong>nmake clean</strong>（&gt;nmake clean）来清除临时文件。</li>
+</ol>
+<p>编译结束后将Qt项目目录加入环境变量<br>QTDIR=…\…\qt-everywhere-opensource-src-4.8.2</p>
+<p>而且将<strong>“…\…\qt-everywhere-opensource-src-4.8.2\bin”</strong>加入到环境变量PATH中</p>
+<hr>
+<p><strong>可能会出现的问题及解决方法 </strong><br>在用VS2013编译CGAL时，CGAL_Qt4等生成失败。<br>在我的案例中，是用<strong>Visual Studio Command Prompt</strong>编译Qt时有问题。请注意，VS Command Prompt 有32位版本和64位版本，在我这个案例中，应该要用64位的工具。<br><strong>解决方法</strong><br>如下启用64位：</p>
+<ol>
+<li>打开命令行窗口。</li>
+<li>切换到“…\…\Microsoft Visual Studio 12.0\VC“目录下（&gt;cd …/…/Microsoft Visual Studio 12.0/VC）。</li>
+<li>执行<strong>vcvarsall amd64</strong>（&gt;vcvarsall amd64）。</li>
+</ol>
+<p>或者</p>
+<ol>
+<li>打开<strong>VS2013</strong> –&gt; <strong>工具</strong> –&gt; <strong>外部工具</strong></li>
+<li>如下界面中，选中<strong>Visual Studio Command Prompt</strong>，在参数栏中设置成：<strong>”%comspec% /k “”D:\Development\VS2013\VC\vcvarsall.bat”” amd64“</strong><br><img src="http://img.blog.csdn.net/20150418203400384" alt="这里写图片描述"></li>
+</ol>
+<hr>
+<h3 id="安装-amp-编译CGAL"><a href="#安装-amp-编译CGAL" class="headerlink" title="安装&amp;编译CGAL"></a>安装&amp;编译CGAL</h3><p>将CGAL安装到指定目录，选择你需要的版本（32-bit 或者 64-bit），我这里是选择64-bit。注意记得勾选<strong>GMP</strong>和<strong>MPFR</strong>。<br>然后设置环境变量：<br>    CGAL_DIR = …\…\CGAL-4.6</p>
+<p>接下来用CMake和VS编译CGAL</p>
+<ol>
+<li>打开CMake-GUI</li>
+<li>在<strong>Where is the source code</strong>后面选择CGAL安装路径，在<strong>Where to build the binaries</strong>后面选择CGAL编译文件路径。</li>
+<li>点击<strong>Configure</strong>，选择合适编译工具。我这里选择<strong>Visual Studio 12 2013 Win64</strong>。</li>
+<li>点击<strong>Generate</strong>。</li>
+<li>打开CGAL编译文件目录，用VS2013打开<strong>CGAL.sln</strong>。</li>
+<li>分别用<strong>Debug</strong>和<strong>Release</strong>两种方式编译生成解决方案。</li>
+</ol>
+<p>成功之后，将<strong>”…\…\CGAL-4.6\bin“</strong>加入到环境变量PATH中。</p>
+<hr>
+<p><strong>可能会出现的问题及解决方法 </strong><br><strong>Error1</strong>： 在用CMake编译CGAL时，无法找到Qt4：<br><img src="http://img.blog.csdn.net/20150418210824923" alt="这里写图片描述"><br>这是提示Qt没有正确安装。<br><strong><em>解决方法</em></strong></p>
+<ol>
+<li>如果安装Qt4了，就要设置Qt4的相关环境变量。</li>
+<li>看看是不是安装的Qt5，CGAL不支持Qt5，需要重装为Qt4。</li>
+</ol>
+<p><strong>Error2</strong>： 在用CMake编译CGAL时，出现”cannot find GMP”：<br><strong><em>解决方法</em></strong><br>重装一下CGAL。</p>
+<hr>
+<h3 id="安装及配置libQGLViewer"><a href="#安装及配置libQGLViewer" class="headerlink" title="安装及配置libQGLViewer"></a>安装及配置libQGLViewer</h3><p>libQGLViewer是用来运行CGAL 3D demo的。下面是配置方法：</p>
+<ol>
+<li>解压到指定目录<strong>”…\…\libQGLViewer-2.6.1“</strong>。</li>
+<li>打开命令行窗口，切换到<strong>QGLViewer</strong>目录下（&gt;cd …\…\libQGLViewer-2.6.1\QGLViewer）。</li>
+<li>执行<strong>qmake.exe</strong>（&gt;qmake.exe），等待完毕。</li>
+<li>打开<strong>Visual Studio Command Prompt</strong>，切换到<strong>QGLViewer</strong>目录下（&gt;cd …\…\libQGLViewer-2.6.1\QGLViewer）。</li>
+<li>执行<strong>nmake</strong>（&gt;nmake），等待执行完毕。</li>
+</ol>
+<p>然后，将<strong>D:\Development\libQGLViewer-2.6.1\QGLViewer\debug</strong>和<strong>D:\Development\libQGLViewer-2.6.1\QGLViewer\release</strong>加入到环境变量PATH中。<br>而且，将libQGLViewer相关目录设置为环境变量：<br>    QGLVIEWERROOT = …\…\libQGLViewer-2.6.1</p>
+<p>至此，整个环境就配置好了。如何查看及demos和examples可以参考CGAL<a href="http://www.cgal.org/download/windows.html#CompilinganExample" target="_blank" rel="external">官方提供方法</a><br>有问题可以交流（weed_t@outlook.com）。</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
