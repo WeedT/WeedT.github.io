@@ -17,8 +17,8 @@
   
   <entry>
     <title>Qt编译出错--可选解决方法</title>
-    <link href="https://weedt.github.io/2015/06/01/Qt%E7%BC%96%E8%AF%91%E5%87%BA%E9%94%99--%E5%8F%AF%E9%80%89%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>https://weedt.github.io/2015/06/01/Qt编译出错--可选解决方法/</id>
+    <link href="https://weedt.github.io/2015/06/01/A-solution-of-Qt%20-builds-error/"/>
+    <id>https://weedt.github.io/2015/06/01/A-solution-of-Qt -builds-error/</id>
     <published>2015-06-01T13:54:12.000Z</published>
     <updated>2016-03-30T07:53:21.056Z</updated>
     
@@ -47,8 +47,8 @@
   
   <entry>
     <title>Boost库问题：无法识别的外部符号……</title>
-    <link href="https://weedt.github.io/2015/05/04/Boost%E5%BA%93%E9%97%AE%E9%A2%98%EF%BC%9A%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E7%9A%84%E5%A4%96%E9%83%A8%E7%AC%A6%E5%8F%B7%E2%80%A6%E2%80%A6/"/>
-    <id>https://weedt.github.io/2015/05/04/Boost库问题：无法识别的外部符号……/</id>
+    <link href="https://weedt.github.io/2015/05/04/The-solution-of-%22unkown-extern-symbol%22-when-using-Boost/"/>
+    <id>https://weedt.github.io/2015/05/04/The-solution-of-"unkown-extern-symbol"-when-using-Boost/</id>
     <published>2015-05-04T13:54:12.000Z</published>
     <updated>2016-03-30T06:51:05.430Z</updated>
     
@@ -83,8 +83,8 @@
   
   <entry>
     <title>MySql安装过程“Start Service”失败解决方法</title>
-    <link href="https://weedt.github.io/2015/04/19/MySql%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E2%80%9CStart%20Service%E2%80%9D%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>https://weedt.github.io/2015/04/19/MySql安装过程“Start Service”失败解决方法/</id>
+    <link href="https://weedt.github.io/2015/04/19/A-solution-of-the%20error-of-%E2%80%9CStart%20Service%E2%80%9Din-mysql-installation/"/>
+    <id>https://weedt.github.io/2015/04/19/A-solution-of-the error-of-“Start Service”in-mysql-installation/</id>
     <published>2015-04-19T12:21:12.000Z</published>
     <updated>2016-03-30T07:52:59.824Z</updated>
     
@@ -119,9 +119,39 @@
   </entry>
   
   <entry>
+    <title>boost库编译参数小结</title>
+    <link href="https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/"/>
+    <id>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</id>
+    <published>2015-04-18T13:54:12.000Z</published>
+    <updated>2016-03-30T06:53:30.181Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;toolset&lt;/strong&gt;：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)&lt;br&gt;&lt;strong&gt;stagedir&lt;/strong&gt;:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。&lt;br&gt;&lt;strong&gt;without/with&lt;/strong&gt;：选择不编译/编译哪些库。&lt;br&gt;&lt;strong&gt;address-model&lt;/strong&gt;：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。&lt;br&gt;&lt;strong&gt;threading&lt;/strong&gt;：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。&lt;br&gt;&lt;strong&gt;link&lt;/strong&gt;：静态库版link=shared，动态库link=shared&lt;br&gt;&lt;strong&gt;runtime-link&lt;/strong&gt;：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。&lt;br&gt;&lt;strong&gt;debug/release&lt;/strong&gt;：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。&lt;/p&gt;
+&lt;h4 id=&quot;64位编译：&quot;&gt;&lt;a href=&quot;#64位编译：&quot; class=&quot;headerlink&quot; title=&quot;64位编译：&quot;&gt;&lt;/a&gt;64位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。&lt;br&gt;在编译命令中加入address-model=64属性&lt;/p&gt;
+&lt;h5 id=&quot;windows下boost库的命名特点：&quot;&gt;&lt;a href=&quot;#windows下boost库的命名特点：&quot; class=&quot;headerlink&quot; title=&quot;windows下boost库的命名特点：&quot;&gt;&lt;/a&gt;windows下boost库的命名特点：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;link=static runtime-link=static 得到 libboostxxxxx.lib
+link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;由以上的文件夹层次结构基本就可以得出结论：&lt;br&gt;１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。&lt;br&gt;２、有“d”的为debug版本，没有的则是release版本。&lt;br&gt;３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。&lt;br&gt;４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;本文参考：&lt;a href=&quot;http://m.blog.csdn.net/blog/chenjh213/42265605&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vs2013 boost库编译小结&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat,编译命令（例）：bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
+    
+    
+      <category term="Boost" scheme="https://weedt.github.io/tags/Boost/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Visual Studio Command Prompt 工具配置方法</title>
-    <link href="https://weedt.github.io/2015/04/18/Visual%20Studio%20Command%20Prompt%20%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/"/>
-    <id>https://weedt.github.io/2015/04/18/Visual Studio Command Prompt 工具配置方法/</id>
+    <link href="https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/"/>
+    <id>https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/</id>
     <published>2015-04-18T13:54:12.000Z</published>
     <updated>2016-03-30T07:52:32.832Z</updated>
     
@@ -158,39 +188,9 @@
   </entry>
   
   <entry>
-    <title>boost库编译参数小结</title>
-    <link href="https://weedt.github.io/2015/04/18/boost%E5%BA%93%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0%E5%B0%8F%E7%BB%93/"/>
-    <id>https://weedt.github.io/2015/04/18/boost库编译参数小结/</id>
-    <published>2015-04-18T13:54:12.000Z</published>
-    <updated>2016-03-30T06:53:30.181Z</updated>
-    
-    <content type="html">&lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;toolset&lt;/strong&gt;：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)&lt;br&gt;&lt;strong&gt;stagedir&lt;/strong&gt;:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。&lt;br&gt;&lt;strong&gt;without/with&lt;/strong&gt;：选择不编译/编译哪些库。&lt;br&gt;&lt;strong&gt;address-model&lt;/strong&gt;：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。&lt;br&gt;&lt;strong&gt;threading&lt;/strong&gt;：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。&lt;br&gt;&lt;strong&gt;link&lt;/strong&gt;：静态库版link=shared，动态库link=shared&lt;br&gt;&lt;strong&gt;runtime-link&lt;/strong&gt;：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。&lt;br&gt;&lt;strong&gt;debug/release&lt;/strong&gt;：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。&lt;/p&gt;
-&lt;h4 id=&quot;64位编译：&quot;&gt;&lt;a href=&quot;#64位编译：&quot; class=&quot;headerlink&quot; title=&quot;64位编译：&quot;&gt;&lt;/a&gt;64位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。&lt;br&gt;在编译命令中加入address-model=64属性&lt;/p&gt;
-&lt;h5 id=&quot;windows下boost库的命名特点：&quot;&gt;&lt;a href=&quot;#windows下boost库的命名特点：&quot; class=&quot;headerlink&quot; title=&quot;windows下boost库的命名特点：&quot;&gt;&lt;/a&gt;windows下boost库的命名特点：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;link=static runtime-link=static 得到 libboostxxxxx.lib
-link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;由以上的文件夹层次结构基本就可以得出结论：&lt;br&gt;１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。&lt;br&gt;２、有“d”的为debug版本，没有的则是release版本。&lt;br&gt;３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。&lt;br&gt;４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;本文参考：&lt;a href=&quot;http://m.blog.csdn.net/blog/chenjh213/42265605&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vs2013 boost库编译小结&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat,编译命令（例）：bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release
-    
-    </summary>
-    
-      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
-    
-    
-      <category term="Boost" scheme="https://weedt.github.io/tags/Boost/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Win8.1 x64 + VS2013 下CGAL安装及配置</title>
-    <link href="https://weedt.github.io/2015/04/15/Win8.1%20x64%20+%20VS2013%20%E4%B8%8BCGAL%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/"/>
-    <id>https://weedt.github.io/2015/04/15/Win8.1 x64 + VS2013 下CGAL安装及配置/</id>
+    <link href="https://weedt.github.io/2015/04/15/The-installation-and-configuration-of-cgal-under-Win8.1-x64+VS2013/"/>
+    <id>https://weedt.github.io/2015/04/15/The-installation-and-configuration-of-cgal-under-Win8.1-x64+VS2013/</id>
     <published>2015-04-15T13:54:12.000Z</published>
     <updated>2016-03-30T07:51:33.977Z</updated>
     
@@ -282,11 +282,74 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
       <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
     
     
+      <category term="Qt" scheme="https://weedt.github.io/tags/Qt/"/>
+    
       <category term="Boost" scheme="https://weedt.github.io/tags/Boost/"/>
+    
+      <category term="CGAL" scheme="https://weedt.github.io/tags/CGAL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20140802QObject::connect:No such slot问题解决办法</title>
+    <link href="https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/"/>
+    <id>https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/</id>
+    <published>2014-08-02T09:23:29.000Z</published>
+    <updated>2016-03-30T09:31:13.700Z</updated>
+    
+    <content type="html">&lt;p&gt;参考&lt;a href=&quot;http://blog.csdn.net/changli_90/article/details/8018376&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网上&lt;/a&gt;，有以下解决方法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1、看看你的类声明中有没有Q_OBJECT&lt;br&gt;2、你声明的函数要加声明:&lt;br&gt;     private slots:&lt;br&gt;        void xxxx();&lt;br&gt;3、检查槽函数名拼写是否有误，以及对应的signal和slot的参数是否一致&lt;br&gt;如果还不行的话,清理项目,删掉原有的moc_xxx.cpp,重新执行qmake.&lt;br&gt;还有一点要注意的是:signal和slots的参数要一样 &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我在实际操作中遇到一下错误：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;加入Q_OBJECT后出现以下错误：&lt;br&gt;错误 1 error LNK2001: 无法解析的外部符号 “public: virtual struct QMetaObject const &lt;em&gt; __thiscall Widget::metaObject(void)const “ (?metaObject@Widget@@UBEPBUQMetaObject@@XZ)&lt;br&gt;错误 2 error LNK2001: 无法解析的外部符号 “public: virtual void &lt;/em&gt; &lt;strong&gt;thiscall Widget::qt_metacast(char const *)” (?qt_metacast@Widget@@UAEPAXPBD@Z)&lt;br&gt;错误 3 error LNK2001: 无法解析的外部符号 “public: virtual int &lt;/strong&gt;thiscall Widget::qt_metacall(enum QMetaObject::Call,int,void &lt;em&gt; &lt;/em&gt;)” (?qt_metacall@Widget@@UAEHW4Call@QMetaObject@@HPAPAX@Z)&lt;br&gt;错误 4 fatal error LNK1120: 3 个无法解析的外部命令  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;解决方法：&lt;/strong&gt;&lt;br&gt;qmake一下 &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      核心qmake一下
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
+    
     
       <category term="Qt" scheme="https://weedt.github.io/tags/Qt/"/>
     
-      <category term="CGAL" scheme="https://weedt.github.io/tags/CGAL/"/>
+  </entry>
+  
+  <entry>
+    <title>malloc/free and new/delete</title>
+    <link href="https://weedt.github.io/2014/04/01/The-Difference-of-malloc-free-and-new-delete/"/>
+    <id>https://weedt.github.io/2014/04/01/The-Difference-of-malloc-free-and-new-delete/</id>
+    <published>2014-04-01T06:05:38.000Z</published>
+    <updated>2016-04-01T07:05:21.814Z</updated>
+    
+    <content type="html">&lt;p&gt;今天在Qt下编写一个解析PCAP文件的小程序时，犯了一个基本错误：&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString openUrl; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString saveDir; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; curFilterIndex; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        saveDir = &lt;span class=&quot;string&quot;&gt;&quot;b&quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        openUrl = &lt;span class=&quot;string&quot;&gt;&quot;a&quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        curFilterIndex = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; Dlg_Attr;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;QString&lt;/strong&gt;是Qt框架下的一个字符串类，和std::string基本类似，然而在这个程序中我却习惯性给struct用了malloc来分配空间，结果导致错误。改用new自然就成功了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;malloc/free：&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;这是两个C/C++的标准库函数，函数原型为：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;void* malloc(int size);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;void free(void* ptr);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;malloc只是进行分配指定大小内存，返回空间的首地址，并且是void类型的。free也只是回收内存。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;new/delete：&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;这是两个C++关键字，为对象的动态创建和销毁提供支持。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不同&lt;/strong&gt;&lt;br&gt;两者最大的不同就是：malloc/free只是简单得进行内存分配，而new/delete是关键字，由编译器控制，不仅仅是分配空间，而且会执行构造函数和析构函数对对象进行创建和销毁。&lt;br&gt;另外，malloc分配的空间是无类型的，需要进行强制类型转换来转换成所需的类型；而new需要提供类型来创建对应类型的对象。&lt;/p&gt;
+&lt;p&gt;前面的QString是类，用malloc当然不行啊，没有对它进行构造，没法用。&lt;br&gt;new/delete的特性是和C++的面向对象思想匹配的，在C++里面还是用new/delete吧。&lt;/p&gt;
+&lt;p&gt;Ps：struct在C++里面和class基本上没啥差别，除了默认访问权限和默认继承权限不同，struct的都是public，而class的都是private。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      malloc/free是两个C/C++的标准库函数，new/delete是两个C++关键字
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
+    
+    
+      <category term="C++" scheme="https://weedt.github.io/tags/C/"/>
+    
+      <category term="内存管理" scheme="https://weedt.github.io/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
