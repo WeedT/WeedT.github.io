@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[Qt编译出错--可选解决方法]]></title>
-      <url>https://weedt.github.io/2015/06/01/A-solution-of-Qt%20-builds-error/</url>
+      <url>https://weedt.github.io/2015/06/01/A-solution-of-Qt-builds-error/</url>
       <content type="html"><![CDATA[<p>1.错误：</p>
 <blockquote>
 <p>错误:C1041: 无法打开程序数据库“mypath\vc120.pdb”；如果要将多个 CL.EXE 写入同一个 .PDB 文件，请使用 /FS</p>
@@ -179,7 +179,17 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p
     </entry>
     
     <entry>
-      <title><![CDATA[20140802QObject::connect:No such slot问题解决办法]]></title>
+      <title><![CDATA[Qt下中文显示问题]]></title>
+      <url>https://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/</url>
+      <content type="html"><![CDATA[<p>Qt 4:<br>main函数中添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForTr(QTextCodec::codecForName(&quot;GB2312&quot;));  </span><br><span class="line">QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GB2312&quot;));  </span><br><span class="line">QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&quot;GB2312&quot;));</span><br></pre></td></tr></table></figure></p>
+<p>需要添加头文件：#include <qtextcodec></qtextcodec></p>
+<p>Qt 5<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GB2312&quot;));</span><br></pre></td></tr></table></figure></p>
+<p>Qt5中取消了setCodecForCStrings和setCodecForTr</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[QObject::connect:No such slot问题解决办法]]></title>
       <url>https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/</url>
       <content type="html"><![CDATA[<p>参考<a href="http://blog.csdn.net/changli_90/article/details/8018376" target="_blank" rel="external">网上</a>，有以下解决方法：</p>
 <blockquote>
@@ -190,6 +200,15 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p
 <p>加入Q_OBJECT后出现以下错误：<br>错误 1 error LNK2001: 无法解析的外部符号 “public: virtual struct QMetaObject const <em> __thiscall Widget::metaObject(void)const “ (?metaObject@Widget@@UBEPBUQMetaObject@@XZ)<br>错误 2 error LNK2001: 无法解析的外部符号 “public: virtual void </em> <strong>thiscall Widget::qt_metacast(char const *)” (?qt_metacast@Widget@@UAEPAXPBD@Z)<br>错误 3 error LNK2001: 无法解析的外部符号 “public: virtual int </strong>thiscall Widget::qt_metacall(enum QMetaObject::Call,int,void <em> </em>)” (?qt_metacall@Widget@@UAEHW4Call@QMetaObject@@HPAPAX@Z)<br>错误 4 fatal error LNK1120: 3 个无法解析的外部命令  </p>
 </blockquote>
 <p><strong>解决方法：</strong><br>qmake一下 </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[new内存失败后的正确处理]]></title>
+      <url>https://weedt.github.io/2014/06/11/How-to-handle-the-%22new%22-failure/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p><a href="http://book.51cto.com/art/201202/317767.htm" target="_blank" rel="external">http://book.51cto.com/art/201202/317767.htm</a></p>
+</blockquote>
 ]]></content>
     </entry>
     

@@ -17,8 +17,8 @@
   
   <entry>
     <title>Qt编译出错--可选解决方法</title>
-    <link href="https://weedt.github.io/2015/06/01/A-solution-of-Qt%20-builds-error/"/>
-    <id>https://weedt.github.io/2015/06/01/A-solution-of-Qt -builds-error/</id>
+    <link href="https://weedt.github.io/2015/06/01/A-solution-of-Qt-builds-error/"/>
+    <id>https://weedt.github.io/2015/06/01/A-solution-of-Qt-builds-error/</id>
     <published>2015-06-01T13:54:12.000Z</published>
     <updated>2016-03-30T07:53:21.056Z</updated>
     
@@ -291,11 +291,37 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
   </entry>
   
   <entry>
-    <title>20140802QObject::connect:No such slot问题解决办法</title>
+    <title>Qt下中文显示问题</title>
+    <link href="https://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/"/>
+    <id>https://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/</id>
+    <published>2014-08-12T07:12:17.000Z</published>
+    <updated>2016-04-02T07:36:52.779Z</updated>
+    
+    <content type="html">&lt;p&gt;Qt 4:&lt;br&gt;main函数中添加：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForTr(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;需要添加头文件：#include &lt;qtextcodec&gt;&lt;/qtextcodec&gt;&lt;/p&gt;
+&lt;p&gt;Qt 5&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Qt5中取消了setCodecForCStrings和setCodecForTr&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GB2312&quot;));
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
+    
+    
+      <category term="Qt" scheme="https://weedt.github.io/tags/Qt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QObject::connect:No such slot问题解决办法</title>
     <link href="https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/"/>
     <id>https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/</id>
     <published>2014-08-02T09:23:29.000Z</published>
-    <updated>2016-03-30T09:31:13.700Z</updated>
+    <updated>2016-04-02T07:38:16.783Z</updated>
     
     <content type="html">&lt;p&gt;参考&lt;a href=&quot;http://blog.csdn.net/changli_90/article/details/8018376&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网上&lt;/a&gt;，有以下解决方法：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -318,6 +344,31 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     
     
       <category term="Qt" scheme="https://weedt.github.io/tags/Qt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>new内存失败后的正确处理</title>
+    <link href="https://weedt.github.io/2014/06/11/How-to-handle-the-%22new%22-failure/"/>
+    <id>https://weedt.github.io/2014/06/11/How-to-handle-the-"new"-failure/</id>
+    <published>2014-06-11T07:11:55.000Z</published>
+    <updated>2016-04-02T07:38:42.524Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://book.51cto.com/art/201202/317767.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://book.51cto.com/art/201202/317767.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      http://book.51cto.com/art/201202/317767.htm
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
+    
+    
+      <category term="内存管理" scheme="https://weedt.github.io/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
@@ -347,9 +398,9 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
       <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
     
     
-      <category term="C++" scheme="https://weedt.github.io/tags/C/"/>
-    
       <category term="内存管理" scheme="https://weedt.github.io/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="C++" scheme="https://weedt.github.io/tags/C/"/>
     
   </entry>
   
