@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title><![CDATA[Qt 编码问题]]></title>
+      <url>https://weedt.github.io/2016/04/05/The-knowledge-of-Qt-endcoding/</url>
+      <content type="html"><![CDATA[<p><a href="http://blog.csdn.net/brave_heart_lxl/article/details/7186631" target="_blank" rel="external">http://blog.csdn.net/brave_heart_lxl/article/details/7186631</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Linux 命令（持续更新）]]></title>
+      <url>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-to-be-continues/</url>
+      <content type="html"><![CDATA[<h3 id="TIPs"><a href="#TIPs" class="headerlink" title="TIPs"></a>TIPs</h3><ul>
+<li>Bash命令基本格式：<p style="text-align: center; font-weight: bold;">命令名 [选项] [参数1] [参数2] ……</p></li>
+<li>命令名小写： DATE，Date和date是不同的，只有date是正确的。</li>
+<li>如果命令太长，一行放不下，可以在行尾输入“\”字符，shell会返回一个“&gt;”作为提示符，表示命令未结束，允许继续输入有关信息。</li>
+<li>命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。</li>
+</ul>
+<ol>
+<li><p><strong>who</strong><br>列出所有正在使用 <em>系统的用户</em>、<em>所用终端名</em>和 <em>注册到系统的时间</em><br><img src="http://ww2.sinaimg.cn/large/93736429gw1f2ig5p43rpj20b5024q3i.jpg" alt=""><br>who am i 和 whoami：<br><img src="http://ww1.sinaimg.cn/large/93736429gw1f2ig9rqw3rj20ax023q3f.jpg" alt=""></p>
+</li>
+<li><p><strong>echo</strong><br>将命令行的参数显示在屏幕上：<br><img src="http://ww1.sinaimg.cn/large/93736429gw1f2igefoae2j20e7041jso.jpg" alt=""></p>
+</li>
+<li><p><strong>date</strong><br>显示或者设置系统日期和时间，详细请传送<a href="http://www.cnblogs.com/peida/archive/2012/12/13/2815687.html" title="每天一条Linux命令" target="_blank" rel="external">这里</a>。</p>
+</li>
+<li><p><strong>cal</strong><br>日历，显示1-9999年任意一年的或者月的日历。不带参数显示当月，一个参数解释为 <em>年</em>，两个参数解释为 <em>月 年</em></p>
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Qt编译出错--可选解决方法]]></title>
       <url>https://weedt.github.io/2015/06/01/A-solution-of-Qt-builds-error/</url>
       <content type="html"><![CDATA[<p>1.错误：</p>
@@ -59,20 +88,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[boost库编译参数小结]]></title>
-      <url>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</url>
-      <content type="html"><![CDATA[<h4 id="32位编译："><a href="#32位编译：" class="headerlink" title="32位编译："></a>32位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat<br>编译命令（例）：<br><code>bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release</code></p>
-<p><strong>toolset</strong>：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)<br><strong>stagedir</strong>:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。<br><strong>without/with</strong>：选择不编译/编译哪些库。<br><strong>address-model</strong>：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。<br><strong>threading</strong>：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。<br><strong>link</strong>：静态库版link=shared，动态库link=shared<br><strong>runtime-link</strong>：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。<br><strong>debug/release</strong>：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。</p>
-<h4 id="64位编译："><a href="#64位编译：" class="headerlink" title="64位编译："></a>64位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。<br>在编译命令中加入address-model=64属性</p>
-<h5 id="windows下boost库的命名特点："><a href="#windows下boost库的命名特点：" class="headerlink" title="windows下boost库的命名特点："></a>windows下boost库的命名特点：</h5><p><code>link=static runtime-link=static 得到 libboostxxxxx.lib
-link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p>
-<p>由以上的文件夹层次结构基本就可以得出结论：<br>１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。<br>２、有“d”的为debug版本，没有的则是release版本。<br>３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。<br>４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。</p>
-<hr>
-<p>本文参考：<a href="http://m.blog.csdn.net/blog/chenjh213/42265605" target="_blank" rel="external">vs2013 boost库编译小结</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Visual Studio Command Prompt 工具配置方法]]></title>
       <url>https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/</url>
       <content type="html"><![CDATA[<h4 id="软件版本：VS2013"><a href="#软件版本：VS2013" class="headerlink" title="软件版本：VS2013"></a>软件版本：VS2013</h4><h4 id="如何打开这个工具？"><a href="#如何打开这个工具？" class="headerlink" title="如何打开这个工具？"></a>如何打开这个工具？</h4><ol>
@@ -92,6 +107,20 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p
 <li>另外，我们也可以在VS的外部工具管理窗口，对Visual Studio Command Prompt设置参数，来打开64位或者32位工具。如上添加Visual Studio Command Prompt过程中，设置工具参数：<br>”<strong>%comspec% /k “”D:\Development\VS2013\VC\vcvarsall.bat”” x86</strong>“  为32位<br>”<strong>%comspec% /k “”D:\Development\VS2013\VC\vcvarsall.bat”” amd64</strong>“  为64位</li>
 </ul>
 <p>注意，每次在使用前可以检查到底是64位还是32位，以免出错。检查方法：<br>打开Visual Studio Command Prompt后，执行<strong>cl.exe</strong></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[boost库编译参数小结]]></title>
+      <url>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</url>
+      <content type="html"><![CDATA[<h4 id="32位编译："><a href="#32位编译：" class="headerlink" title="32位编译："></a>32位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat<br>编译命令（例）：<br><code>bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release</code></p>
+<p><strong>toolset</strong>：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)<br><strong>stagedir</strong>:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。<br><strong>without/with</strong>：选择不编译/编译哪些库。<br><strong>address-model</strong>：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。<br><strong>threading</strong>：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。<br><strong>link</strong>：静态库版link=shared，动态库link=shared<br><strong>runtime-link</strong>：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。<br><strong>debug/release</strong>：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。</p>
+<h4 id="64位编译："><a href="#64位编译：" class="headerlink" title="64位编译："></a>64位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。<br>在编译命令中加入address-model=64属性</p>
+<h5 id="windows下boost库的命名特点："><a href="#windows下boost库的命名特点：" class="headerlink" title="windows下boost库的命名特点："></a>windows下boost库的命名特点：</h5><p><code>link=static runtime-link=static 得到 libboostxxxxx.lib
+link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p>
+<p>由以上的文件夹层次结构基本就可以得出结论：<br>１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。<br>２、有“d”的为debug版本，没有的则是release版本。<br>３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。<br>４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。</p>
+<hr>
+<p>本文参考：<a href="http://m.blog.csdn.net/blog/chenjh213/42265605" target="_blank" rel="external">vs2013 boost库编译小结</a></p>
 ]]></content>
     </entry>
     
