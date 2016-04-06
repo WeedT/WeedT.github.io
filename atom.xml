@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weedt.github.io/"/>
-  <updated>2016-04-05T14:18:48.083Z</updated>
+  <updated>2016-04-06T14:50:32.774Z</updated>
   <id>https://weedt.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OpenGL 纹理</title>
+    <link href="https://weedt.github.io/2016/04/06/OpenGL-Texture-effect-pictures/"/>
+    <id>https://weedt.github.io/2016/04/06/OpenGL-Texture-effect-pictures/</id>
+    <published>2016-04-06T14:49:47.000Z</published>
+    <updated>2016-04-06T14:50:32.774Z</updated>
+    
+    <content type="html">&lt;p&gt;明天更新&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;明天更新&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Qt 编码问题</title>
@@ -462,9 +482,9 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
       <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
     
     
-      <category term="C++" scheme="https://weedt.github.io/tags/C/"/>
-    
       <category term="内存管理" scheme="https://weedt.github.io/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="C++" scheme="https://weedt.github.io/tags/C/"/>
     
   </entry>
   
