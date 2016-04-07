@@ -11,28 +11,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Qt 编码问题]]></title>
-      <url>https://weedt.github.io/2016/04/05/The-knowledge-of-Qt-endcoding/</url>
-      <content type="html"><![CDATA[<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>首先看一个简单的程序：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">﻿#include &lt;QCoreApplication&gt;</span><br><span class="line">#include &lt;QTextStream&gt;</span><br><span class="line">#include &lt;QTextCodec&gt;</span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">    QCoreApplication a(argc, argv);</span><br><span class="line">    QString str = &quot;我是中文&quot;;</span><br><span class="line">    QTextStream out(stdout);</span><br><span class="line">    out &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">    return a.exec();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>输出结果为：<br><img src="http://ww3.sinaimg.cn/large/93736429gw1f2ohe36n7dj206m039web.jpg" alt=""><br>中文乱码了。<br>我们在之前（<a href="http://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/">点这里</a>）讨论过解决办法。<br>今天来讨论一下为什么这么解决。</p>
-<h4 id="探讨"><a href="#探讨" class="headerlink" title="探讨"></a>探讨</h4><hr>
-<p>这是QString对中文字符不支持吗？不是，QString内部使用 <strong>Unicode</strong> 编码，当然是支持中文的。出现输出乱码问题是编码问题。<br>文本文件都是有编码的，比如GBK，UTF-8，以上例子的源文件编码就是GBK。同一个文件用不同的编码，虽然看上去内容一样，但是物理表示方式不同；同理，用A编码存储的内容来用B编码解析，看到的都是乱码（Ps. Windows下压缩包在Linux下解压后中文文件名都是乱码T.T）。开始慢慢明白了，QString内部是Unicode编码，文件中的“我是中文”这几个字符是GBK编码，编码不一致导致乱码问题。但是还有一个问题，保存文件的编码方式千千万，QString对象如何知道文本的编码呢？你不告诉它，它肯定不知道，就会采取默认的方式——Latin-1，把赋值字符串当做 <strong>Latin-1</strong> 编码来转换为Unicode。<br>所以在上面的例子中，把GBK编码的“我是中文”当做Latin-1转换为Unicode，输出当然为乱码。<br><strong>解决方法1</strong>：就是直接转换为Unicode（Windows中local8Bit就是GBK）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QString str = QString::fromLocal8Bit(&quot;我是中文&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>当然，如果文件为UTF-8编码就采取这种方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QString str = QString::fromUtf8(&quot;我是中文&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>QString提供的转换函数有限，如果没有合适的转换函数，可以使用QTextCodec：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QString QTextCodec::toUnicode ( const char * chars ) const</span><br></pre></td></tr></table></figure></p>
-<p><strong>解决办法2</strong>：明确告诉QString你的编码<br>Qt4：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&quot;GBK&quot;));</span><br></pre></td></tr></table></figure></p>
-<p>Qt5：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GBK&quot;));</span><br></pre></td></tr></table></figure></p>
-<p>最后转帖<a href="http://blog.csdn.net/libaineu2004/article/details/19245205" target="_blank" rel="external">这儿</a>的编码知识：<br>Qt常见的两种编码是:UTF-8和GBK</p>
-<ul>
-<li>UTF-8：Unicode TransformationFormat-8bit，允许含BOM，但通常不含BOM。是用以解决国际上字符的一种多字节编码，它对英文使用8位（即一个字节），中文使用24为（三个字节）来编码。UTF-8包含全世界所有国家需要用到的字符，是国际编码，通用性强。UTF-8编码的文字可以在各国支持UTF8字符集的浏览器上显示。如，如果是UTF8编码，则在外国人的英文IE上也能显示中文，他们无需下载IE的中文语言支持包。</li>
-<li>GBK是国家标准GB2312基础上扩容后兼容GB2312的标准。GBK的文字编码是用双字节来表示的，即不论中、英文字符均使用双字节来表示，为了区分中文，将其最高位都设定成1。GBK包含全部中文字符，是国家编码，通用性比UTF8差，不过UTF8占用的数据库比GBD大。GBK是GB2312的扩展，除了兼容GB2312外，它还能显示繁体中文，还有日文的假名。</li>
-<li>GBK、GB2312等与UTF8之间都必须通过Unicode编码才能相互转换：<br>GBK、GB2312－－Unicode－－UTF8<br>UTF8－－Unicode－－GBK、GB2312 </li>
-<li>在简体中文windows系统下，ANSI编码代表GBK/GB2312编码，ANSI通常使用0x80~0xFF范围的2个字节来表示1个中文字符。0x00~0x7F之间的字符，依旧是1个字节代表1个字符。Unicode(UTF-16)编码则所有字符都用2个字节表示。</li>
-</ul>
-<p>参考：<a href="http://blog.csdn.net/brave_heart_lxl/article/details/7186631" target="_blank" rel="external">Qt中文乱码问题</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Linux 命令（持续更新）]]></title>
       <url>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-to-be-continues/</url>
       <content type="html"><![CDATA[<h3 id="TIPs"><a href="#TIPs" class="headerlink" title="TIPs"></a>TIPs</h3><ul>
@@ -226,6 +204,28 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p
 </ol>
 <p>然后，将<strong>D:\Development\libQGLViewer-2.6.1\QGLViewer\debug</strong>和<strong>D:\Development\libQGLViewer-2.6.1\QGLViewer\release</strong>加入到环境变量PATH中。<br>而且，将libQGLViewer相关目录设置为环境变量：<br>    QGLVIEWERROOT = …\…\libQGLViewer-2.6.1</p>
 <p>至此，整个环境就配置好了。如何查看及demos和examples可以参考CGAL<a href="http://www.cgal.org/download/windows.html#CompilinganExample" target="_blank" rel="external">官方提供方法</a><br>有问题可以交流（weed_t@outlook.com）。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Qt 编码问题]]></title>
+      <url>https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/</url>
+      <content type="html"><![CDATA[<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>首先看一个简单的程序：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">﻿#include &lt;QCoreApplication&gt;</span><br><span class="line">#include &lt;QTextStream&gt;</span><br><span class="line">#include &lt;QTextCodec&gt;</span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">    QCoreApplication a(argc, argv);</span><br><span class="line">    QString str = &quot;我是中文&quot;;</span><br><span class="line">    QTextStream out(stdout);</span><br><span class="line">    out &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">    return a.exec();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><img src="http://ww3.sinaimg.cn/large/93736429gw1f2ohe36n7dj206m039web.jpg" alt=""><br>中文乱码了。<br>我们在之前（<a href="http://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/">点这里</a>）讨论过解决办法。<br>今天来讨论一下为什么这么解决。</p>
+<h4 id="探讨"><a href="#探讨" class="headerlink" title="探讨"></a>探讨</h4><hr>
+<p>这是QString对中文字符不支持吗？不是，QString内部使用 <strong>Unicode</strong> 编码，当然是支持中文的。出现输出乱码问题是编码问题。<br>文本文件都是有编码的，比如GBK，UTF-8，以上例子的源文件编码就是GBK。同一个文件用不同的编码，虽然看上去内容一样，但是物理表示方式不同；同理，用A编码存储的内容来用B编码解析，看到的都是乱码（Ps. Windows下压缩包在Linux下解压后中文文件名都是乱码T.T）。开始慢慢明白了，QString内部是Unicode编码，文件中的“我是中文”这几个字符是GBK编码，编码不一致导致乱码问题。但是还有一个问题，保存文件的编码方式千千万，QString对象如何知道文本的编码呢？你不告诉它，它肯定不知道，就会采取默认的方式——Latin-1，把赋值字符串当做 <strong>Latin-1</strong> 编码来转换为Unicode。<br>所以在上面的例子中，把GBK编码的“我是中文”当做Latin-1转换为Unicode，输出当然为乱码。<br><strong>解决方法1</strong>：就是直接转换为Unicode（Windows中local8Bit就是GBK）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QString str = QString::fromLocal8Bit(&quot;我是中文&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>当然，如果文件为UTF-8编码就采取这种方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QString str = QString::fromUtf8(&quot;我是中文&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>QString提供的转换函数有限，如果没有合适的转换函数，可以使用QTextCodec：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QString QTextCodec::toUnicode ( const char * chars ) const</span><br></pre></td></tr></table></figure></p>
+<p><strong>解决办法2</strong>：明确告诉QString你的编码<br>Qt4：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&quot;GBK&quot;));</span><br></pre></td></tr></table></figure></p>
+<p>Qt5：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GBK&quot;));</span><br></pre></td></tr></table></figure></p>
+<p>最后转帖<a href="http://blog.csdn.net/libaineu2004/article/details/19245205" target="_blank" rel="external">这儿</a>的编码知识：<br>Qt常见的两种编码是:UTF-8和GBK</p>
+<ul>
+<li>UTF-8：Unicode TransformationFormat-8bit，允许含BOM，但通常不含BOM。是用以解决国际上字符的一种多字节编码，它对英文使用8位（即一个字节），中文使用24为（三个字节）来编码。UTF-8包含全世界所有国家需要用到的字符，是国际编码，通用性强。UTF-8编码的文字可以在各国支持UTF8字符集的浏览器上显示。如，如果是UTF8编码，则在外国人的英文IE上也能显示中文，他们无需下载IE的中文语言支持包。</li>
+<li>GBK是国家标准GB2312基础上扩容后兼容GB2312的标准。GBK的文字编码是用双字节来表示的，即不论中、英文字符均使用双字节来表示，为了区分中文，将其最高位都设定成1。GBK包含全部中文字符，是国家编码，通用性比UTF8差，不过UTF8占用的数据库比GBD大。GBK是GB2312的扩展，除了兼容GB2312外，它还能显示繁体中文，还有日文的假名。</li>
+<li>GBK、GB2312等与UTF8之间都必须通过Unicode编码才能相互转换：<br>GBK、GB2312－－Unicode－－UTF8<br>UTF8－－Unicode－－GBK、GB2312 </li>
+<li>在简体中文windows系统下，ANSI编码代表GBK/GB2312编码，ANSI通常使用0x80~0xFF范围的2个字节来表示1个中文字符。0x00~0x7F之间的字符，依旧是1个字节代表1个字符。Unicode(UTF-16)编码则所有字符都用2个字节表示。</li>
+</ul>
+<p>参考：<a href="http://blog.csdn.net/brave_heart_lxl/article/details/7186631" target="_blank" rel="external">Qt中文乱码问题</a></p>
 ]]></content>
     </entry>
     

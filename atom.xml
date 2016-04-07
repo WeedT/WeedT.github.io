@@ -36,46 +36,6 @@
   </entry>
   
   <entry>
-    <title>Qt 编码问题</title>
-    <link href="https://weedt.github.io/2016/04/05/The-knowledge-of-Qt-endcoding/"/>
-    <id>https://weedt.github.io/2016/04/05/The-knowledge-of-Qt-endcoding/</id>
-    <published>2016-04-05T14:17:35.000Z</published>
-    <updated>2016-04-07T15:02:04.517Z</updated>
-    
-    <content type="html">&lt;h4 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;首先看一个简单的程序：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;﻿#include &amp;lt;QCoreApplication&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;QTextStream&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;QTextCodec&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;int main(int argc, char *argv[])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QCoreApplication a(argc, argv);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString str = &amp;quot;我是中文&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QTextStream out(stdout);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    out &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return a.exec();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;输出结果为：&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/93736429gw1f2ohe36n7dj206m039web.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;中文乱码了。&lt;br&gt;我们在之前（&lt;a href=&quot;http://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/&quot;&gt;点这里&lt;/a&gt;）讨论过解决办法。&lt;br&gt;今天来讨论一下为什么这么解决。&lt;/p&gt;
-&lt;h4 id=&quot;探讨&quot;&gt;&lt;a href=&quot;#探讨&quot; class=&quot;headerlink&quot; title=&quot;探讨&quot;&gt;&lt;/a&gt;探讨&lt;/h4&gt;&lt;hr&gt;
-&lt;p&gt;这是QString对中文字符不支持吗？不是，QString内部使用 &lt;strong&gt;Unicode&lt;/strong&gt; 编码，当然是支持中文的。出现输出乱码问题是编码问题。&lt;br&gt;文本文件都是有编码的，比如GBK，UTF-8，以上例子的源文件编码就是GBK。同一个文件用不同的编码，虽然看上去内容一样，但是物理表示方式不同；同理，用A编码存储的内容来用B编码解析，看到的都是乱码（Ps. Windows下压缩包在Linux下解压后中文文件名都是乱码T.T）。开始慢慢明白了，QString内部是Unicode编码，文件中的“我是中文”这几个字符是GBK编码，编码不一致导致乱码问题。但是还有一个问题，保存文件的编码方式千千万，QString对象如何知道文本的编码呢？你不告诉它，它肯定不知道，就会采取默认的方式——Latin-1，把赋值字符串当做 &lt;strong&gt;Latin-1&lt;/strong&gt; 编码来转换为Unicode。&lt;br&gt;所以在上面的例子中，把GBK编码的“我是中文”当做Latin-1转换为Unicode，输出当然为乱码。&lt;br&gt;&lt;strong&gt;解决方法1&lt;/strong&gt;：就是直接转换为Unicode（Windows中local8Bit就是GBK）：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QString str = QString::fromLocal8Bit(&amp;quot;我是中文&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;当然，如果文件为UTF-8编码就采取这种方式：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QString str = QString::fromUtf8(&amp;quot;我是中文&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;QString提供的转换函数有限，如果没有合适的转换函数，可以使用QTextCodec：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QString QTextCodec::toUnicode ( const char * chars ) const&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;解决办法2&lt;/strong&gt;：明确告诉QString你的编码&lt;br&gt;Qt4：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&amp;quot;GBK&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;Qt5：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GBK&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;最后转帖&lt;a href=&quot;http://blog.csdn.net/libaineu2004/article/details/19245205&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这儿&lt;/a&gt;的编码知识：&lt;br&gt;Qt常见的两种编码是:UTF-8和GBK&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;UTF-8：Unicode TransformationFormat-8bit，允许含BOM，但通常不含BOM。是用以解决国际上字符的一种多字节编码，它对英文使用8位（即一个字节），中文使用24为（三个字节）来编码。UTF-8包含全世界所有国家需要用到的字符，是国际编码，通用性强。UTF-8编码的文字可以在各国支持UTF8字符集的浏览器上显示。如，如果是UTF8编码，则在外国人的英文IE上也能显示中文，他们无需下载IE的中文语言支持包。&lt;/li&gt;
-&lt;li&gt;GBK是国家标准GB2312基础上扩容后兼容GB2312的标准。GBK的文字编码是用双字节来表示的，即不论中、英文字符均使用双字节来表示，为了区分中文，将其最高位都设定成1。GBK包含全部中文字符，是国家编码，通用性比UTF8差，不过UTF8占用的数据库比GBD大。GBK是GB2312的扩展，除了兼容GB2312外，它还能显示繁体中文，还有日文的假名。&lt;/li&gt;
-&lt;li&gt;GBK、GB2312等与UTF8之间都必须通过Unicode编码才能相互转换：&lt;br&gt;GBK、GB2312－－Unicode－－UTF8&lt;br&gt;UTF8－－Unicode－－GBK、GB2312 &lt;/li&gt;
-&lt;li&gt;在简体中文windows系统下，ANSI编码代表GBK/GB2312编码，ANSI通常使用0x80~0xFF范围的2个字节来表示1个中文字符。0x00~0x7F之间的字符，依旧是1个字节代表1个字符。Unicode(UTF-16)编码则所有字符都用2个字节表示。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考：&lt;a href=&quot;http://blog.csdn.net/brave_heart_lxl/article/details/7186631&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Qt中文乱码问题&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      文本文件都是有编码的，比如GBK，UTF-8，以上例子的源文件编码就是GBK。同一个文件用不同的编码，虽然看上去内容一样，但是物理表示方式不同；同理，用A编码存储的内容来用B编码解析，看到的都是乱码
-    
-    </summary>
-    
-      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
-    
-    
-      <category term="Qt" scheme="https://weedt.github.io/tags/Qt/"/>
-    
-      <category term="编码" scheme="https://weedt.github.io/tags/%E7%BC%96%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Linux 命令（持续更新）</title>
     <link href="https://weedt.github.io/2016/04/02/Commonds-Of-Linux-to-be-continues/"/>
     <id>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-to-be-continues/</id>
@@ -386,6 +346,46 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
       <category term="Boost" scheme="https://weedt.github.io/tags/Boost/"/>
     
       <category term="CGAL" scheme="https://weedt.github.io/tags/CGAL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Qt 编码问题</title>
+    <link href="https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/"/>
+    <id>https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/</id>
+    <published>2014-08-20T14:17:35.000Z</published>
+    <updated>2016-04-07T15:03:33.824Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;首先看一个简单的程序：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;﻿#include &amp;lt;QCoreApplication&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;QTextStream&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;QTextCodec&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;int main(int argc, char *argv[])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QCoreApplication a(argc, argv);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString str = &amp;quot;我是中文&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QTextStream out(stdout);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    out &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return a.exec();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;输出结果为：&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/93736429gw1f2ohe36n7dj206m039web.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;中文乱码了。&lt;br&gt;我们在之前（&lt;a href=&quot;http://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/&quot;&gt;点这里&lt;/a&gt;）讨论过解决办法。&lt;br&gt;今天来讨论一下为什么这么解决。&lt;/p&gt;
+&lt;h4 id=&quot;探讨&quot;&gt;&lt;a href=&quot;#探讨&quot; class=&quot;headerlink&quot; title=&quot;探讨&quot;&gt;&lt;/a&gt;探讨&lt;/h4&gt;&lt;hr&gt;
+&lt;p&gt;这是QString对中文字符不支持吗？不是，QString内部使用 &lt;strong&gt;Unicode&lt;/strong&gt; 编码，当然是支持中文的。出现输出乱码问题是编码问题。&lt;br&gt;文本文件都是有编码的，比如GBK，UTF-8，以上例子的源文件编码就是GBK。同一个文件用不同的编码，虽然看上去内容一样，但是物理表示方式不同；同理，用A编码存储的内容来用B编码解析，看到的都是乱码（Ps. Windows下压缩包在Linux下解压后中文文件名都是乱码T.T）。开始慢慢明白了，QString内部是Unicode编码，文件中的“我是中文”这几个字符是GBK编码，编码不一致导致乱码问题。但是还有一个问题，保存文件的编码方式千千万，QString对象如何知道文本的编码呢？你不告诉它，它肯定不知道，就会采取默认的方式——Latin-1，把赋值字符串当做 &lt;strong&gt;Latin-1&lt;/strong&gt; 编码来转换为Unicode。&lt;br&gt;所以在上面的例子中，把GBK编码的“我是中文”当做Latin-1转换为Unicode，输出当然为乱码。&lt;br&gt;&lt;strong&gt;解决方法1&lt;/strong&gt;：就是直接转换为Unicode（Windows中local8Bit就是GBK）：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QString str = QString::fromLocal8Bit(&amp;quot;我是中文&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;当然，如果文件为UTF-8编码就采取这种方式：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QString str = QString::fromUtf8(&amp;quot;我是中文&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;QString提供的转换函数有限，如果没有合适的转换函数，可以使用QTextCodec：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QString QTextCodec::toUnicode ( const char * chars ) const&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决办法2&lt;/strong&gt;：明确告诉QString你的编码&lt;br&gt;Qt4：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&amp;quot;GBK&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Qt5：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GBK&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;最后转帖&lt;a href=&quot;http://blog.csdn.net/libaineu2004/article/details/19245205&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这儿&lt;/a&gt;的编码知识：&lt;br&gt;Qt常见的两种编码是:UTF-8和GBK&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UTF-8：Unicode TransformationFormat-8bit，允许含BOM，但通常不含BOM。是用以解决国际上字符的一种多字节编码，它对英文使用8位（即一个字节），中文使用24为（三个字节）来编码。UTF-8包含全世界所有国家需要用到的字符，是国际编码，通用性强。UTF-8编码的文字可以在各国支持UTF8字符集的浏览器上显示。如，如果是UTF8编码，则在外国人的英文IE上也能显示中文，他们无需下载IE的中文语言支持包。&lt;/li&gt;
+&lt;li&gt;GBK是国家标准GB2312基础上扩容后兼容GB2312的标准。GBK的文字编码是用双字节来表示的，即不论中、英文字符均使用双字节来表示，为了区分中文，将其最高位都设定成1。GBK包含全部中文字符，是国家编码，通用性比UTF8差，不过UTF8占用的数据库比GBD大。GBK是GB2312的扩展，除了兼容GB2312外，它还能显示繁体中文，还有日文的假名。&lt;/li&gt;
+&lt;li&gt;GBK、GB2312等与UTF8之间都必须通过Unicode编码才能相互转换：&lt;br&gt;GBK、GB2312－－Unicode－－UTF8&lt;br&gt;UTF8－－Unicode－－GBK、GB2312 &lt;/li&gt;
+&lt;li&gt;在简体中文windows系统下，ANSI编码代表GBK/GB2312编码，ANSI通常使用0x80~0xFF范围的2个字节来表示1个中文字符。0x00~0x7F之间的字符，依旧是1个字节代表1个字符。Unicode(UTF-16)编码则所有字符都用2个字节表示。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考：&lt;a href=&quot;http://blog.csdn.net/brave_heart_lxl/article/details/7186631&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Qt中文乱码问题&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      文本文件都是有编码的，比如GBK，UTF-8，以上例子的源文件编码就是GBK。同一个文件用不同的编码，虽然看上去内容一样，但是物理表示方式不同；同理，用A编码存储的内容来用B编码解析，看到的都是乱码
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
+    
+    
+      <category term="Qt" scheme="https://weedt.github.io/tags/Qt/"/>
+    
+      <category term="编码" scheme="https://weedt.github.io/tags/%E7%BC%96%E7%A0%81/"/>
     
   </entry>
   
