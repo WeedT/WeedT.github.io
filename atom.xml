@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weedt.github.io/"/>
-  <updated>2016-04-06T14:50:32.774Z</updated>
+  <updated>2016-04-08T07:08:35.821Z</updated>
   <id>https://weedt.github.io/</id>
   
   <author>
@@ -16,22 +16,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>OpenGL 纹理</title>
-    <link href="https://weedt.github.io/2016/04/06/OpenGL-Texture-effect-pictures/"/>
-    <id>https://weedt.github.io/2016/04/06/OpenGL-Texture-effect-pictures/</id>
-    <published>2016-04-06T14:49:47.000Z</published>
-    <updated>2016-04-06T14:50:32.774Z</updated>
+    <title>Hexo下表格显示问题</title>
+    <link href="https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/"/>
+    <id>https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/</id>
+    <published>2016-04-08T06:29:35.000Z</published>
+    <updated>2016-04-08T07:08:35.821Z</updated>
     
-    <content type="html">&lt;p&gt;明天更新&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。&lt;br&gt;通过：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;|项目|数目|&lt;br&gt;|1|2|&lt;br&gt;|2|2|&lt;br&gt;|3|5|&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;来显示一个表格。然而，这貌似有主题限制的。有的主题支持而一些是不支持的，比如我用的是maupassant主题，就不支持表格。然而我又不想贴图片，只能用HTML标签来实现（网上有人说在Markdown中使用HTML标签需要前后空一行，然而我不空行也可以，而且可以在行内使用span来给文字加颜色）。我就在Markdown中加入了如下代码：&lt;br&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw690/93736429gw1f2pamp4fchj20bb082dg7.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;结果效果如下图，表格的上方有一大片空白：&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/93736429gw1f2pazl0wdpj20ih08qmxb.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;打开生成的源文件，发现了一堆br：&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw690/93736429gw1f2pb300d0sj20ar05ndfw.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;问题就是这一堆br是从哪儿来的。怀着猜想，我把HTML的代码改了一下，变成了这样：&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw690/93736429gw1f2pb5lje31j20hv048ta2.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;然后就可以了：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw690/93736429gw1f2pb65m1waj20e20bb3zg.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h3&gt;&lt;p&gt;在Hexo中用HTML标签时务必写成一行，不然文本中的换行会被Markdown解释成br&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;明天更新&lt;/p&gt;
-
+      &lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。&lt;br&gt;通过：&lt;/p&gt;
+&lt;block
     
     </summary>
     
+      <category term="Prac" scheme="https://weedt.github.io/categories/Prac/"/>
+    
+    
+      <category term="Hexo" scheme="https://weedt.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -71,6 +81,50 @@
     
     
       <category term="Linux" scheme="https://weedt.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenGL纹理映射基本知识小结</title>
+    <link href="https://weedt.github.io/2015/12/16/A-Brief-Summary-Of-OpenGL-Texture/"/>
+    <id>https://weedt.github.io/2015/12/16/A-Brief-Summary-Of-OpenGL-Texture/</id>
+    <published>2015-12-16T14:49:47.000Z</published>
+    <updated>2016-04-08T06:38:21.342Z</updated>
+    
+    <content type="html">&lt;p&gt;这些天在做项目时需要修复项目时的纹理问题，特此总结一下OpenGL纹理相关的知识。&lt;/p&gt;
+&lt;h3 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本知识&quot;&gt;&lt;/a&gt;基本知识&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;glTexImage2D&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;void glTexImage2D(GLenum target, GLint level, GLint internalFormat,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    GLsizei width, GLsizei height, GLint border,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    GLenum format, GLenum type, const GLvoid* data);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义一个二维纹理或者一维纹理数组&lt;/strong&gt;。参数说明：&lt;br&gt;target: 指定纹理单元的类型，必须指定为GL_TEXTURE_2D,GL_PROXY_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, or GL_PROXY_TEXTURE_CUBE_MAP来定义二维纹理，或者指定GL_TEXTURE_1D_ARRAY， GL_PROXY_TEXTURE_1D_ARRAY来定义一维纹理数组。&lt;br&gt;level：如果使用了多种分辨率的纹理（mipmap），可以使用level，如果没有，就要把level设为0。&lt;br&gt;&lt;strong&gt;internalFormat&lt;/strong&gt;：指定OpenGL是如何管理纹理单元中数据格式的，确定那些成分（RGBA、深度、亮度或强度）被选定为图像的纹理单元。（网络上很多解释说这个参数必须和后面的format参数一样，这个说法是不正确的）。&lt;br&gt;width：指定纹理单元的宽度。&lt;br&gt;height：指定纹理单元的高度。&lt;br&gt;border：指定纹理单元的边框，如果包含边框取值为1，不包含边框取值为0。&lt;br&gt;&lt;strong&gt;format&lt;/strong&gt;：指定data所指向的数据的格式。&lt;br&gt;type：指定data所指向的数据的类型。&lt;br&gt;data：纹理数据。&lt;br&gt;对于internalFormat和format，由于取值类型基本上一致，很容易混淆和误解。 &lt;strong&gt;需要说明的是，internalFormat是指生成的纹理单元的格式，而format是指data的格式&lt;/strong&gt;，如果两者格式一样，就不需要转换可以直接传输。否则就要转换，这个过程包含两部分，首先转换为RGBA，在由RGBA转换为internalFormat。format转换为RGBA：&lt;/p&gt;
+&lt;table style=&quot;text-align: center; width: 50%; background-color: #ccc;&quot;&gt;&lt;tr&gt;&lt;th&gt;format&lt;/th&gt;&lt;th&gt;RBGA&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;RED&lt;/td&gt;&lt;td&gt;R001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;      &lt;td&gt;GREED&lt;/td&gt;&lt;td&gt;0G01&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;        &lt;td&gt;BLUE&lt;/td&gt;&lt;td&gt;00B1&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;        &lt;td&gt;ALPHA&lt;/td&gt;&lt;td&gt;000A&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;        &lt;td&gt;RGB&lt;/td&gt;&lt;td&gt;RGB1&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;        &lt;td&gt;RGBA&lt;/td&gt;&lt;td&gt;RGBA&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;        &lt;td&gt;LUMINANCE&lt;/td&gt;&lt;td&gt;LLL1&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;        &lt;td&gt;LUMINANCE_ALPHA&lt;/td&gt;&lt;td&gt;LLLA&lt;/td&gt;    &lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;然后RGBA转为internalFormat：&lt;br&gt;INTENSITY = R， LUMINANCE = R， R = R， G = G, B = B， A = A。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;gluScaleImage&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;GLint gluScaleImage(GLenum format,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; GLsizei wIn, GLsizei hIn, GLenum typeIn, const void* dataIn, &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; GLsizei wOut, GLsizei hOut, GLenum typeOut, GLvoid* dataOut);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;纹理图像的高度和宽度（不包括可选的边框宽度）上的纹理单元的数量必须是2的整数次方，如果源图像不满足这个要求，可以使用这个函数来 &lt;strong&gt;更改纹理图像大小&lt;/strong&gt;。参数说明：&lt;br&gt;format：指定像素数据的格式类型。GL_STENCIL_INDEX，GL_DEPTH_COMPONENT，GL_RED，GL_GREEN，GL_BLUE，GL_ALPHA，GL_RGB，GL_RGBA，GL_LUMINANCE，GL_LUMINANCE_ALPHA。&lt;br&gt;wIn，hIn，typeIn：源图像的宽高度和数据类型（GL_UNSIGNED_BYTE，GL_BYTE，GL_BITMAP，GL_UNSIGNED_SHORT，GL_SHORT，GL_UNSIGNED_INT，GL_INT，GL_FLOAT）。&lt;br&gt;dataIn：源图像数据的指针。&lt;br&gt;wOut，hOut，typeOut：新图像的宽高度和数据类型。&lt;br&gt;dataOut：指定目的图像指针。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;glGenTextures&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;void glGenTextures(GLsize n, GLuint* textureNames);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用它来命名纹理对象&lt;/strong&gt;，原则上来说，任何非零无符号整数都可以用来表示纹理对象名称。但为了避免意外命名，应该使用glGenTexture来命名。该函数就是在数组textureNames中返回n个当前未使用的值，表示纹理的名称。textureNames中返回的值不一定是连续的。可以用glIsTexture来判断一个纹理名称是否在使用。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;GLboolean glIsTexture(GLuint textureName);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果textureName是一个已绑定的纹理对象名称，而且未删除就返回GL_TRUE。如果textureName为零或者不是一个现有的纹理对象名称，就返回GL_FALSE。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;glBindTexture&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;void glBindTexture(GLenum target, GLuint textureName);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;glBindTexture可以 &lt;strong&gt;创建和使用纹理对象&lt;/strong&gt;。当一个纹理对象初次绑定时，OpenGL就会创建一个新的纹理对象，并把纹理图像和纹理属性设置为默认值。glTexImage*()，glTexSubImage*()，glCopyTexImage*()，glCopyTexSubImage*()，glTextParameter*()和glPrioritizeTexture()函数的 &lt;strong&gt;后续调用将把数据存储在这个纹理对象中&lt;/strong&gt;。当一个纹理对象以后再次绑定时， 它的数据就成为当前的纹理状态。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;glTexEnv&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;void glTexEnv&amp;#123;if&amp;#125;(GLenum target, GLenum pname, TYPE param);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;void glTexEnv&amp;#123;if&amp;#125;v(GLenum target, GLenum pname, const TYPE* param);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;使用纹理图像对物体表面的颜色进行调整，而不是直接贴图。也可以把纹理图像的颜色与物体表面的原先颜色进行组合。该函数提供适当的参数来 &lt;strong&gt;选择纹理函数&lt;/strong&gt;，参数说明：&lt;br&gt;target：设置纹理函数使用GL_TEXTURE_FILTER_CONTROL或GL_TEXTURE_ENV。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GL_TEXTURE_FILTER_CONTROL：pname必须是GL_TEXTURELOD_BIAS，param必须是浮点值，作为mipmap细节层参数的偏移值使用。&lt;/li&gt;
+&lt;li&gt;GL_TEXTURE_ENV：并且pname是GL_TEXTURE_ENV_MODE，那么param必须是GL_DECAL，GL_REPLACE，GL_MODULATE，GL_BLEND，GL_ADD或GL_COMBINE之一；如果pname为GL_TEXTURE_ENV_COLOR，那么param就是包含四个浮点数的数组（RGBA），表示用于GL_BLEND操作的颜色。&lt;/li&gt;
+&lt;li&gt;GL_POINT_SPRITE：（略）&lt;br&gt;该函数将在后面做详细分析。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考：&lt;a href=&quot;http://blog.csdn.net/csxiaoshui/article/details/27543615&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenGL API 之 glTexImage2D&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      这些天在做项目时需要修复项目时的纹理问题，特此总结一下OpenGL纹理相关的知识。
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
+    
+    
+      <category term="OpenGL" scheme="https://weedt.github.io/tags/OpenGL/"/>
     
   </entry>
   
