@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[Linux 命令 - 2]]></title>
+      <url>https://weedt.github.io/2016/04/09/Commonds-Of-Linux-2/</url>
+      <content type="html"><![CDATA[<h3 id="比较文件内容"><a href="#比较文件内容" class="headerlink" title="比较文件内容"></a>比较文件内容</h3><ol>
+<li><p><strong>comm</strong><br>对两个以及排序好的文件进行逐行比较。结果生成3列：仅在file1中出现的行，仅在file2中出现的行，在两个文件中都出现的行。格式：<br></p><p style="text-align: center; font-weight: bold;">comm [-123] 文件1 文件2</p><br>常用选项：<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-123   1,2,3分别表示不显示输出中的第一列，第二列，第三列。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>diff</strong><br>比较两个文本文件，找出不同，不要求文件以及排序。格式：<br></p><p style="text-align: center; font-weight: bold;">diff [选项] 文件1 文件2</p><br>比较两个文件的不同之处，并且提供让两个文件相同的修改方法。如果两个文件完全一样，不显示输出。该命令显示的一般形式：<br>n1 a n3,n4      （文件1的n1行附加到文件2n3～n4行）<br>n1,n2 d n3      （将文件1的n1～n2行和文件2的n3行）<br>n1,n2 c n3,n4   （将文件1的n1～n2改为文件2的n3～n4）<br>默认是<br>常用选项：<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-b，--ignore-space-change 　不检查空格字符的不同。</span><br><span class="line">-B，--ignore-blank-lines 　不检查空白行。</span><br><span class="line">-c   输出是带上下文的三行模式</span><br><span class="line">-C NUM   输出是带上下文的NUM行模式</span><br><span class="line">-e   输出合法的ed脚本</span><br><span class="line">-i   忽略字母大小写</span><br><span class="line">-r   当两个文件是目录时，递归查找子目录</span><br><span class="line">-q，--brief 　仅显示有无差异，不显示详细的信息。</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Tip：如果file1或者file2是目录时，则diff会利用目录下的同名文件比较。如果指定比较的是目录的的时候，diff命令会比较两个目录下名字相同的文本文件。列出不同的二进制文件、公共子目录和只在一个目录出现的文件。</p>
+<h3 id="复制删除移动文件"><a href="#复制删除移动文件" class="headerlink" title="复制删除移动文件"></a>复制删除移动文件</h3><ol>
+<li><strong>cp</strong><br>复制文件或者目录。格式：<br><p style="text-align: center; font-weight: bold;">cp [选项] 源文件或目录 目的文件或目录</p><br>如果是目录，一般都需要“-r“来递归复制目录下文件。<br>常用选项：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">-a，--archive    等于-dR --preserve=all</span><br><span class="line">    --backup[=CONTROL    为每个已存在的目标文件创建备份，保留文件链接和属性。</span><br><span class="line">-b    类似--backup 但不接受参数</span><br><span class="line">   --copy-contents 在递归处理是复制特殊文件内容</span><br><span class="line">-d   等于--no-dereference --preserve=links</span><br><span class="line">-f，--force   如果目标文件无法打开则将其移除并重试(当-n选项存在时则不需再选此项)</span><br><span class="line">-i，--interactive   覆盖前询问(使前面的 -n 选项失效)</span><br><span class="line">-H   跟随源文件中的命令行符号链接</span><br><span class="line">-l，--link   链接文件而不复制</span><br><span class="line">-L，--dereference   总是跟随符号链接</span><br><span class="line">-n，--no-clobber   不要覆盖已存在的文件(使前面的 -i 选项失效)</span><br><span class="line">-P，--no-dereference   不跟随源文件中的符号链接</span><br><span class="line">-p   等于--preserve=模式,所有权,时间戳</span><br><span class="line">   --preserve[=属性列表   保持指定的属性(默认：模式,所有权,时间戳)，如果可能保持附加属性：环境、链接、xattr 等</span><br><span class="line">-R，-r，--recursive   复制目录及目录内的所有项目</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Tip：如果把文件复制到一个目的文件，而目标文件已存在，那么目的文件的内容将被破坏。</p>
+<ol>
+<li><strong>rm</strong><br>rm命令可以删除文件和目录。格式：<p style="text-align: center; font-weight: bold;">rm [选项] 文件…</p>
+
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo下表格显示问题]]></title>
       <url>https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/</url>
       <content type="html"><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。<br>通过：</p>
@@ -13,6 +38,92 @@
 <p>来显示一个表格。然而，这貌似有主题限制的。有的主题支持而一些是不支持的，比如我用的是maupassant主题，就不支持表格。然而我又不想贴图片，只能用HTML标签来实现（网上有人说在Markdown中使用HTML标签需要前后空一行，然而我不空行也可以，而且可以在行内使用span来给文字加颜色）。我就在Markdown中加入了如下代码：<br><img src="http://ww4.sinaimg.cn/mw690/93736429gw1f2pamp4fchj20bb082dg7.jpg" alt=""><br>结果效果如下图，表格的上方有一大片空白：<br><img src="http://ww3.sinaimg.cn/mw690/93736429gw1f2pazl0wdpj20ih08qmxb.jpg" alt=""><br>打开生成的源文件，发现了一堆br：<br><img src="http://ww2.sinaimg.cn/mw690/93736429gw1f2pb300d0sj20ar05ndfw.jpg" alt=""></p>
 <p>问题就是这一堆br是从哪儿来的。怀着猜想，我把HTML的代码改了一下，变成了这样：<br><img src="http://ww2.sinaimg.cn/mw690/93736429gw1f2pb5lje31j20hv048ta2.jpg" alt=""><br>然后就可以了：<br><img src="http://ww1.sinaimg.cn/mw690/93736429gw1f2pb65m1waj20e20bb3zg.jpg" alt=""></p>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>在Hexo中用HTML标签时务必写成一行，不然文本中的换行会被Markdown解释成br</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Linux 命令 - 1]]></title>
+      <url>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-1/</url>
+      <content type="html"><![CDATA[<h3 id="TIPs"><a href="#TIPs" class="headerlink" title="TIPs"></a>TIPs</h3><ul>
+<li>Bash命令基本格式：<p style="text-align: center; font-weight: bold;">命令名 [选项] [参数1] [参数2] ……</p></li>
+<li>命令名小写： DATE，Date和date是不同的，只有date是正确的。</li>
+<li>如果命令太长，一行放不下，可以在行尾输入“\”字符，shell会返回一个“&gt;”作为提示符，表示命令未结束，允许继续输入有关信息。</li>
+<li>命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。</li>
+</ul>
+<h3 id="一些简单命令"><a href="#一些简单命令" class="headerlink" title="一些简单命令"></a>一些简单命令</h3><ol>
+<li><p><strong>who</strong><br>列出所有正在使用 <em>系统的用户</em>、<em>所用终端名</em>和 <em>注册到系统的时间</em><br><img src="http://ww2.sinaimg.cn/large/93736429gw1f2ig5p43rpj20b5024q3i.jpg" alt=""><br>who am i 和 whoami：<br><img src="http://ww1.sinaimg.cn/large/93736429gw1f2ig9rqw3rj20ax023q3f.jpg" alt=""></p>
+</li>
+<li><p><strong>echo</strong><br>将命令行的参数显示在屏幕上：<br><img src="http://ww1.sinaimg.cn/large/93736429gw1f2igefoae2j20e7041jso.jpg" alt=""></p>
+</li>
+<li><p><strong>date</strong><br>显示或者设置系统日期和时间，详细请传送<a href="http://www.cnblogs.com/peida/archive/2012/12/13/2815687.html" title="每天一条Linux命令" target="_blank" rel="external">这里</a>。</p>
+</li>
+<li><p><strong>cal</strong><br>日历，显示1-9999年任意一年的或者月的日历。不带参数显示当月，一个参数解释为 <em>年</em>，两个参数解释为 <em>月 年</em></p>
+</li>
+</ol>
+<h3 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h3><ol>
+<li><strong>cat</strong><br>连接文件并打印到标准输出设备上，经常用来显示内容。主要两个功能：<strong>显示文件，连接两个或多个文件</strong>。格式：<br><p style="text-align: center; font-weight: bold;">cat [选项]… 文件…</p><br>常用选项：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-b，--number-noblank     从1对所有非空行编号</span><br><span class="line">-n，--number   从1对所有行编号</span><br><span class="line">-s，--squeeze-blank    将多个相邻空行何必成一个空行</span><br><span class="line">--help 用法帮助</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>示例：<br>$ cat f1          //显示f1文件<br>$ cat f1 f2       //同时显示f1、f2文件<br>$ cat f1 f2 &gt; f3  //将f1 f2合并放入f3文件</p>
+<ol>
+<li><strong>more</strong><br>分屏显示文件内容，显示满屏后停下。格式：<br><p style="text-align: center; font-weight: bold;">more [选项] 文件…</p><br>常用选项：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-num    指定一屏显示多少行</span><br><span class="line">-d   提供更友好的提示信息</span><br><span class="line">-c/-p   不滚屏，在显示下一屏之前先清屏</span><br><span class="line">-s   将连续空行合并成一行</span><br><span class="line">+/   模式搜索中向上搜索</span><br><span class="line">+num   从第num行开始显示</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>操作：</p>
+<ul>
+<li>空格键：显示文本下一屏</li>
+<li>Enter：下一行</li>
+<li>斜线符（/），然后输入模式，可以在文本中寻找下一个匹配的模式</li>
+<li>H：帮助</li>
+<li>B：上一屏</li>
+<li>Q：退出more命令</li>
+</ul>
+<ol>
+<li><strong>less</strong><br>和more类似可以分屏显示文件内容，不同是less能向前或向后浏览文件，而more只能向前浏览（？）。总体来说less比more功能强大。格式：<br><p style="text-align: center; font-weight: bold;">less [选项] 文件…</p><br>常用选项：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-e   当文件显示结束后，自动离开</span><br><span class="line">-f   强迫打开特殊文件，例如外围设备代号、目录和二进制文件</span><br><span class="line">-g   只标志最后搜索的关键词</span><br><span class="line">-i   忽略搜索时的大小写</span><br><span class="line">-m   显示类似more命令的百分比</span><br><span class="line">-N   显示每行的行号</span><br><span class="line">-o &lt;文件名&gt;   将less 输出的内容在指定文件中保存起来</span><br><span class="line">-s   显示连续空行为一行</span><br><span class="line">-x &lt;数字&gt;   将“tab”键显示为规定的数字空格</span><br><span class="line">/字符串   向下搜索“字符串”的功能</span><br><span class="line">?字符串   向上搜索“字符串”的功能</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>操作：</p>
+<ul>
+<li>n：重复前一个搜索（与 / 或 ? 有关）</li>
+<li>N：反向重复前一个搜索（与 / 或 ? 有关）</li>
+<li>b：向前翻一页</li>
+<li>d：向后翻半页</li>
+<li>h：显示帮助界面</li>
+<li>Q：退出less 命令</li>
+<li>u：向前滚动半页</li>
+<li>y：向前滚动一行</li>
+<li>空格键：滚动一行</li>
+<li>回车键：滚动一页</li>
+<li>Pagedown：向下翻动一页</li>
+<li>Pageup；向上翻动一页<br>Tip：less可以浏览多个文件，输入 <strong>“:p”和”:n”</strong>向前向后切换文件。</li>
+</ul>
+<ol>
+<li><p><strong>head</strong><br>在屏幕上显示指定文件的开头若干行。格式：<br></p><p style="text-align: center; font-weight: bold;">head [选项]… 文件…</p><br>常用选项：<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-c，--bytes=SIZE   显示前size个字节</span><br><span class="line">-n，--lines=NUMBER   指定显示行数，默认10行</span><br><span class="line">-q，-quiet，--silent   不显示文件标题</span><br><span class="line">-v，--verbose   始终显示标题</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>tail</strong><br>在屏幕上显示指定文件的末尾若干行。格式：<br></p><p style="text-align: center; font-weight: bold;">tail [选项]… 文件…</p><br>常用选项：<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-c，--bytes=SIZE   显示前size个字节</span><br><span class="line">-f   当文件增长时输出附加的数据</span><br><span class="line">-n，--lines=NUMBER   指定显示行数，默认10行</span><br><span class="line">-q，-quiet，--silent   不显示文件标题</span><br><span class="line">-v，--verbose   始终显示标题</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Tip：如果字节或者行数前有一个”+“，则表示从文件开头第N项显示，而不是显示文件最后N项。</p>
+<ol>
+<li><p><strong>touch</strong><br>可以修改指定文件的时间标签或者创建一个空文件。如果文件存在，默认情况下，将时间标签更新为系统当前时间，数据不改变；如果文件不存在，则创建一个空文件。<br></p><p style="text-align: center; font-weight: bold;">touch [选项] 文件…</p><br>常用选项：<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-a   仅改变存取时间</span><br><span class="line">-c   不创建任何文件</span><br><span class="line">-m   仅改变文件修改时间</span><br><span class="line">-t STAMP   使用STAMP指定的时间标签，而不是系统当前时间，格式为[[CC]YY]MMDDhhmm[.ss]，CC代表年前两位，YY是后两位。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>grep</strong> = Global Regular Expression Print<br>在文本中查找指定模式的词或短语，并在标准输出上显示包括给定字符串模式的所有行。该命令组包含三个命令：grep，egrep，fgrep。grep一次只能搜索一个指定的模式；egrep相当于gerp -E，可以使用扩展的字符串模式进行搜索；fgrep相当于grep -F，是快速搜索命令，检索固定字符串，不识别正则表达式。格式：<br></p><p style="text-align: center; font-weight: bold;">grep [选项] 模式 文件…</p><br>常用选项：<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">-a，--text   不要忽略二进制的数据。   </span><br><span class="line">-A NUMBER，--after-context=NUMBER    显示符合范本样式的那一行以及后面NUMBER行</span><br><span class="line">-b，--byte-offset   在显示符合样式的那一行之前，标示出该行第一个字符的编号。   </span><br><span class="line">-B NUMBER，--before-context=NUMBER   显示符合样式的那一行及该行之前NUMBER行。   </span><br><span class="line">-c，--count   计算符合样式的列数。</span><br><span class="line">-C NUMBER    --context=NUMBER或-NUMBER   显示符合样式的行以及该行之前后的NUMBER行。   </span><br><span class="line">-d &lt;动作&gt;，--directories=&lt;动作&gt;   当指定要查找的是目录而非文件时，必须使用这项参数，否则grep指令将回报信息并停止动作。   </span><br><span class="line">-e &lt;范本样式&gt;，--regexp=&lt;范本样式&gt;   指定字符串做为查找文件内容的样式。   </span><br><span class="line">-E,--extended-regexp   将样式为延伸的普通表示法来使用。</span><br><span class="line">-f &lt;规则文件&gt;，--file=&lt;规则文件&gt;   从文件中获取模式，每行一个规则样式。空文件不包含模式，不做匹配</span><br><span class="line">-F，--fixed-regexp   #将样式视为固定字符串的列表。</span><br><span class="line">-G，--basic-regexp   #将样式视为普通的表示法来使用。</span><br><span class="line">-h，--no-filename   #在显示符合样式的那一行之前，不标示该行所属的文件名称。</span><br><span class="line">-H，--with-filename   #在显示符合样式的那一行之前，表示该行所属的文件名称。</span><br><span class="line">-i，--ignore-case   #忽略字符大小写的差别。</span><br><span class="line">-l，--file-with-matches   #列出文件内容符合指定的样式的文件名称。</span><br><span class="line">-L，--files-without-match   #列出文件内容不符合指定的样式的文件名称。</span><br><span class="line">-n，--line-number   在显示符合样式的那一行之前，标示出该行的列数编号。</span><br><span class="line">-q，--quiet或--silent   不显示任何信息。</span><br><span class="line">-r，--recursive   此参数的效果和指定“-d recurse”参数相同。</span><br><span class="line">-s，--no-messages   不显示错误信息。</span><br><span class="line">-v，--revert-match   显示不包含匹配文本的所有行。</span><br><span class="line">-w，--word-regexp   只显示全字符合的列。</span><br><span class="line">-x，--line-regexp   只显示全列符合的列。</span><br><span class="line">-y 此参数的效果和指定“-i”参数相同。</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Tip：在文件列表中可以使用通配符号“*”。模式中有空格，应该将模式用单引号括起来</p>
+<ol>
+<li><p><strong>sort</strong><br>对文本文件各行进行排序。格式：<br></p><p style="text-align: center; font-weight: bold;">sort [选项] 文件列表</p><br>sort将逐行对文件的所有行进行排序，显示在标准输出上。如果不指定文件或使用“-”表示文件，则排序内容来自标准输入（ctrl+d开始排序）。排序比较是依据从输入文件的每一行提取的一个或者多个关键字进行的。排序关键字定义了，用来排序的最小字符序列。默认情况下，排序关键字的顺序有系统使用的 <strong>字符集</strong>决定。<br>常用选项：<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-b   忽略每行前面开始出的空格字符。</span><br><span class="line">-c   检查文件是否已经按照顺序排序。</span><br><span class="line">-f   排序时，忽略大小写字母。</span><br><span class="line">-M   将前面3个字母依照月份的缩写进行排序。</span><br><span class="line">-n   依照数值的大小排序。</span><br><span class="line">-i   忽略非打印字符。</span><br><span class="line">-o &lt;输出文件&gt;   将排序后的结果存入指定的文件。从重定向符“&gt;”也可以，不过后者不支持输入到源文件。</span><br><span class="line">-r   以相反的顺序来排序。</span><br><span class="line">-t &lt;分隔字符&gt;   指定排序时所用的栏位分隔字符。</span><br><span class="line">-k n1[,n2]   指定从文本的第n1字段开始到n2字段中间的内容作为排序关键字。如果没有n2，则是从n1开始到行结尾的所有字段，n1/n2可以是小数，代表“字段.字符”，都是从1开始计算。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>uniq</strong><br>该命令从排好序的文件中去除重复行。比较相邻行，去掉重复行，只留下一行。该命令加工后的结果写到输出文件中，输入文件和输出文件必须不同。如果输入文件用”-“表示，则从标准输入上读取。格式：<br></p><p style="text-align: center; font-weight: bold;">uniq [选项] [输入文件 [输出文件]] </p><br>常用选项：<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-c，--count   在每列旁边显示该行重复出现的次数。</span><br><span class="line">-d，--repeated   仅显示重复出现的行列。</span><br><span class="line">-f NUMBER，--skip-fields=NUMBER   忽略比较前NUMBER行。</span><br><span class="line">-s UMBER，--skip-chars=NUMBER   忽略比较前NUMBER个字符。</span><br><span class="line">-u或--unique   仅显示出一次的行列。</span><br><span class="line">-w&lt;字符位置&gt;，--check-chars=&lt;字符位置&gt;   指定要比较的字符。</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>参考：<a href="http://www.cnblogs.com/peida/tag/%E6%AF%8F%E6%97%A5%E4%B8%80linux%E5%91%BD%E4%BB%A4/" target="_blank" rel="external">每天一Linux命令</a></p>
 ]]></content>
     </entry>
     
@@ -100,6 +211,20 @@
     </entry>
     
     <entry>
+      <title><![CDATA[boost库编译参数小结]]></title>
+      <url>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</url>
+      <content type="html"><![CDATA[<h4 id="32位编译："><a href="#32位编译：" class="headerlink" title="32位编译："></a>32位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat<br>编译命令（例）：<br><code>bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release</code></p>
+<p><strong>toolset</strong>：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)<br><strong>stagedir</strong>:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。<br><strong>without/with</strong>：选择不编译/编译哪些库。<br><strong>address-model</strong>：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。<br><strong>threading</strong>：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。<br><strong>link</strong>：静态库版link=shared，动态库link=shared<br><strong>runtime-link</strong>：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。<br><strong>debug/release</strong>：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。</p>
+<h4 id="64位编译："><a href="#64位编译：" class="headerlink" title="64位编译："></a>64位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。<br>在编译命令中加入address-model=64属性</p>
+<h5 id="windows下boost库的命名特点："><a href="#windows下boost库的命名特点：" class="headerlink" title="windows下boost库的命名特点："></a>windows下boost库的命名特点：</h5><p><code>link=static runtime-link=static 得到 libboostxxxxx.lib
+link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p>
+<p>由以上的文件夹层次结构基本就可以得出结论：<br>１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。<br>２、有“d”的为debug版本，没有的则是release版本。<br>３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。<br>４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。</p>
+<hr>
+<p>本文参考：<a href="http://m.blog.csdn.net/blog/chenjh213/42265605" target="_blank" rel="external">vs2013 boost库编译小结</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Visual Studio Command Prompt 工具配置方法]]></title>
       <url>https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/</url>
       <content type="html"><![CDATA[<h4 id="软件版本：VS2013"><a href="#软件版本：VS2013" class="headerlink" title="软件版本：VS2013"></a>软件版本：VS2013</h4><h4 id="如何打开这个工具？"><a href="#如何打开这个工具？" class="headerlink" title="如何打开这个工具？"></a>如何打开这个工具？</h4><ol>
@@ -119,20 +244,6 @@
 <li>另外，我们也可以在VS的外部工具管理窗口，对Visual Studio Command Prompt设置参数，来打开64位或者32位工具。如上添加Visual Studio Command Prompt过程中，设置工具参数：<br>”<strong>%comspec% /k “”D:\Development\VS2013\VC\vcvarsall.bat”” x86</strong>“  为32位<br>”<strong>%comspec% /k “”D:\Development\VS2013\VC\vcvarsall.bat”” amd64</strong>“  为64位</li>
 </ul>
 <p>注意，每次在使用前可以检查到底是64位还是32位，以免出错。检查方法：<br>打开Visual Studio Command Prompt后，执行<strong>cl.exe</strong></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[boost库编译参数小结]]></title>
-      <url>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</url>
-      <content type="html"><![CDATA[<h4 id="32位编译："><a href="#32位编译：" class="headerlink" title="32位编译："></a>32位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat<br>编译命令（例）：<br><code>bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release</code></p>
-<p><strong>toolset</strong>：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)<br><strong>stagedir</strong>:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。<br><strong>without/with</strong>：选择不编译/编译哪些库。<br><strong>address-model</strong>：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。<br><strong>threading</strong>：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。<br><strong>link</strong>：静态库版link=shared，动态库link=shared<br><strong>runtime-link</strong>：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。<br><strong>debug/release</strong>：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。</p>
-<h4 id="64位编译："><a href="#64位编译：" class="headerlink" title="64位编译："></a>64位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。<br>在编译命令中加入address-model=64属性</p>
-<h5 id="windows下boost库的命名特点："><a href="#windows下boost库的命名特点：" class="headerlink" title="windows下boost库的命名特点："></a>windows下boost库的命名特点：</h5><p><code>link=static runtime-link=static 得到 libboostxxxxx.lib
-link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p>
-<p>由以上的文件夹层次结构基本就可以得出结论：<br>１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。<br>２、有“d”的为debug版本，没有的则是release版本。<br>３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。<br>４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。</p>
-<hr>
-<p>本文参考：<a href="http://m.blog.csdn.net/blog/chenjh213/42265605" target="_blank" rel="external">vs2013 boost库编译小结</a></p>
 ]]></content>
     </entry>
     

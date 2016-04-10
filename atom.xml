@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weedt.github.io/"/>
-  <updated>2016-04-08T07:12:41.332Z</updated>
+  <updated>2016-04-10T08:50:30.409Z</updated>
   <id>https://weedt.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux 命令 - 2</title>
+    <link href="https://weedt.github.io/2016/04/09/Commonds-Of-Linux-2/"/>
+    <id>https://weedt.github.io/2016/04/09/Commonds-Of-Linux-2/</id>
+    <published>2016-04-09T07:43:41.000Z</published>
+    <updated>2016-04-10T08:50:30.409Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;比较文件内容&quot;&gt;&lt;a href=&quot;#比较文件内容&quot; class=&quot;headerlink&quot; title=&quot;比较文件内容&quot;&gt;&lt;/a&gt;比较文件内容&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;comm&lt;/strong&gt;&lt;br&gt;对两个以及排序好的文件进行逐行比较。结果生成3列：仅在file1中出现的行，仅在file2中出现的行，在两个文件中都出现的行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;comm [-123] 文件1 文件2&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-123   1,2,3分别表示不显示输出中的第一列，第二列，第三列。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;diff&lt;/strong&gt;&lt;br&gt;比较两个文本文件，找出不同，不要求文件以及排序。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;diff [选项] 文件1 文件2&lt;/p&gt;&lt;br&gt;比较两个文件的不同之处，并且提供让两个文件相同的修改方法。如果两个文件完全一样，不显示输出。该命令显示的一般形式：&lt;br&gt;n1 a n3,n4      （文件1的n1行附加到文件2n3～n4行）&lt;br&gt;n1,n2 d n3      （将文件1的n1～n2行和文件2的n3行）&lt;br&gt;n1,n2 c n3,n4   （将文件1的n1～n2改为文件2的n3～n4）&lt;br&gt;默认是&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-b，--ignore-space-change 　不检查空格字符的不同。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-B，--ignore-blank-lines 　不检查空白行。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c   输出是带上下文的三行模式&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-C NUM   输出是带上下文的NUM行模式&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-e   输出合法的ed脚本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i   忽略字母大小写&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-r   当两个文件是目录时，递归查找子目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-q，--brief 　仅显示有无差异，不显示详细的信息。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Tip：如果file1或者file2是目录时，则diff会利用目录下的同名文件比较。如果指定比较的是目录的的时候，diff命令会比较两个目录下名字相同的文本文件。列出不同的二进制文件、公共子目录和只在一个目录出现的文件。&lt;/p&gt;
+&lt;h3 id=&quot;复制删除移动文件&quot;&gt;&lt;a href=&quot;#复制删除移动文件&quot; class=&quot;headerlink&quot; title=&quot;复制删除移动文件&quot;&gt;&lt;/a&gt;复制删除移动文件&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;cp&lt;/strong&gt;&lt;br&gt;复制文件或者目录。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;cp [选项] 源文件或目录 目的文件或目录&lt;/p&gt;&lt;br&gt;如果是目录，一般都需要“-r“来递归复制目录下文件。&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-a，--archive    等于-dR --preserve=all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    --backup[=CONTROL    为每个已存在的目标文件创建备份，保留文件链接和属性。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-b    类似--backup 但不接受参数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   --copy-contents 在递归处理是复制特殊文件内容&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d   等于--no-dereference --preserve=links&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f，--force   如果目标文件无法打开则将其移除并重试(当-n选项存在时则不需再选此项)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i，--interactive   覆盖前询问(使前面的 -n 选项失效)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-H   跟随源文件中的命令行符号链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-l，--link   链接文件而不复制&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-L，--dereference   总是跟随符号链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--no-clobber   不要覆盖已存在的文件(使前面的 -i 选项失效)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-P，--no-dereference   不跟随源文件中的符号链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p   等于--preserve=模式,所有权,时间戳&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   --preserve[=属性列表   保持指定的属性(默认：模式,所有权,时间戳)，如果可能保持附加属性：环境、链接、xattr 等&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-R，-r，--recursive   复制目录及目录内的所有项目&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Tip：如果把文件复制到一个目的文件，而目标文件已存在，那么目的文件的内容将被破坏。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;rm&lt;/strong&gt;&lt;br&gt;rm命令可以删除文件和目录。格式：&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;rm [选项] 文件…&lt;/p&gt;
+
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      学习Linux命令中（比较文件内容，）
+    
+    </summary>
+    
+      <category term="Note" scheme="https://weedt.github.io/categories/Note/"/>
+    
+    
+      <category term="Linux" scheme="https://weedt.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo下表格显示问题</title>
@@ -41,6 +82,108 @@
     
     
       <category term="Hexo" scheme="https://weedt.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 命令 - 1</title>
+    <link href="https://weedt.github.io/2016/04/02/Commonds-Of-Linux-1/"/>
+    <id>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-1/</id>
+    <published>2016-04-02T08:06:41.000Z</published>
+    <updated>2016-04-10T08:50:36.993Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;TIPs&quot;&gt;&lt;a href=&quot;#TIPs&quot; class=&quot;headerlink&quot; title=&quot;TIPs&quot;&gt;&lt;/a&gt;TIPs&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Bash命令基本格式：&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;命令名 [选项] [参数1] [参数2] ……&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;命令名小写： DATE，Date和date是不同的，只有date是正确的。&lt;/li&gt;
+&lt;li&gt;如果命令太长，一行放不下，可以在行尾输入“\”字符，shell会返回一个“&amp;gt;”作为提示符，表示命令未结束，允许继续输入有关信息。&lt;/li&gt;
+&lt;li&gt;命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;一些简单命令&quot;&gt;&lt;a href=&quot;#一些简单命令&quot; class=&quot;headerlink&quot; title=&quot;一些简单命令&quot;&gt;&lt;/a&gt;一些简单命令&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;who&lt;/strong&gt;&lt;br&gt;列出所有正在使用 &lt;em&gt;系统的用户&lt;/em&gt;、&lt;em&gt;所用终端名&lt;/em&gt;和 &lt;em&gt;注册到系统的时间&lt;/em&gt;&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/93736429gw1f2ig5p43rpj20b5024q3i.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;who am i 和 whoami：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/93736429gw1f2ig9rqw3rj20ax023q3f.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;echo&lt;/strong&gt;&lt;br&gt;将命令行的参数显示在屏幕上：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/93736429gw1f2igefoae2j20e7041jso.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;br&gt;显示或者设置系统日期和时间，详细请传送&lt;a href=&quot;http://www.cnblogs.com/peida/archive/2012/12/13/2815687.html&quot; title=&quot;每天一条Linux命令&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;cal&lt;/strong&gt;&lt;br&gt;日历，显示1-9999年任意一年的或者月的日历。不带参数显示当月，一个参数解释为 &lt;em&gt;年&lt;/em&gt;，两个参数解释为 &lt;em&gt;月 年&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;文件操作命令&quot;&gt;&lt;a href=&quot;#文件操作命令&quot; class=&quot;headerlink&quot; title=&quot;文件操作命令&quot;&gt;&lt;/a&gt;文件操作命令&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;cat&lt;/strong&gt;&lt;br&gt;连接文件并打印到标准输出设备上，经常用来显示内容。主要两个功能：&lt;strong&gt;显示文件，连接两个或多个文件&lt;/strong&gt;。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;cat [选项]… 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-b，--number-noblank     从1对所有非空行编号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--number   从1对所有行编号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s，--squeeze-blank    将多个相邻空行何必成一个空行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--help 用法帮助&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;示例：&lt;br&gt;$ cat f1          //显示f1文件&lt;br&gt;$ cat f1 f2       //同时显示f1、f2文件&lt;br&gt;$ cat f1 f2 &amp;gt; f3  //将f1 f2合并放入f3文件&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;more&lt;/strong&gt;&lt;br&gt;分屏显示文件内容，显示满屏后停下。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;more [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-num    指定一屏显示多少行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d   提供更友好的提示信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c/-p   不滚屏，在显示下一屏之前先清屏&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s   将连续空行合并成一行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;+/   模式搜索中向上搜索&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;+num   从第num行开始显示&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;空格键：显示文本下一屏&lt;/li&gt;
+&lt;li&gt;Enter：下一行&lt;/li&gt;
+&lt;li&gt;斜线符（/），然后输入模式，可以在文本中寻找下一个匹配的模式&lt;/li&gt;
+&lt;li&gt;H：帮助&lt;/li&gt;
+&lt;li&gt;B：上一屏&lt;/li&gt;
+&lt;li&gt;Q：退出more命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;less&lt;/strong&gt;&lt;br&gt;和more类似可以分屏显示文件内容，不同是less能向前或向后浏览文件，而more只能向前浏览（？）。总体来说less比more功能强大。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;less [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-e   当文件显示结束后，自动离开&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   强迫打开特殊文件，例如外围设备代号、目录和二进制文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-g   只标志最后搜索的关键词&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i   忽略搜索时的大小写&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-m   显示类似more命令的百分比&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-N   显示每行的行号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-o &amp;lt;文件名&amp;gt;   将less 输出的内容在指定文件中保存起来&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s   显示连续空行为一行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-x &amp;lt;数字&amp;gt;   将“tab”键显示为规定的数字空格&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/字符串   向下搜索“字符串”的功能&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;?字符串   向上搜索“字符串”的功能&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;n：重复前一个搜索（与 / 或 ? 有关）&lt;/li&gt;
+&lt;li&gt;N：反向重复前一个搜索（与 / 或 ? 有关）&lt;/li&gt;
+&lt;li&gt;b：向前翻一页&lt;/li&gt;
+&lt;li&gt;d：向后翻半页&lt;/li&gt;
+&lt;li&gt;h：显示帮助界面&lt;/li&gt;
+&lt;li&gt;Q：退出less 命令&lt;/li&gt;
+&lt;li&gt;u：向前滚动半页&lt;/li&gt;
+&lt;li&gt;y：向前滚动一行&lt;/li&gt;
+&lt;li&gt;空格键：滚动一行&lt;/li&gt;
+&lt;li&gt;回车键：滚动一页&lt;/li&gt;
+&lt;li&gt;Pagedown：向下翻动一页&lt;/li&gt;
+&lt;li&gt;Pageup；向上翻动一页&lt;br&gt;Tip：less可以浏览多个文件，输入 &lt;strong&gt;“:p”和”:n”&lt;/strong&gt;向前向后切换文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;head&lt;/strong&gt;&lt;br&gt;在屏幕上显示指定文件的开头若干行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;head [选项]… 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-c，--bytes=SIZE   显示前size个字节&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--lines=NUMBER   指定显示行数，默认10行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-q，-quiet，--silent   不显示文件标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v，--verbose   始终显示标题&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;tail&lt;/strong&gt;&lt;br&gt;在屏幕上显示指定文件的末尾若干行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;tail [选项]… 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-c，--bytes=SIZE   显示前size个字节&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   当文件增长时输出附加的数据&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--lines=NUMBER   指定显示行数，默认10行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-q，-quiet，--silent   不显示文件标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v，--verbose   始终显示标题&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Tip：如果字节或者行数前有一个”+“，则表示从文件开头第N项显示，而不是显示文件最后N项。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;touch&lt;/strong&gt;&lt;br&gt;可以修改指定文件的时间标签或者创建一个空文件。如果文件存在，默认情况下，将时间标签更新为系统当前时间，数据不改变；如果文件不存在，则创建一个空文件。&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;touch [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-a   仅改变存取时间&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c   不创建任何文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-m   仅改变文件修改时间&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-t STAMP   使用STAMP指定的时间标签，而不是系统当前时间，格式为[[CC]YY]MMDDhhmm[.ss]，CC代表年前两位，YY是后两位。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;grep&lt;/strong&gt; = Global Regular Expression Print&lt;br&gt;在文本中查找指定模式的词或短语，并在标准输出上显示包括给定字符串模式的所有行。该命令组包含三个命令：grep，egrep，fgrep。grep一次只能搜索一个指定的模式；egrep相当于gerp -E，可以使用扩展的字符串模式进行搜索；fgrep相当于grep -F，是快速搜索命令，检索固定字符串，不识别正则表达式。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;grep [选项] 模式 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-a，--text   不要忽略二进制的数据。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-A NUMBER，--after-context=NUMBER    显示符合范本样式的那一行以及后面NUMBER行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-b，--byte-offset   在显示符合样式的那一行之前，标示出该行第一个字符的编号。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-B NUMBER，--before-context=NUMBER   显示符合样式的那一行及该行之前NUMBER行。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c，--count   计算符合样式的列数。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-C NUMBER    --context=NUMBER或-NUMBER   显示符合样式的行以及该行之前后的NUMBER行。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d &amp;lt;动作&amp;gt;，--directories=&amp;lt;动作&amp;gt;   当指定要查找的是目录而非文件时，必须使用这项参数，否则grep指令将回报信息并停止动作。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-e &amp;lt;范本样式&amp;gt;，--regexp=&amp;lt;范本样式&amp;gt;   指定字符串做为查找文件内容的样式。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-E,--extended-regexp   将样式为延伸的普通表示法来使用。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f &amp;lt;规则文件&amp;gt;，--file=&amp;lt;规则文件&amp;gt;   从文件中获取模式，每行一个规则样式。空文件不包含模式，不做匹配&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-F，--fixed-regexp   #将样式视为固定字符串的列表。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-G，--basic-regexp   #将样式视为普通的表示法来使用。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-h，--no-filename   #在显示符合样式的那一行之前，不标示该行所属的文件名称。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-H，--with-filename   #在显示符合样式的那一行之前，表示该行所属的文件名称。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i，--ignore-case   #忽略字符大小写的差别。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-l，--file-with-matches   #列出文件内容符合指定的样式的文件名称。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-L，--files-without-match   #列出文件内容不符合指定的样式的文件名称。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--line-number   在显示符合样式的那一行之前，标示出该行的列数编号。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-q，--quiet或--silent   不显示任何信息。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-r，--recursive   此参数的效果和指定“-d recurse”参数相同。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s，--no-messages   不显示错误信息。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v，--revert-match   显示不包含匹配文本的所有行。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-w，--word-regexp   只显示全字符合的列。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-x，--line-regexp   只显示全列符合的列。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-y 此参数的效果和指定“-i”参数相同。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Tip：在文件列表中可以使用通配符号“*”。模式中有空格，应该将模式用单引号括起来&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;sort&lt;/strong&gt;&lt;br&gt;对文本文件各行进行排序。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;sort [选项] 文件列表&lt;/p&gt;&lt;br&gt;sort将逐行对文件的所有行进行排序，显示在标准输出上。如果不指定文件或使用“-”表示文件，则排序内容来自标准输入（ctrl+d开始排序）。排序比较是依据从输入文件的每一行提取的一个或者多个关键字进行的。排序关键字定义了，用来排序的最小字符序列。默认情况下，排序关键字的顺序有系统使用的 &lt;strong&gt;字符集&lt;/strong&gt;决定。&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-b   忽略每行前面开始出的空格字符。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c   检查文件是否已经按照顺序排序。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   排序时，忽略大小写字母。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-M   将前面3个字母依照月份的缩写进行排序。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n   依照数值的大小排序。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i   忽略非打印字符。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-o &amp;lt;输出文件&amp;gt;   将排序后的结果存入指定的文件。从重定向符“&amp;gt;”也可以，不过后者不支持输入到源文件。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-r   以相反的顺序来排序。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-t &amp;lt;分隔字符&amp;gt;   指定排序时所用的栏位分隔字符。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-k n1[,n2]   指定从文本的第n1字段开始到n2字段中间的内容作为排序关键字。如果没有n2，则是从n1开始到行结尾的所有字段，n1/n2可以是小数，代表“字段.字符”，都是从1开始计算。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;uniq&lt;/strong&gt;&lt;br&gt;该命令从排好序的文件中去除重复行。比较相邻行，去掉重复行，只留下一行。该命令加工后的结果写到输出文件中，输入文件和输出文件必须不同。如果输入文件用”-“表示，则从标准输入上读取。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;uniq [选项] [输入文件 [输出文件]] &lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-c，--count   在每列旁边显示该行重复出现的次数。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d，--repeated   仅显示重复出现的行列。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f NUMBER，--skip-fields=NUMBER   忽略比较前NUMBER行。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s UMBER，--skip-chars=NUMBER   忽略比较前NUMBER个字符。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-u或--unique   仅显示出一次的行列。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-w&amp;lt;字符位置&amp;gt;，--check-chars=&amp;lt;字符位置&amp;gt;   指定要比较的字符。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;参考：&lt;a href=&quot;http://www.cnblogs.com/peida/tag/%E6%AF%8F%E6%97%A5%E4%B8%80linux%E5%91%BD%E4%BB%A4/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每天一Linux命令&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      学习Linux命令中（简单命令和文件操作命令-）
+    
+    </summary>
+    
+      <category term="Note" scheme="https://weedt.github.io/categories/Note/"/>
+    
+    
+      <category term="Linux" scheme="https://weedt.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -192,6 +335,36 @@
   </entry>
   
   <entry>
+    <title>boost库编译参数小结</title>
+    <link href="https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/"/>
+    <id>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</id>
+    <published>2015-04-18T13:54:12.000Z</published>
+    <updated>2016-03-30T06:53:30.181Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;toolset&lt;/strong&gt;：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)&lt;br&gt;&lt;strong&gt;stagedir&lt;/strong&gt;:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。&lt;br&gt;&lt;strong&gt;without/with&lt;/strong&gt;：选择不编译/编译哪些库。&lt;br&gt;&lt;strong&gt;address-model&lt;/strong&gt;：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。&lt;br&gt;&lt;strong&gt;threading&lt;/strong&gt;：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。&lt;br&gt;&lt;strong&gt;link&lt;/strong&gt;：静态库版link=shared，动态库link=shared&lt;br&gt;&lt;strong&gt;runtime-link&lt;/strong&gt;：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。&lt;br&gt;&lt;strong&gt;debug/release&lt;/strong&gt;：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。&lt;/p&gt;
+&lt;h4 id=&quot;64位编译：&quot;&gt;&lt;a href=&quot;#64位编译：&quot; class=&quot;headerlink&quot; title=&quot;64位编译：&quot;&gt;&lt;/a&gt;64位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。&lt;br&gt;在编译命令中加入address-model=64属性&lt;/p&gt;
+&lt;h5 id=&quot;windows下boost库的命名特点：&quot;&gt;&lt;a href=&quot;#windows下boost库的命名特点：&quot; class=&quot;headerlink&quot; title=&quot;windows下boost库的命名特点：&quot;&gt;&lt;/a&gt;windows下boost库的命名特点：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;link=static runtime-link=static 得到 libboostxxxxx.lib
+link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;由以上的文件夹层次结构基本就可以得出结论：&lt;br&gt;１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。&lt;br&gt;２、有“d”的为debug版本，没有的则是release版本。&lt;br&gt;３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。&lt;br&gt;４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;本文参考：&lt;a href=&quot;http://m.blog.csdn.net/blog/chenjh213/42265605&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vs2013 boost库编译小结&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat,编译命令（例）：bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
+    
+    
+      <category term="Boost" scheme="https://weedt.github.io/tags/Boost/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Visual Studio Command Prompt 工具配置方法</title>
     <link href="https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/"/>
     <id>https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/</id>
@@ -227,36 +400,6 @@
     
     
       <category term="VS" scheme="https://weedt.github.io/tags/VS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>boost库编译参数小结</title>
-    <link href="https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/"/>
-    <id>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</id>
-    <published>2015-04-18T13:54:12.000Z</published>
-    <updated>2016-03-30T06:53:30.181Z</updated>
-    
-    <content type="html">&lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;toolset&lt;/strong&gt;：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)&lt;br&gt;&lt;strong&gt;stagedir&lt;/strong&gt;:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。&lt;br&gt;&lt;strong&gt;without/with&lt;/strong&gt;：选择不编译/编译哪些库。&lt;br&gt;&lt;strong&gt;address-model&lt;/strong&gt;：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。&lt;br&gt;&lt;strong&gt;threading&lt;/strong&gt;：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。&lt;br&gt;&lt;strong&gt;link&lt;/strong&gt;：静态库版link=shared，动态库link=shared&lt;br&gt;&lt;strong&gt;runtime-link&lt;/strong&gt;：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。&lt;br&gt;&lt;strong&gt;debug/release&lt;/strong&gt;：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。&lt;/p&gt;
-&lt;h4 id=&quot;64位编译：&quot;&gt;&lt;a href=&quot;#64位编译：&quot; class=&quot;headerlink&quot; title=&quot;64位编译：&quot;&gt;&lt;/a&gt;64位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。&lt;br&gt;在编译命令中加入address-model=64属性&lt;/p&gt;
-&lt;h5 id=&quot;windows下boost库的命名特点：&quot;&gt;&lt;a href=&quot;#windows下boost库的命名特点：&quot; class=&quot;headerlink&quot; title=&quot;windows下boost库的命名特点：&quot;&gt;&lt;/a&gt;windows下boost库的命名特点：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;link=static runtime-link=static 得到 libboostxxxxx.lib
-link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;由以上的文件夹层次结构基本就可以得出结论：&lt;br&gt;１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。&lt;br&gt;２、有“d”的为debug版本，没有的则是release版本。&lt;br&gt;３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。&lt;br&gt;４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;本文参考：&lt;a href=&quot;http://m.blog.csdn.net/blog/chenjh213/42265605&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vs2013 boost库编译小结&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat,编译命令（例）：bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release
-    
-    </summary>
-    
-      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
-    
-    
-      <category term="Boost" scheme="https://weedt.github.io/tags/Boost/"/>
     
   </entry>
   
