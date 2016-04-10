@@ -17,28 +17,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Linux 命令（持续更新）]]></title>
-      <url>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-to-be-continues/</url>
-      <content type="html"><![CDATA[<h3 id="TIPs"><a href="#TIPs" class="headerlink" title="TIPs"></a>TIPs</h3><ul>
-<li>Bash命令基本格式：<p style="text-align: center; font-weight: bold;">命令名 [选项] [参数1] [参数2] ……</p></li>
-<li>命令名小写： DATE，Date和date是不同的，只有date是正确的。</li>
-<li>如果命令太长，一行放不下，可以在行尾输入“\”字符，shell会返回一个“&gt;”作为提示符，表示命令未结束，允许继续输入有关信息。</li>
-<li>命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。</li>
-</ul>
-<ol>
-<li><p><strong>who</strong><br>列出所有正在使用 <em>系统的用户</em>、<em>所用终端名</em>和 <em>注册到系统的时间</em><br><img src="http://ww2.sinaimg.cn/large/93736429gw1f2ig5p43rpj20b5024q3i.jpg" alt=""><br>who am i 和 whoami：<br><img src="http://ww1.sinaimg.cn/large/93736429gw1f2ig9rqw3rj20ax023q3f.jpg" alt=""></p>
-</li>
-<li><p><strong>echo</strong><br>将命令行的参数显示在屏幕上：<br><img src="http://ww1.sinaimg.cn/large/93736429gw1f2igefoae2j20e7041jso.jpg" alt=""></p>
-</li>
-<li><p><strong>date</strong><br>显示或者设置系统日期和时间，详细请传送<a href="http://www.cnblogs.com/peida/archive/2012/12/13/2815687.html" title="每天一条Linux命令" target="_blank" rel="external">这里</a>。</p>
-</li>
-<li><p><strong>cal</strong><br>日历，显示1-9999年任意一年的或者月的日历。不带参数显示当月，一个参数解释为 <em>年</em>，两个参数解释为 <em>月 年</em></p>
-</li>
-</ol>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[OpenGL纹理映射基本知识小结]]></title>
       <url>https://weedt.github.io/2015/12/16/A-Brief-Summary-Of-OpenGL-Texture/</url>
       <content type="html"><![CDATA[<p>这些天在做项目时需要修复项目时的纹理问题，特此总结一下OpenGL纹理相关的知识。</p>
@@ -265,7 +243,7 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p
     
     <entry>
       <title><![CDATA[Qt下中文显示问题]]></title>
-      <url>https://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/</url>
+      <url>https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/</url>
       <content type="html"><![CDATA[<p>Qt 4:<br>main函数中添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForTr(QTextCodec::codecForName(&quot;GB2312&quot;));  </span><br><span class="line">QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GB2312&quot;));  </span><br><span class="line">QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&quot;GB2312&quot;));</span><br></pre></td></tr></table></figure></p>
 <p>需要添加头文件：#include <qtextcodec></qtextcodec></p>
 <p>Qt 5<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GB2312&quot;));</span><br></pre></td></tr></table></figure></p>

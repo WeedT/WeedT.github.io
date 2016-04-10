@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/</loc>
+    
+    <lastmod>2016-04-08T07:45:56.946Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/</loc>
     
-    <lastmod>2016-04-08T07:08:35.821Z</lastmod>
+    <lastmod>2016-04-08T07:12:41.332Z</lastmod>
     
   </url>
   
@@ -23,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-to-be-continues/</loc>
-    
-    <lastmod>2016-04-02T08:57:45.516Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weedt.github.io/2014/06/11/How-to-handle-the-%22new%22-failure/</loc>
     
     <lastmod>2016-04-02T07:38:42.524Z</lastmod>
@@ -40,13 +40,6 @@
     <loc>https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/</loc>
     
     <lastmod>2016-04-02T07:38:16.783Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/</loc>
-    
-    <lastmod>2016-04-02T07:36:52.779Z</lastmod>
     
   </url>
   

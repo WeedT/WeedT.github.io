@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weedt.github.io/"/>
-  <updated>2016-04-08T07:08:35.821Z</updated>
+  <updated>2016-04-08T07:12:41.332Z</updated>
   <id>https://weedt.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/"/>
     <id>https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/</id>
     <published>2016-04-08T06:29:35.000Z</published>
-    <updated>2016-04-08T07:08:35.821Z</updated>
+    <updated>2016-04-08T07:12:41.332Z</updated>
     
     <content type="html">&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。&lt;br&gt;通过：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -33,8 +33,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。&lt;br&gt;通过：&lt;/p&gt;
-&lt;block
+      在Hexo中用HTML标签时务必写成一行，不然文本中的换行会被Markdown解释成br
     
     </summary>
     
@@ -42,45 +41,6 @@
     
     
       <category term="Hexo" scheme="https://weedt.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 命令（持续更新）</title>
-    <link href="https://weedt.github.io/2016/04/02/Commonds-Of-Linux-to-be-continues/"/>
-    <id>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-to-be-continues/</id>
-    <published>2016-04-02T08:06:41.000Z</published>
-    <updated>2016-04-02T08:57:45.516Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;TIPs&quot;&gt;&lt;a href=&quot;#TIPs&quot; class=&quot;headerlink&quot; title=&quot;TIPs&quot;&gt;&lt;/a&gt;TIPs&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Bash命令基本格式：&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;命令名 [选项] [参数1] [参数2] ……&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;命令名小写： DATE，Date和date是不同的，只有date是正确的。&lt;/li&gt;
-&lt;li&gt;如果命令太长，一行放不下，可以在行尾输入“\”字符，shell会返回一个“&amp;gt;”作为提示符，表示命令未结束，允许继续输入有关信息。&lt;/li&gt;
-&lt;li&gt;命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;who&lt;/strong&gt;&lt;br&gt;列出所有正在使用 &lt;em&gt;系统的用户&lt;/em&gt;、&lt;em&gt;所用终端名&lt;/em&gt;和 &lt;em&gt;注册到系统的时间&lt;/em&gt;&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/93736429gw1f2ig5p43rpj20b5024q3i.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;who am i 和 whoami：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/93736429gw1f2ig9rqw3rj20ax023q3f.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;echo&lt;/strong&gt;&lt;br&gt;将命令行的参数显示在屏幕上：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/93736429gw1f2igefoae2j20e7041jso.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;br&gt;显示或者设置系统日期和时间，详细请传送&lt;a href=&quot;http://www.cnblogs.com/peida/archive/2012/12/13/2815687.html&quot; title=&quot;每天一条Linux命令&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;cal&lt;/strong&gt;&lt;br&gt;日历，显示1-9999年任意一年的或者月的日历。不带参数显示当月，一个参数解释为 &lt;em&gt;年&lt;/em&gt;，两个参数解释为 &lt;em&gt;月 年&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;TIPs&quot;&gt;&lt;a href=&quot;#TIPs&quot; class=&quot;headerlink&quot; title=&quot;TIPs&quot;&gt;&lt;/a&gt;TIPs&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Bash命令基本格式：&lt;p style=&quot;text-align: center; font-weight: bo
-    
-    </summary>
-    
-      <category term="Note" scheme="https://weedt.github.io/categories/Note/"/>
-    
-    
-      <category term="Linux" scheme="https://weedt.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -445,10 +405,10 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
   
   <entry>
     <title>Qt下中文显示问题</title>
-    <link href="https://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/"/>
-    <id>https://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/</id>
+    <link href="https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/"/>
+    <id>https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/</id>
     <published>2014-08-12T07:12:17.000Z</published>
-    <updated>2016-04-02T07:36:52.779Z</updated>
+    <updated>2016-04-08T07:45:56.946Z</updated>
     
     <content type="html">&lt;p&gt;Qt 4:&lt;br&gt;main函数中添加：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForTr(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;需要添加头文件：#include &lt;qtextcodec&gt;&lt;/qtextcodec&gt;&lt;/p&gt;
