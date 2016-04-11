@@ -21,10 +21,19 @@
 </ol>
 <p>Tip：如果把文件复制到一个目的文件，而目标文件已存在，那么目的文件的内容将被破坏。</p>
 <ol>
-<li><strong>rm</strong><br>rm命令可以删除文件和目录。格式：<p style="text-align: center; font-weight: bold;">rm [选项] 文件…</p>
-
+<li><strong>rm</strong><br>rm命令可以删除文件和目录。格式：<br><p style="text-align: center; font-weight: bold;">rm [选项] 文件…</p><br>常用选项：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-d   删除目录不管是否空（超级用户才行）</span><br><span class="line">-f，--force   忽略不存在的文件，从不给出提示。</span><br><span class="line">-i，--interactive   进行交互式删除</span><br><span class="line">-r，-R, --recursive   指示rm将参数中列出的全部目录和子目录均递归地删除。</span><br><span class="line">-v，--verbose   详细显示进行的步骤</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<p>Tip：这个命令很危险，特别是“-fr <em>”。文件可以使用通配符“</em>”。</p>
+<ol>
+<li><strong>mv</strong><br>用来移动文件或者目录，或者对文件或目录进行重命名。格式<br><p style="text-align: center; font-weight: bold;">mv [选项] 源 目的</p><br>源是文件，目的是文件，若两者不同目录，源移动到目的目录下，重命名为目的，同名文件覆盖，否则将源重命名为目的。源是文件，目的是目录，将文件移动到目的下，同名覆盖。源是目录，目的是目录，将源目录移动到目的目录下。<br>常用选项：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-b   若需覆盖文件，则覆盖前先行备份。 </span><br><span class="line">-f   force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；</span><br><span class="line">-i   若目标文件 (destination) 已经存在时，就会询问是否覆盖！</span><br><span class="line">-u   若目标文件已经存在，且 source 比较新，才会更新(update)</span><br><span class="line">-t，--target-directory=DIRECTORY move all SOURCE arguments into DIRECTORY   即指定mv的目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="文件内容统计"><a href="#文件内容统计" class="headerlink" title="文件内容统计"></a>文件内容统计</h3><ol>
+<li><strong>wc</strong><br>统计文件字节数、字数、行数。字是指空格隔开的字符串。格式：<br><p style="text-align: center; font-weight: bold;">wc [选项] 文件…</p><br>如果没有指定文件或用“-”指定，则从标准输入读取数据。多个文件，则输出统计总数。<br>wc输出列的数目和顺序不受选项的顺序和数目的影响，总是按以下格式显示，并且每项只占一列：<br><p style="text-align: center; font-weight: bold;">行数   字数  字节数  文件名</p><br>常用选项:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-c   字节数</span><br><span class="line">-l   行数</span><br><span class="line">-w   字数</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>示例：<br><img src="http://ww1.sinaimg.cn/large/93736429gw1f2t4kv9vuej20dk016dg2.jpg" alt=""></p>
 ]]></content>
     </entry>
     

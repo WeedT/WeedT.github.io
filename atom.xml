@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weedt.github.io/"/>
-  <updated>2016-04-10T08:50:30.409Z</updated>
+  <updated>2016-04-11T14:40:52.676Z</updated>
   <id>https://weedt.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://weedt.github.io/2016/04/09/Commonds-Of-Linux-2/"/>
     <id>https://weedt.github.io/2016/04/09/Commonds-Of-Linux-2/</id>
     <published>2016-04-09T07:43:41.000Z</published>
-    <updated>2016-04-10T08:50:30.409Z</updated>
+    <updated>2016-04-11T14:40:52.676Z</updated>
     
     <content type="html">&lt;h3 id=&quot;比较文件内容&quot;&gt;&lt;a href=&quot;#比较文件内容&quot; class=&quot;headerlink&quot; title=&quot;比较文件内容&quot;&gt;&lt;/a&gt;比较文件内容&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;comm&lt;/strong&gt;&lt;br&gt;对两个以及排序好的文件进行逐行比较。结果生成3列：仅在file1中出现的行，仅在file2中出现的行，在两个文件中都出现的行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;comm [-123] 文件1 文件2&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
@@ -37,10 +37,19 @@
 &lt;/ol&gt;
 &lt;p&gt;Tip：如果把文件复制到一个目的文件，而目标文件已存在，那么目的文件的内容将被破坏。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;rm&lt;/strong&gt;&lt;br&gt;rm命令可以删除文件和目录。格式：&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;rm [选项] 文件…&lt;/p&gt;
-
+&lt;li&gt;&lt;strong&gt;rm&lt;/strong&gt;&lt;br&gt;rm命令可以删除文件和目录。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;rm [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-d   删除目录不管是否空（超级用户才行）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f，--force   忽略不存在的文件，从不给出提示。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i，--interactive   进行交互式删除&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-r，-R, --recursive   指示rm将参数中列出的全部目录和子目录均递归地删除。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v，--verbose   详细显示进行的步骤&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;Tip：这个命令很危险，特别是“-fr &lt;em&gt;”。文件可以使用通配符“&lt;/em&gt;”。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;mv&lt;/strong&gt;&lt;br&gt;用来移动文件或者目录，或者对文件或目录进行重命名。格式&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;mv [选项] 源 目的&lt;/p&gt;&lt;br&gt;源是文件，目的是文件，若两者不同目录，源移动到目的目录下，重命名为目的，同名文件覆盖，否则将源重命名为目的。源是文件，目的是目录，将文件移动到目的下，同名覆盖。源是目录，目的是目录，将源目录移动到目的目录下。&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-b   若需覆盖文件，则覆盖前先行备份。 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i   若目标文件 (destination) 已经存在时，就会询问是否覆盖！&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-u   若目标文件已经存在，且 source 比较新，才会更新(update)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-t，--target-directory=DIRECTORY move all SOURCE arguments into DIRECTORY   即指定mv的目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;文件内容统计&quot;&gt;&lt;a href=&quot;#文件内容统计&quot; class=&quot;headerlink&quot; title=&quot;文件内容统计&quot;&gt;&lt;/a&gt;文件内容统计&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;wc&lt;/strong&gt;&lt;br&gt;统计文件字节数、字数、行数。字是指空格隔开的字符串。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;wc [选项] 文件…&lt;/p&gt;&lt;br&gt;如果没有指定文件或用“-”指定，则从标准输入读取数据。多个文件，则输出统计总数。&lt;br&gt;wc输出列的数目和顺序不受选项的顺序和数目的影响，总是按以下格式显示，并且每项只占一列：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;行数   字数  字节数  文件名&lt;/p&gt;&lt;br&gt;常用选项:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-c   字节数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-l   行数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-w   字数&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;示例：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/93736429gw1f2t4kv9vuej20dk016dg2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
