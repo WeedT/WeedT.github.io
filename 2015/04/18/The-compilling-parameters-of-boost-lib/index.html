@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/index.html">
 <meta property="og:site_name" content="Obladi">
 <meta property="og:description" content="32位编译：从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat编译命令（例）：bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threadi">
-<meta property="og:updated_time" content="2016-04-12T07:05:12.614Z">
+<meta property="og:updated_time" content="2016-04-12T07:32:07.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="boost库编译参数小结">
 <meta name="twitter:description" content="32位编译：从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat编译命令（例）：bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threadi">
@@ -93,7 +93,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="32位编译："><a href="#32位编译：" class="headerlink" title="32位编译："></a>32位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat<br>编译命令（例）：<br><code>bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release</code><br><a id="more"></a></p>
+        <h4 id="32位编译："><a href="#32位编译：" class="headerlink" title="32位编译："></a>32位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat<br>编译命令（例）：<br><code>bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release</code></p>
+<a id="more"></a>
 <p><strong>toolset</strong>：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)<br><strong>stagedir</strong>:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。<br><strong>without/with</strong>：选择不编译/编译哪些库。<br><strong>address-model</strong>：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。<br><strong>threading</strong>：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。<br><strong>link</strong>：静态库版link=shared，动态库link=shared<br><strong>runtime-link</strong>：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。<br><strong>debug/release</strong>：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。</p>
 <h4 id="64位编译："><a href="#64位编译：" class="headerlink" title="64位编译："></a>64位编译：</h4><p>从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。<br>在编译命令中加入address-model=64属性</p>
 <h5 id="windows下boost库的命名特点："><a href="#windows下boost库的命名特点：" class="headerlink" title="windows下boost库的命名特点："></a>windows下boost库的命名特点：</h5><p><code>link=static runtime-link=static 得到 libboostxxxxx.lib
@@ -105,7 +106,7 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/" data-id="cimx3xq5u000oeh34vnwxoird" class="article-share-link">Share</a>
+      <a data-url="https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/" data-id="cimx428tp000lqo34r0pbctyp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boost/">Boost</a></li></ul>
@@ -116,19 +117,19 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll</code></p
     
 <nav id="article-nav">
   
-    <a href="/2015/04/18/Visual-Studio-Command-Prompt-configure/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/04/19/A-solution-of-the error-of-“Start Service”in-mysql-installation/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Visual Studio Command Prompt 工具配置方法
+          MySql安装过程“Start Service”失败解决方法
         
       </div>
     </a>
   
   
-    <a href="/2015/04/15/The-installation-and-configuration-of-cgal-under-Win8.1-x64+VS2013/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/04/18/Visual-Studio-Command-Prompt-configure/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Win8.1 x64 + VS2013 下CGAL安装及配置</div>
+      <div class="article-nav-title">Visual Studio Command Prompt 工具配置方法</div>
     </a>
   
 </nav>

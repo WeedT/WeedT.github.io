@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://ww2.sinaimg.cn/mw690/93736429gw1f2pb300d0sj20ar05ndfw.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/mw690/93736429gw1f2pb5lje31j20hv048ta2.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw690/93736429gw1f2pb65m1waj20e20bb3zg.jpg">
-<meta property="og:updated_time" content="2016-04-12T07:05:24.630Z">
+<meta property="og:updated_time" content="2016-04-12T07:31:53.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo下表格显示问题">
 <meta name="twitter:description" content="问题Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。通过：
@@ -107,8 +107,9 @@
       
         <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。<br>通过：</p>
 <blockquote>
-<p>|项目|数目|<br>|1|2|<br>|2|2|<br>|3|5|<br><a id="more"></a></p>
+<p>|项目|数目|<br>|1|2|<br>|2|2|<br>|3|5|</p>
 </blockquote>
+<a id="more"></a>
 <p>来显示一个表格。然而，这貌似有主题限制的。有的主题支持而一些是不支持的，比如我用的是maupassant主题，就不支持表格。然而我又不想贴图片，只能用HTML标签来实现（网上有人说在Markdown中使用HTML标签需要前后空一行，然而我不空行也可以，而且可以在行内使用span来给文字加颜色）。我就在Markdown中加入了如下代码：<br><img src="http://ww4.sinaimg.cn/mw690/93736429gw1f2pamp4fchj20bb082dg7.jpg" alt=""><br>结果效果如下图，表格的上方有一大片空白：<br><img src="http://ww3.sinaimg.cn/mw690/93736429gw1f2pazl0wdpj20ih08qmxb.jpg" alt=""><br>打开生成的源文件，发现了一堆br：<br><img src="http://ww2.sinaimg.cn/mw690/93736429gw1f2pb300d0sj20ar05ndfw.jpg" alt=""></p>
 <p>问题就是这一堆br是从哪儿来的。怀着猜想，我把HTML的代码改了一下，变成了这样：<br><img src="http://ww2.sinaimg.cn/mw690/93736429gw1f2pb5lje31j20hv048ta2.jpg" alt=""><br>然后就可以了：<br><img src="http://ww1.sinaimg.cn/mw690/93736429gw1f2pb65m1waj20e20bb3zg.jpg" alt=""></p>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>在Hexo中用HTML标签时务必写成一行，不然文本中的换行会被Markdown解释成br</p>
@@ -116,7 +117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/" data-id="cimx3xq5l000heh34u0054nth" class="article-share-link">Share</a>
+      <a data-url="https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/" data-id="cimx428tm000jqo34ju9t377p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>

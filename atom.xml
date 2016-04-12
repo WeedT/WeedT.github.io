@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weedt.github.io/"/>
-  <updated>2016-04-12T07:16:44.596Z</updated>
+  <updated>2016-04-12T07:30:53.709Z</updated>
   <id>https://weedt.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://weedt.github.io/2016/04/09/Commonds-Of-Linux-2/"/>
     <id>https://weedt.github.io/2016/04/09/Commonds-Of-Linux-2/</id>
     <published>2016-04-09T07:43:41.000Z</published>
-    <updated>2016-04-12T07:16:44.596Z</updated>
+    <updated>2016-04-12T07:30:53.709Z</updated>
     
     <content type="html">&lt;h3 id=&quot;比较文件内容&quot;&gt;&lt;a href=&quot;#比较文件内容&quot; class=&quot;headerlink&quot; title=&quot;比较文件内容&quot;&gt;&lt;/a&gt;比较文件内容&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;comm&lt;/strong&gt;&lt;br&gt;对两个以及排序好的文件进行逐行比较。结果生成3列：仅在file1中出现的行，仅在file2中出现的行，在两个文件中都出现的行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;comm [-123] 文件1 文件2&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
@@ -92,12 +92,13 @@
     <link href="https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/"/>
     <id>https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/</id>
     <published>2016-04-08T06:29:35.000Z</published>
-    <updated>2016-04-12T07:05:24.630Z</updated>
+    <updated>2016-04-12T07:31:53.313Z</updated>
     
     <content type="html">&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。&lt;br&gt;通过：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;|项目|数目|&lt;br&gt;|1|2|&lt;br&gt;|2|2|&lt;br&gt;|3|5|&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;|项目|数目|&lt;br&gt;|1|2|&lt;br&gt;|2|2|&lt;br&gt;|3|5|&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;来显示一个表格。然而，这貌似有主题限制的。有的主题支持而一些是不支持的，比如我用的是maupassant主题，就不支持表格。然而我又不想贴图片，只能用HTML标签来实现（网上有人说在Markdown中使用HTML标签需要前后空一行，然而我不空行也可以，而且可以在行内使用span来给文字加颜色）。我就在Markdown中加入了如下代码：&lt;br&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw690/93736429gw1f2pamp4fchj20bb082dg7.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;结果效果如下图，表格的上方有一大片空白：&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/93736429gw1f2pazl0wdpj20ih08qmxb.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;打开生成的源文件，发现了一堆br：&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw690/93736429gw1f2pb300d0sj20ar05ndfw.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;问题就是这一堆br是从哪儿来的。怀着猜想，我把HTML的代码改了一下，变成了这样：&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw690/93736429gw1f2pb5lje31j20hv048ta2.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;然后就可以了：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw690/93736429gw1f2pb65m1waj20e20bb3zg.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h3&gt;&lt;p&gt;在Hexo中用HTML标签时务必写成一行，不然文本中的换行会被Markdown解释成br&lt;/p&gt;
@@ -107,7 +108,8 @@
     
       &lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。&lt;br&gt;通过：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;|项目|数目|&lt;br&gt;|1|2|&lt;br&gt;|2|2|&lt;br&gt;|3|5|&lt;br&gt;
+&lt;p&gt;|项目|数目|&lt;br&gt;|1|2|&lt;br&gt;|2|2|&lt;br&gt;|3|5|&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -123,15 +125,15 @@
     <link href="https://weedt.github.io/2016/04/02/Commonds-Of-Linux-1/"/>
     <id>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-1/</id>
     <published>2016-04-02T08:06:41.000Z</published>
-    <updated>2016-04-12T07:05:47.870Z</updated>
+    <updated>2016-04-12T07:31:26.165Z</updated>
     
     <content type="html">&lt;h3 id=&quot;TIPs&quot;&gt;&lt;a href=&quot;#TIPs&quot; class=&quot;headerlink&quot; title=&quot;TIPs&quot;&gt;&lt;/a&gt;TIPs&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Bash命令基本格式：&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;命令名 [选项] [参数1] [参数2] ……&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;命令名小写： DATE，Date和date是不同的，只有date是正确的。&lt;/li&gt;
 &lt;li&gt;如果命令太长，一行放不下，可以在行尾输入“\”字符，shell会返回一个“&amp;gt;”作为提示符，表示命令未结束，允许继续输入有关信息。&lt;/li&gt;
-&lt;li&gt;命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h3 id=&quot;一些简单命令&quot;&gt;&lt;a href=&quot;#一些简单命令&quot; class=&quot;headerlink&quot; title=&quot;一些简单命令&quot;&gt;&lt;/a&gt;一些简单命令&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;who&lt;/strong&gt;&lt;br&gt;列出所有正在使用 &lt;em&gt;系统的用户&lt;/em&gt;、&lt;em&gt;所用终端名&lt;/em&gt;和 &lt;em&gt;注册到系统的时间&lt;/em&gt;&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/93736429gw1f2ig5p43rpj20b5024q3i.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;who am i 和 whoami：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/93736429gw1f2ig9rqw3rj20ax023q3f.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -214,7 +216,8 @@
 &lt;li&gt;Bash命令基本格式：&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;命令名 [选项] [参数1] [参数2] ……&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;命令名小写： DATE，Date和date是不同的，只有date是正确的。&lt;/li&gt;
 &lt;li&gt;如果命令太长，一行放不下，可以在行尾输入“\”字符，shell会返回一个“&amp;gt;”作为提示符，表示命令未结束，允许继续输入有关信息。&lt;/li&gt;
-&lt;li&gt;命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。
+&lt;li&gt;命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -274,12 +277,13 @@
     <link href="https://weedt.github.io/2015/06/01/A-solution-of-Qt-builds-error/"/>
     <id>https://weedt.github.io/2015/06/01/A-solution-of-Qt-builds-error/</id>
     <published>2015-06-01T13:54:12.000Z</published>
-    <updated>2016-04-12T07:05:59.654Z</updated>
+    <updated>2016-04-12T07:31:07.825Z</updated>
     
     <content type="html">&lt;p&gt;1.错误：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;错误:C1041: 无法打开程序数据库“mypath\vc120.pdb”；如果要将多个 CL.EXE 写入同一个 .PDB 文件，请使用 /FS&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;错误:C1041: 无法打开程序数据库“mypath\vc120.pdb”；如果要将多个 CL.EXE 写入同一个 .PDB 文件，请使用 /FS&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;解决：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150504221903912&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -290,7 +294,8 @@
     
       &lt;p&gt;1.错误：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;错误:C1041: 无法打开程序数据库“mypath\vc120.pdb”；如果要将多个 CL.EXE 写入同一个 .PDB 文件，请使用 /FS&lt;br&gt;
+&lt;p&gt;错误:C1041: 无法打开程序数据库“mypath\vc120.pdb”；如果要将多个 CL.EXE 写入同一个 .PDB 文件，请使用 /FS&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -306,9 +311,10 @@
     <link href="https://weedt.github.io/2015/05/04/The-solution-of-%22unkown-extern-symbol%22-when-using-Boost/"/>
     <id>https://weedt.github.io/2015/05/04/The-solution-of-"unkown-extern-symbol"-when-using-Boost/</id>
     <published>2015-05-04T13:54:12.000Z</published>
-    <updated>2016-04-12T07:10:13.390Z</updated>
+    <updated>2016-04-12T07:32:26.017Z</updated>
     
-    <content type="html">&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;今天在用&lt;strong&gt;Qt&lt;/strong&gt;可视化&lt;strong&gt;CGAL&lt;/strong&gt;生成的图像的编程过程中遇到以下问题：&lt;br&gt;只要include了CGAL的头文件或者Boost库的头文件，编译就会出现“&lt;strong&gt;无法识别的外部符号&lt;/strong&gt;”，“&lt;strong&gt;无法识别的外部命令&lt;/strong&gt;”等错误。如下（由于我的问题已经解决，以下图片是我找的，并不是我当时出的问题）：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;今天在用&lt;strong&gt;Qt&lt;/strong&gt;可视化&lt;strong&gt;CGAL&lt;/strong&gt;生成的图像的编程过程中遇到以下问题：&lt;br&gt;只要include了CGAL的头文件或者Boost库的头文件，编译就会出现“&lt;strong&gt;无法识别的外部符号&lt;/strong&gt;”，“&lt;strong&gt;无法识别的外部命令&lt;/strong&gt;”等错误。如下（由于我的问题已经解决，以下图片是我找的，并不是我当时出的问题）：&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150504215548443&quot; alt=&quot;错误信息&quot;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -326,7 +332,7 @@
     
     <summary type="html">
     
-      &lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;今天在用&lt;strong&gt;Qt&lt;/strong&gt;可视化&lt;strong&gt;CGAL&lt;/strong&gt;生成的图像的编程过程中遇到以下问题：&lt;br&gt;只要include了CGAL的头文件或者Boost库的头文件，编译就会出现“&lt;strong&gt;无法识别的外部符号&lt;/strong&gt;”，“&lt;strong&gt;无法识别的外部命令&lt;/strong&gt;”等错误。如下（由于我的问题已经解决，以下图片是我找的，并不是我当时出的问题）：&lt;br&gt;
+      &lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;今天在用&lt;strong&gt;Qt&lt;/strong&gt;可视化&lt;strong&gt;CGAL&lt;/strong&gt;生成的图像的编程过程中遇到以下问题：&lt;br&gt;只要include了CGAL的头文件或者Boost库的头文件，编译就会出现“&lt;strong&gt;无法识别的外部符号&lt;/strong&gt;”，“&lt;strong&gt;无法识别的外部命令&lt;/strong&gt;”等错误。如下（由于我的问题已经解决，以下图片是我找的，并不是我当时出的问题）：&lt;/p&gt;
     
     </summary>
     
@@ -380,19 +386,50 @@
   </entry>
   
   <entry>
+    <title>boost库编译参数小结</title>
+    <link href="https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/"/>
+    <id>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</id>
+    <published>2015-04-18T13:54:12.000Z</published>
+    <updated>2016-04-12T07:32:07.761Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;strong&gt;toolset&lt;/strong&gt;：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)&lt;br&gt;&lt;strong&gt;stagedir&lt;/strong&gt;:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。&lt;br&gt;&lt;strong&gt;without/with&lt;/strong&gt;：选择不编译/编译哪些库。&lt;br&gt;&lt;strong&gt;address-model&lt;/strong&gt;：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。&lt;br&gt;&lt;strong&gt;threading&lt;/strong&gt;：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。&lt;br&gt;&lt;strong&gt;link&lt;/strong&gt;：静态库版link=shared，动态库link=shared&lt;br&gt;&lt;strong&gt;runtime-link&lt;/strong&gt;：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。&lt;br&gt;&lt;strong&gt;debug/release&lt;/strong&gt;：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。&lt;/p&gt;
+&lt;h4 id=&quot;64位编译：&quot;&gt;&lt;a href=&quot;#64位编译：&quot; class=&quot;headerlink&quot; title=&quot;64位编译：&quot;&gt;&lt;/a&gt;64位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。&lt;br&gt;在编译命令中加入address-model=64属性&lt;/p&gt;
+&lt;h5 id=&quot;windows下boost库的命名特点：&quot;&gt;&lt;a href=&quot;#windows下boost库的命名特点：&quot; class=&quot;headerlink&quot; title=&quot;windows下boost库的命名特点：&quot;&gt;&lt;/a&gt;windows下boost库的命名特点：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;link=static runtime-link=static 得到 libboostxxxxx.lib
+link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;由以上的文件夹层次结构基本就可以得出结论：&lt;br&gt;１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。&lt;br&gt;２、有“d”的为debug版本，没有的则是release版本。&lt;br&gt;３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。&lt;br&gt;４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;本文参考：&lt;a href=&quot;http://m.blog.csdn.net/blog/chenjh213/42265605&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vs2013 boost库编译小结&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
+    
+    
+      <category term="Boost" scheme="https://weedt.github.io/tags/Boost/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Visual Studio Command Prompt 工具配置方法</title>
     <link href="https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/"/>
     <id>https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/</id>
     <published>2015-04-18T13:54:12.000Z</published>
-    <updated>2016-04-12T07:04:34.542Z</updated>
+    <updated>2016-04-12T07:32:42.993Z</updated>
     
     <content type="html">&lt;h4 id=&quot;软件版本&quot;&gt;&lt;a href=&quot;#软件版本&quot; class=&quot;headerlink&quot; title=&quot;软件版本&quot;&gt;&lt;/a&gt;软件版本&lt;/h4&gt;&lt;p&gt;VS2013&lt;/p&gt;
 &lt;h4 id=&quot;如何打开这个工具？&quot;&gt;&lt;a href=&quot;#如何打开这个工具？&quot; class=&quot;headerlink&quot; title=&quot;如何打开这个工具？&quot;&gt;&lt;/a&gt;如何打开这个工具？&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;打开VS2013，在“&lt;strong&gt;工具&lt;/strong&gt;“菜单下可以找到。&lt;/li&gt;
 &lt;li&gt;打开”&lt;strong&gt;开始&lt;/strong&gt;“，在程序菜单中找到VS2013，打开”&lt;strong&gt;Visual Studio Tools&lt;/strong&gt;“，可以找到&lt;strong&gt;Visual Studio Command Prompt&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;百度一下，有更多方法。&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;百度一下，有更多方法。&lt;/li&gt;
 &lt;/ol&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h4 id=&quot;如何增加这个工具&quot;&gt;&lt;a href=&quot;#如何增加这个工具&quot; class=&quot;headerlink&quot; title=&quot;如何增加这个工具&quot;&gt;&lt;/a&gt;如何增加这个工具&lt;/h4&gt;&lt;p&gt;如果实在找不到这个工具，那就是没有自动配置，我们可以手动增加这个工具：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;打开VS2013，”&lt;strong&gt;工具&lt;/strong&gt;“ –&amp;gt; ”&lt;strong&gt;外部工具&lt;/strong&gt;“，如下窗口：&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150418221830238&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
@@ -413,7 +450,8 @@
 &lt;h4 id=&quot;如何打开这个工具？&quot;&gt;&lt;a href=&quot;#如何打开这个工具？&quot; class=&quot;headerlink&quot; title=&quot;如何打开这个工具？&quot;&gt;&lt;/a&gt;如何打开这个工具？&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;打开VS2013，在“&lt;strong&gt;工具&lt;/strong&gt;“菜单下可以找到。&lt;/li&gt;
 &lt;li&gt;打开”&lt;strong&gt;开始&lt;/strong&gt;“，在程序菜单中找到VS2013，打开”&lt;strong&gt;Visual Studio Tools&lt;/strong&gt;“，可以找到&lt;strong&gt;Visual Studio Command Prompt&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;百度一下，有更多方法。
+&lt;li&gt;百度一下，有更多方法。&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -421,36 +459,6 @@
     
     
       <category term="VS" scheme="https://weedt.github.io/tags/VS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>boost库编译参数小结</title>
-    <link href="https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/"/>
-    <id>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</id>
-    <published>2015-04-18T13:54:12.000Z</published>
-    <updated>2016-04-12T07:05:12.614Z</updated>
-    
-    <content type="html">&lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;toolset&lt;/strong&gt;：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)&lt;br&gt;&lt;strong&gt;stagedir&lt;/strong&gt;:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。&lt;br&gt;&lt;strong&gt;without/with&lt;/strong&gt;：选择不编译/编译哪些库。&lt;br&gt;&lt;strong&gt;address-model&lt;/strong&gt;：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。&lt;br&gt;&lt;strong&gt;threading&lt;/strong&gt;：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。&lt;br&gt;&lt;strong&gt;link&lt;/strong&gt;：静态库版link=shared，动态库link=shared&lt;br&gt;&lt;strong&gt;runtime-link&lt;/strong&gt;：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。&lt;br&gt;&lt;strong&gt;debug/release&lt;/strong&gt;：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。&lt;/p&gt;
-&lt;h4 id=&quot;64位编译：&quot;&gt;&lt;a href=&quot;#64位编译：&quot; class=&quot;headerlink&quot; title=&quot;64位编译：&quot;&gt;&lt;/a&gt;64位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。&lt;br&gt;在编译命令中加入address-model=64属性&lt;/p&gt;
-&lt;h5 id=&quot;windows下boost库的命名特点：&quot;&gt;&lt;a href=&quot;#windows下boost库的命名特点：&quot; class=&quot;headerlink&quot; title=&quot;windows下boost库的命名特点：&quot;&gt;&lt;/a&gt;windows下boost库的命名特点：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;link=static runtime-link=static 得到 libboostxxxxx.lib
-link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;由以上的文件夹层次结构基本就可以得出结论：&lt;br&gt;１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。&lt;br&gt;２、有“d”的为debug版本，没有的则是release版本。&lt;br&gt;３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。&lt;br&gt;４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;本文参考：&lt;a href=&quot;http://m.blog.csdn.net/blog/chenjh213/42265605&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vs2013 boost库编译小结&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
-    
-    
-      <category term="Boost" scheme="https://weedt.github.io/tags/Boost/"/>
     
   </entry>
   
@@ -562,7 +570,7 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     <link href="https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/"/>
     <id>https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/</id>
     <published>2014-08-20T14:17:35.000Z</published>
-    <updated>2016-04-12T07:02:47.255Z</updated>
+    <updated>2016-04-12T07:32:17.681Z</updated>
     
     <content type="html">&lt;h4 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;首先看一个简单的程序：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;﻿#include &amp;lt;QCoreApplication&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;QTextStream&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;QTextCodec&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;int main(int argc, char *argv[])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QCoreApplication a(argc, argv);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString str = &amp;quot;我是中文&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QTextStream out(stdout);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    out &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return a.exec();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -603,10 +611,11 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     <link href="https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/"/>
     <id>https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/</id>
     <published>2014-08-12T07:12:17.000Z</published>
-    <updated>2016-04-12T07:05:29.446Z</updated>
+    <updated>2016-04-12T07:31:43.465Z</updated>
     
     <content type="html">&lt;p&gt;Qt 4:&lt;br&gt;main函数中添加：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForTr(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;需要添加头文件：#include &lt;qtextcodec&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/qtextcodec&gt;&lt;/p&gt;
+&lt;p&gt;需要添加头文件：#include &lt;qtextcodec&gt;&lt;/qtextcodec&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;Qt 5&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Qt5中取消了setCodecForCStrings和setCodecForTr&lt;/p&gt;
 </content>
@@ -614,7 +623,7 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     <summary type="html">
     
       &lt;p&gt;Qt 4:&lt;br&gt;main函数中添加：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForTr(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;需要添加头文件：#include &lt;QTextCodec&gt;&lt;br&gt;
+&lt;p&gt;需要添加头文件：#include &lt;QTextCodec&gt;&lt;/p&gt;
     
     </summary>
     
@@ -630,12 +639,13 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     <link href="https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/"/>
     <id>https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/</id>
     <published>2014-08-02T09:23:29.000Z</published>
-    <updated>2016-04-12T07:04:39.350Z</updated>
+    <updated>2016-04-12T07:32:37.753Z</updated>
     
     <content type="html">&lt;p&gt;参考&lt;a href=&quot;http://blog.csdn.net/changli_90/article/details/8018376&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网上&lt;/a&gt;，有以下解决方法：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;1、看看你的类声明中有没有Q_OBJECT&lt;br&gt;2、你声明的函数要加声明:&lt;br&gt;     private slots:&lt;br&gt;        void xxxx();&lt;br&gt;3、检查槽函数名拼写是否有误，以及对应的signal和slot的参数是否一致&lt;br&gt;如果还不行的话,清理项目,删掉原有的moc_xxx.cpp,重新执行qmake.&lt;br&gt;还有一点要注意的是:signal和slots的参数要一样&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1、看看你的类声明中有没有Q_OBJECT&lt;br&gt;2、你声明的函数要加声明:&lt;br&gt;     private slots:&lt;br&gt;        void xxxx();&lt;br&gt;3、检查槽函数名拼写是否有误，以及对应的signal和slot的参数是否一致&lt;br&gt;如果还不行的话,清理项目,删掉原有的moc_xxx.cpp,重新执行qmake.&lt;br&gt;还有一点要注意的是:signal和slots的参数要一样 &lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;我在实际操作中遇到一下错误：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;加入Q_OBJECT后出现以下错误：&lt;br&gt;错误 1 error LNK2001: 无法解析的外部符号 “public: virtual struct QMetaObject const &lt;em&gt; __thiscall Widget::metaObject(void)const “ (?metaObject@Widget@@UBEPBUQMetaObject@@XZ)&lt;br&gt;错误 2 error LNK2001: 无法解析的外部符号 “public: virtual void &lt;/em&gt; &lt;strong&gt;thiscall Widget::qt_metacast(char const *)” (?qt_metacast@Widget@@UAEPAXPBD@Z)&lt;br&gt;错误 3 error LNK2001: 无法解析的外部符号 “public: virtual int &lt;/strong&gt;thiscall Widget::qt_metacall(enum QMetaObject::Call,int,void &lt;em&gt; &lt;/em&gt;)” (?qt_metacall@Widget@@UAEHW4Call@QMetaObject@@HPAPAX@Z)&lt;br&gt;错误 4 fatal error LNK1120: 3 个无法解析的外部命令  &lt;/p&gt;
@@ -647,7 +657,8 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     
       &lt;p&gt;参考&lt;a href=&quot;http://blog.csdn.net/changli_90/article/details/8018376&quot;&gt;网上&lt;/a&gt;，有以下解决方法：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;1、看看你的类声明中有没有Q_OBJECT&lt;br&gt;2、你声明的函数要加声明:&lt;br&gt;     private slots:&lt;br&gt;        void xxxx();&lt;br&gt;3、检查槽函数名拼写是否有误，以及对应的signal和slot的参数是否一致&lt;br&gt;如果还不行的话,清理项目,删掉原有的moc_xxx.cpp,重新执行qmake.&lt;br&gt;还有一点要注意的是:signal和slots的参数要一样&lt;br&gt;
+&lt;p&gt;1、看看你的类声明中有没有Q_OBJECT&lt;br&gt;2、你声明的函数要加声明:&lt;br&gt;     private slots:&lt;br&gt;        void xxxx();&lt;br&gt;3、检查槽函数名拼写是否有误，以及对应的signal和slot的参数是否一致&lt;br&gt;如果还不行的话,清理项目,删掉原有的moc_xxx.cpp,重新执行qmake.&lt;br&gt;还有一点要注意的是:signal和slots的参数要一样 &lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -689,7 +700,7 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     <link href="https://weedt.github.io/2014/04/01/The-Difference-of-malloc-free-and-new-delete/"/>
     <id>https://weedt.github.io/2014/04/01/The-Difference-of-malloc-free-and-new-delete/</id>
     <published>2014-04-01T06:05:38.000Z</published>
-    <updated>2016-04-12T07:05:19.734Z</updated>
+    <updated>2016-04-12T07:32:00.321Z</updated>
     
     <content type="html">&lt;p&gt;今天在Qt下编写一个解析PCAP文件的小程序时，犯了一个基本错误：&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString openUrl; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString saveDir; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; curFilterIndex; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        saveDir = &lt;span class=&quot;string&quot;&gt;&quot;b&quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        openUrl = &lt;span class=&quot;string&quot;&gt;&quot;a&quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        curFilterIndex = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; Dlg_Attr;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;

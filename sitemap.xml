@@ -2,9 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/</loc>
+    
+    <lastmod>2016-04-12T07:32:42.993Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/</loc>
+    
+    <lastmod>2016-04-12T07:32:37.753Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weedt.github.io/2015/05/04/The-solution-of-%22unkown-extern-symbol%22-when-using-Boost/</loc>
+    
+    <lastmod>2016-04-12T07:32:26.017Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/</loc>
+    
+    <lastmod>2016-04-12T07:32:17.681Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</loc>
+    
+    <lastmod>2016-04-12T07:32:07.761Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weedt.github.io/2014/04/01/The-Difference-of-malloc-free-and-new-delete/</loc>
+    
+    <lastmod>2016-04-12T07:32:00.321Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/</loc>
+    
+    <lastmod>2016-04-12T07:31:53.313Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/</loc>
+    
+    <lastmod>2016-04-12T07:31:43.465Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-1/</loc>
+    
+    <lastmod>2016-04-12T07:31:26.165Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weedt.github.io/2015/06/01/A-solution-of-Qt-builds-error/</loc>
+    
+    <lastmod>2016-04-12T07:31:07.825Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weedt.github.io/2016/04/09/Commonds-Of-Linux-2/</loc>
     
-    <lastmod>2016-04-12T07:16:44.596Z</lastmod>
+    <lastmod>2016-04-12T07:30:53.709Z</lastmod>
     
   </url>
   
@@ -16,30 +86,9 @@
   </url>
   
   <url>
-    <loc>https://weedt.github.io/2015/05/04/The-solution-of-%22unkown-extern-symbol%22-when-using-Boost/</loc>
-    
-    <lastmod>2016-04-12T07:10:13.390Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weedt.github.io/2015/12/16/A-Brief-Summary-Of-OpenGL-Texture/</loc>
     
     <lastmod>2016-04-12T07:06:07.566Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weedt.github.io/2015/06/01/A-solution-of-Qt-builds-error/</loc>
-    
-    <lastmod>2016-04-12T07:05:59.654Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-1/</loc>
-    
-    <lastmod>2016-04-12T07:05:47.870Z</lastmod>
     
   </url>
   
@@ -51,58 +100,9 @@
   </url>
   
   <url>
-    <loc>https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/</loc>
-    
-    <lastmod>2016-04-12T07:05:29.446Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/</loc>
-    
-    <lastmod>2016-04-12T07:05:24.630Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weedt.github.io/2014/04/01/The-Difference-of-malloc-free-and-new-delete/</loc>
-    
-    <lastmod>2016-04-12T07:05:19.734Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</loc>
-    
-    <lastmod>2016-04-12T07:05:12.614Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weedt.github.io/2015/04/15/The-installation-and-configuration-of-cgal-under-Win8.1-x64+VS2013/</loc>
     
     <lastmod>2016-04-12T07:04:50.006Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/</loc>
-    
-    <lastmod>2016-04-12T07:04:39.350Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/</loc>
-    
-    <lastmod>2016-04-12T07:04:34.542Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/</loc>
-    
-    <lastmod>2016-04-12T07:02:47.255Z</lastmod>
     
   </url>
   

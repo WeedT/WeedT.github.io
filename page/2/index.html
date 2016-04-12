@@ -103,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/" data-id="cimx3xq62000veh34bg1242di" class="article-share-link">Share</a>
+      <a data-url="https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/" data-id="cimx428tw000sqo34lrotosqd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qt/">Qt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a></li></ul>
@@ -142,7 +142,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Qt 4:<br>main函数中添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForTr(QTextCodec::codecForName(&quot;GB2312&quot;));  </span><br><span class="line">QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GB2312&quot;));  </span><br><span class="line">QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&quot;GB2312&quot;));</span><br></pre></td></tr></table></figure></p>
-<p>需要添加头文件：#include <QTextCodec><br>
+<p>需要添加头文件：#include <QTextCodec></p>
         
           <p class="article-more-link">
             <a href="/2014/08/12/Show-Chinese-text-in-Qt/#more">Read More</a>
@@ -151,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/" data-id="cimx3xq5b000deh34undocvft" class="article-share-link">Share</a>
+      <a data-url="https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/" data-id="cimx428sq0006qo34nlmbv5ve" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qt/">Qt</a></li></ul>
@@ -191,7 +191,8 @@
       
         <p>参考<a href="http://blog.csdn.net/changli_90/article/details/8018376">网上</a>，有以下解决方法：</p>
 <blockquote>
-<p>1、看看你的类声明中有没有Q_OBJECT<br>2、你声明的函数要加声明:<br>     private slots:<br>        void xxxx();<br>3、检查槽函数名拼写是否有误，以及对应的signal和slot的参数是否一致<br>如果还不行的话,清理项目,删掉原有的moc_xxx.cpp,重新执行qmake.<br>还有一点要注意的是:signal和slots的参数要一样<br>
+<p>1、看看你的类声明中有没有Q_OBJECT<br>2、你声明的函数要加声明:<br>     private slots:<br>        void xxxx();<br>3、检查槽函数名拼写是否有误，以及对应的signal和slot的参数是否一致<br>如果还不行的话,清理项目,删掉原有的moc_xxx.cpp,重新执行qmake.<br>还有一点要注意的是:signal和slots的参数要一样 </p>
+</blockquote>
         
           <p class="article-more-link">
             <a href="/2014/08/02/The-solution-of-QObject-connect-No-such-slot/#more">Read More</a>
@@ -200,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/" data-id="cimx3xq6b0012eh341ie9sth7" class="article-share-link">Share</a>
+      <a data-url="https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/" data-id="cimx428uj0013qo34dl94kh8w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qt/">Qt</a></li></ul>
@@ -245,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://weedt.github.io/2014/06/11/How-to-handle-the-"new"-failure/" data-id="cimx3xq54000beh34iqhriomt" class="article-share-link">Share</a>
+      <a data-url="https://weedt.github.io/2014/06/11/How-to-handle-the-"new"-failure/" data-id="cimx428sm0005qo34z4w57mwi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内存管理/">内存管理</a></li></ul>
@@ -292,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://weedt.github.io/2014/04/01/The-Difference-of-malloc-free-and-new-delete/" data-id="cimx3xq5q000keh342klxmvja" class="article-share-link">Share</a>
+      <a data-url="https://weedt.github.io/2014/04/01/The-Difference-of-malloc-free-and-new-delete/" data-id="cimx428tf000eqo34v3fllvah" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内存管理/">内存管理</a></li></ul>

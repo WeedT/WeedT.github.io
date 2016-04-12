@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/index.html">
 <meta property="og:site_name" content="Obladi">
 <meta property="og:description" content="Qt 4:main函数中添加：123QTextCodec::setCodecForTr(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  QTextCodec::setCodecForCString">
-<meta property="og:updated_time" content="2016-04-12T07:05:29.446Z">
+<meta property="og:updated_time" content="2016-04-12T07:31:43.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Qt下中文显示问题">
 <meta name="twitter:description" content="Qt 4:main函数中添加：123QTextCodec::setCodecForTr(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  QTextCodec::setCodecForCString">
@@ -94,14 +94,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Qt 4:<br>main函数中添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForTr(QTextCodec::codecForName(&quot;GB2312&quot;));  </span><br><span class="line">QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GB2312&quot;));  </span><br><span class="line">QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&quot;GB2312&quot;));</span><br></pre></td></tr></table></figure></p>
-<p>需要添加头文件：#include <qtextcodec><br><a id="more"></a></qtextcodec></p>
+<p>需要添加头文件：#include <qtextcodec></qtextcodec></p>
+<a id="more"></a>
 <p>Qt 5<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GB2312&quot;));</span><br></pre></td></tr></table></figure></p>
 <p>Qt5中取消了setCodecForCStrings和setCodecForTr</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/" data-id="cimx3xq5b000deh34undocvft" class="article-share-link">Share</a>
+      <a data-url="https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/" data-id="cimx428sq0006qo34nlmbv5ve" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qt/">Qt</a></li></ul>
