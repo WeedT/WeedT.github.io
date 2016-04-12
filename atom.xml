@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weedt.github.io/"/>
-  <updated>2016-04-11T14:40:52.676Z</updated>
+  <updated>2016-04-12T07:16:44.596Z</updated>
   <id>https://weedt.github.io/</id>
   
   <author>
@@ -20,41 +20,63 @@
     <link href="https://weedt.github.io/2016/04/09/Commonds-Of-Linux-2/"/>
     <id>https://weedt.github.io/2016/04/09/Commonds-Of-Linux-2/</id>
     <published>2016-04-09T07:43:41.000Z</published>
-    <updated>2016-04-11T14:40:52.676Z</updated>
+    <updated>2016-04-12T07:16:44.596Z</updated>
     
     <content type="html">&lt;h3 id=&quot;比较文件内容&quot;&gt;&lt;a href=&quot;#比较文件内容&quot; class=&quot;headerlink&quot; title=&quot;比较文件内容&quot;&gt;&lt;/a&gt;比较文件内容&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;comm&lt;/strong&gt;&lt;br&gt;对两个以及排序好的文件进行逐行比较。结果生成3列：仅在file1中出现的行，仅在file2中出现的行，在两个文件中都出现的行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;comm [-123] 文件1 文件2&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;comm&lt;/strong&gt;&lt;br&gt;对两个以及排序好的文件进行逐行比较。结果生成3列：仅在file1中出现的行，仅在file2中出现的行，在两个文件中都出现的行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;comm [-123] 文件1 文件2&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;常用选项：&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-123   1,2,3分别表示不显示输出中的第一列，第二列，第三列。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;diff&lt;/strong&gt;&lt;br&gt;比较两个文本文件，找出不同，不要求文件以及排序。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;diff [选项] 文件1 文件2&lt;/p&gt;&lt;br&gt;比较两个文件的不同之处，并且提供让两个文件相同的修改方法。如果两个文件完全一样，不显示输出。该命令显示的一般形式：&lt;br&gt;n1 a n3,n4      （文件1的n1行附加到文件2n3～n4行）&lt;br&gt;n1,n2 d n3      （将文件1的n1～n2行和文件2的n3行）&lt;br&gt;n1,n2 c n3,n4   （将文件1的n1～n2改为文件2的n3～n4）&lt;br&gt;默认是&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;diff&lt;/strong&gt;&lt;br&gt;比较两个文本文件，找出不同，不要求文件以及排序。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;diff [选项] 文件1 文件2&lt;/p&gt;&lt;br&gt;比较两个文件的不同之处，并且提供让两个文件相同的修改方法。如果两个文件完全一样，不显示输出。该命令显示的一般形式：&lt;br&gt;n1 a n3,n4      （文件1的n1行附加到文件2n3～n4行）&lt;br&gt;n1,n2 d n3      （将文件1的n1～n2行和文件2的n3行）&lt;br&gt;n1,n2 c n3,n4   （将文件1的n1～n2改为文件2的n3～n4）&lt;br&gt;默认是&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-b，--ignore-space-change 　不检查空格字符的不同。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-B，--ignore-blank-lines 　不检查空白行。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c   输出是带上下文的三行模式&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-C NUM   输出是带上下文的NUM行模式&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-e   输出合法的ed脚本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i   忽略字母大小写&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-r   当两个文件是目录时，递归查找子目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-q，--brief 　仅显示有无差异，不显示详细的信息。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Tip：如果file1或者file2是目录时，则diff会利用目录下的同名文件比较。如果指定比较的是目录的的时候，diff命令会比较两个目录下名字相同的文本文件。列出不同的二进制文件、公共子目录和只在一个目录出现的文件。&lt;/p&gt;
 &lt;h3 id=&quot;复制删除移动文件&quot;&gt;&lt;a href=&quot;#复制删除移动文件&quot; class=&quot;headerlink&quot; title=&quot;复制删除移动文件&quot;&gt;&lt;/a&gt;复制删除移动文件&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;cp&lt;/strong&gt;&lt;br&gt;复制文件或者目录。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;cp [选项] 源文件或目录 目的文件或目录&lt;/p&gt;&lt;br&gt;如果是目录，一般都需要“-r“来递归复制目录下文件。&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-a，--archive    等于-dR --preserve=all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    --backup[=CONTROL    为每个已存在的目标文件创建备份，保留文件链接和属性。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-b    类似--backup 但不接受参数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   --copy-contents 在递归处理是复制特殊文件内容&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d   等于--no-dereference --preserve=links&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f，--force   如果目标文件无法打开则将其移除并重试(当-n选项存在时则不需再选此项)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i，--interactive   覆盖前询问(使前面的 -n 选项失效)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-H   跟随源文件中的命令行符号链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-l，--link   链接文件而不复制&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-L，--dereference   总是跟随符号链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--no-clobber   不要覆盖已存在的文件(使前面的 -i 选项失效)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-P，--no-dereference   不跟随源文件中的符号链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p   等于--preserve=模式,所有权,时间戳&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   --preserve[=属性列表   保持指定的属性(默认：模式,所有权,时间戳)，如果可能保持附加属性：环境、链接、xattr 等&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-R，-r，--recursive   复制目录及目录内的所有项目&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;&lt;strong&gt;cp&lt;/strong&gt;&lt;br&gt;复制文件或者目录。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;cp [选项] 源文件或目录 目的文件或目录&lt;/p&gt;&lt;br&gt;如果是目录，一般都需要“-r“来递归复制目录下文件。&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-a，--archive    等于-dR --preserve=all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    --backup[=CONTROL    为每个已存在的目标文件创建备份，保留文件链接和属性。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-b    类似--backup 但不接受参数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   --copy-contents 在递归处理是复制特殊文件内容&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d   等于--no-dereference --preserve=links&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f，--force   如果目标文件无法打开则将其移除并重试(当-n选项存在时则不需再选此项)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i，--interactive   覆盖前询问(使前面的 -n 选项失效)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-H   跟随源文件中的命令行符号链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-l，--link   链接文件而不复制&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-L，--dereference   总是跟随符号链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--no-clobber   不要覆盖已存在的文件(使前面的 -i 选项失效)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-P，--no-dereference   不跟随源文件中的符号链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p   等于--preserve=模式,所有权,时间戳&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   --preserve[=属性列表   保持指定的属性(默认：模式,所有权,时间戳)，如果可能保持附加属性：环境、链接、xattr 等&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-R，-r，--recursive   复制目录及目录内的所有项目&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Tip：如果把文件复制到一个目的文件，而目标文件已存在，那么目的文件的内容将被破坏。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;rm&lt;/strong&gt;&lt;br&gt;rm命令可以删除文件和目录。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;rm [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-d   删除目录不管是否空（超级用户才行）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f，--force   忽略不存在的文件，从不给出提示。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i，--interactive   进行交互式删除&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-r，-R, --recursive   指示rm将参数中列出的全部目录和子目录均递归地删除。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v，--verbose   详细显示进行的步骤&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;&lt;strong&gt;rm&lt;/strong&gt;&lt;br&gt;rm命令可以删除文件和目录。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;rm [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-d   删除目录不管是否空（超级用户才行）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f，--force   忽略不存在的文件，从不给出提示。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i，--interactive   进行交互式删除&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-r，-R, --recursive   指示rm将参数中列出的全部目录和子目录均递归地删除。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v，--verbose   详细显示进行的步骤&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Tip：这个命令很危险，特别是“-fr &lt;em&gt;”。文件可以使用通配符“&lt;/em&gt;”。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;mv&lt;/strong&gt;&lt;br&gt;用来移动文件或者目录，或者对文件或目录进行重命名。格式&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;mv [选项] 源 目的&lt;/p&gt;&lt;br&gt;源是文件，目的是文件，若两者不同目录，源移动到目的目录下，重命名为目的，同名文件覆盖，否则将源重命名为目的。源是文件，目的是目录，将文件移动到目的下，同名覆盖。源是目录，目的是目录，将源目录移动到目的目录下。&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-b   若需覆盖文件，则覆盖前先行备份。 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i   若目标文件 (destination) 已经存在时，就会询问是否覆盖！&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-u   若目标文件已经存在，且 source 比较新，才会更新(update)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-t，--target-directory=DIRECTORY move all SOURCE arguments into DIRECTORY   即指定mv的目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;&lt;strong&gt;mv&lt;/strong&gt;&lt;br&gt;用来移动文件或者目录，或者对文件或目录进行重命名。格式&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;mv [选项] 源 目的&lt;/p&gt;&lt;br&gt;源是文件，目的是文件，若两者不同目录，源移动到目的目录下，重命名为目的，同名文件覆盖，否则将源重命名为目的。源是文件，目的是目录，将文件移动到目的下，同名覆盖。源是目录，目的是目录，将源目录移动到目的目录下。&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-b   若需覆盖文件，则覆盖前先行备份。 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i   若目标文件 (destination) 已经存在时，就会询问是否覆盖！&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-u   若目标文件已经存在，且 source 比较新，才会更新(update)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-t，--target-directory=DIRECTORY move all SOURCE arguments into DIRECTORY   即指定mv的目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&quot;文件内容统计&quot;&gt;&lt;a href=&quot;#文件内容统计&quot; class=&quot;headerlink&quot; title=&quot;文件内容统计&quot;&gt;&lt;/a&gt;文件内容统计&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;wc&lt;/strong&gt;&lt;br&gt;统计文件字节数、字数、行数。字是指空格隔开的字符串。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;wc [选项] 文件…&lt;/p&gt;&lt;br&gt;如果没有指定文件或用“-”指定，则从标准输入读取数据。多个文件，则输出统计总数。&lt;br&gt;wc输出列的数目和顺序不受选项的顺序和数目的影响，总是按以下格式显示，并且每项只占一列：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;行数   字数  字节数  文件名&lt;/p&gt;&lt;br&gt;常用选项:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-c   字节数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-l   行数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-w   字数&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;&lt;strong&gt;wc&lt;/strong&gt;&lt;br&gt;统计文件字节数、字数、行数。字是指空格隔开的字符串。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;wc [选项] 文件…&lt;/p&gt;&lt;br&gt;如果没有指定文件或用“-”指定，则从标准输入读取数据。多个文件，则输出统计总数。&lt;br&gt;wc输出列的数目和顺序不受选项的顺序和数目的影响，总是按以下格式显示，并且每项只占一列：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;行数   字数  字节数  文件名&lt;/p&gt;&lt;br&gt;常用选项:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-c   字节数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-l   行数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-w   字数&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;示例：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/93736429gw1f2t4kv9vuej20dk016dg2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;创建和删除目录的命令&quot;&gt;&lt;a href=&quot;#创建和删除目录的命令&quot; class=&quot;headerlink&quot; title=&quot;创建和删除目录的命令&quot;&gt;&lt;/a&gt;创建和删除目录的命令&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;mkdir&lt;/strong&gt;&lt;br&gt;创建目录。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;mkdir [选项] 目录名&lt;/p&gt;&lt;br&gt;如果目录名前没有路径名，则在当前目录下创建，否则在指定路径下创建目录，若路径不存在则不创建。不能有同名目录。&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-m NUM，--mode=模式，设定权限&amp;lt;模式&amp;gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p，--parents  可以是一个路径名称。此时若路径中的某些目录尚不存在,加上此选项后，系统将自动建立好那些尚不存在的目录,即一次可以建立多个目录; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v，--verbose  每次创建新目录都显示信息&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;rmdir&lt;/strong&gt;&lt;br&gt;删除目录，从一个目录删除一个或多个子目录。&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;rmdir [选项] 目录名&lt;/p&gt;&lt;br&gt;如果目录名中没有指定路径，则删除当前目录下由目录名指定的目录，否则，删除指定位置的目录。删除目录时必须具有对其父目录的写权限。&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-p   递归删除目录，当子目录删除后父目录为空，也一同被删除。如果有非空目录，则保留。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Tip：子目录被删除时，应该为空。也就是说，文件必须用rm全部删除，如果目录中还有文件，就不能用rmdir删除。另外，当前目录必须位于删除目录之上。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;cd&lt;/strong&gt;&lt;br&gt;改变工作目录。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;cd [目录名]&lt;/p&gt;&lt;br&gt;若不指定目录名，默认为用户主目录&lt;br&gt;. 当前目录&lt;br&gt;.. 父目录&lt;br&gt;～ 用户主目录&lt;br&gt;/ 根目录&lt;p&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;pwd&lt;/strong&gt;&lt;br&gt;显示当前目录的觉得路径，该命令不带任何参数和选项。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;ls&lt;/strong&gt;&lt;br&gt;列出指定目录的内容。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;ls [选项] [目录或文件] &lt;/p&gt;&lt;br&gt;如果给出的参数是目录，则列出所有子目录与文件的信息；如果是文件，列出有关该文件属性的一些信息。默认情况下输出条目按字母顺序排序。若没给出参数，将显示当前目录下所有子目录和文件信息。&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-a，--all    列出目录下的所有文件，包括以“.”开头的隐含文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-A   同-a，但不列出“.”和“..”。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-b   当文件名包含不可显示字符时，用\ddd（三位八进制）形式显示&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c   配合 -lt：根据 ctime 排序及显示 ctime (文件修改时间)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     配合 -l：显示 ctime 但根据名称排序&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     单独：根据 ctime 排序&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-C   每栏由上至下列出项目&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--color[=WHEN]   控制是否使用色彩分辨文件。WHEN 可以是&amp;apos;never&amp;apos;、&amp;apos;always&amp;apos;或&amp;apos;auto&amp;apos;其中之一&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d，--directory   将目录象文件一样显示，而不是显示其下的文件。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   对输出的文件不进行排序，-aU 选项生效，-lst 选项失效&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-g   类似 -l，但不列出所有者&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-G，--no-group   不列出任何有关组的信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-h，--human-readable   以容易理解的格式列出文件大小 (例如 1K 234M 2G)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--si   类似 -h,但文件大小取 1000 的次方而不是 1024&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-H，--dereference-command-line   使用命令列中的符号链接指示的真正目的地&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i，--inode   在输出第一列先死文件的I结点号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-k   即 –block-size=1K，以 k 字节的形式表示文件的大小。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-l   除了文件名之外，还将文件的权限、所有者、文件大小等信息详细列出来。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-L，--dereference   当显示符号链接的文件信息时，显示链接的对象而并非符号链接本身的信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-m   所有项目以逗号分隔，并填满整行行宽&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-o   类似 -l，显示文件的除组信息外的详细信息。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-r，--reverse   依相反次序排列&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-R，--recursive   同时列出所有子目录层&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s，–size   以块大小为单位列出所有文件的大小&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-S   根据文件大小排序&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--sort=WORD   以下是可选用的 WORD 和它们代表的相应选项：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;extension -X status -c&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;none -U time -t&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;size -S atime -u&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;time -t access -u&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;version -v use -u&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-t   以文件修改时间排序&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-u   配合 -lt:显示访问时间而且依访问时间排序&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     配合 -l:显示访问时间但根据名称排序&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     单独：根据访问时间排序&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-U   不进行排序；依文件系统原有的次序列出项目&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-x   逐行列出项目而不是逐栏列出&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-X   根据扩展名排序&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-1   每行只列出一个文件（是数字1，不是i或者l）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;需要说明的是长格式信息，信息分为多列：&lt;br&gt;文件类型与权限  链接数  文件主  文件组  文件大小  建立或最近修改时间  文件名&lt;br&gt;drwxr-xr-x  26 root root  4096  3月 25 15:04 lib&lt;br&gt;字段说明：&lt;br&gt;1.第一个字段开头第一个字符表示文件类型。&lt;br&gt;    -  普通文件&lt;br&gt;    d  目录&lt;br&gt;    b  块设备文件&lt;br&gt;    c  字符设备文件&lt;br&gt;    l  符号链接文件&lt;br&gt;2.随后9个字符表示文件存取权限。&lt;br&gt;    r  读&lt;br&gt;    w  写&lt;br&gt;    x  执行。对于目录，表示可访问。&lt;br&gt;    s  当文件被执行是，把该文件的GID或UID赋予执行进程的UID（userID）或GID（groupID）&lt;br&gt;    t  设置了粘着标志位（留在内存，不被删除）。如果该文件是目录，则该目录的文件只能被超级用户、文件主删除。如果是可执行文件，在文件执行后，指向其正文段的指针。再次执行它时，系统就能更快地装入该文件。&lt;br&gt;    -  没有设置权限&lt;br&gt;3.对于符号链接文件，在最后“文件名”字段显示的形式是：&lt;br&gt;    符号链接文件名-&amp;gt;目标文件的路径名&lt;br&gt;4.对于设备文件。其“文件大小”字段显示的是设备的主、次设备号。&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      学习Linux命令中（比较文件内容，）
+      &lt;h3 id=&quot;比较文件内容&quot;&gt;&lt;a href=&quot;#比较文件内容&quot; class=&quot;headerlink&quot; title=&quot;比较文件内容&quot;&gt;&lt;/a&gt;比较文件内容&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;comm&lt;/strong&gt;&lt;br&gt;对两个以及排序好的文件进行逐行比较。结果生成3列：仅在file1中出现的行，仅在file2中出现的行，在两个文件中都出现的行。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;comm [-123] 文件1 文件2&lt;/p&gt;&lt;/p&gt;
     
     </summary>
     
@@ -70,11 +92,11 @@
     <link href="https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/"/>
     <id>https://weedt.github.io/2016/04/08/Show-Table-in-Hexo/</id>
     <published>2016-04-08T06:29:35.000Z</published>
-    <updated>2016-04-08T07:12:41.332Z</updated>
+    <updated>2016-04-12T07:05:24.630Z</updated>
     
     <content type="html">&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。&lt;br&gt;通过：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;|项目|数目|&lt;br&gt;|1|2|&lt;br&gt;|2|2|&lt;br&gt;|3|5|&lt;/p&gt;
+&lt;p&gt;|项目|数目|&lt;br&gt;|1|2|&lt;br&gt;|2|2|&lt;br&gt;|3|5|&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;来显示一个表格。然而，这貌似有主题限制的。有的主题支持而一些是不支持的，比如我用的是maupassant主题，就不支持表格。然而我又不想贴图片，只能用HTML标签来实现（网上有人说在Markdown中使用HTML标签需要前后空一行，然而我不空行也可以，而且可以在行内使用span来给文字加颜色）。我就在Markdown中加入了如下代码：&lt;br&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw690/93736429gw1f2pamp4fchj20bb082dg7.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;结果效果如下图，表格的上方有一大片空白：&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/93736429gw1f2pazl0wdpj20ih08qmxb.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;打开生成的源文件，发现了一堆br：&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw690/93736429gw1f2pb300d0sj20ar05ndfw.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;问题就是这一堆br是从哪儿来的。怀着猜想，我把HTML的代码改了一下，变成了这样：&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/mw690/93736429gw1f2pb5lje31j20hv048ta2.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;然后就可以了：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw690/93736429gw1f2pb65m1waj20e20bb3zg.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -83,7 +105,9 @@
     
     <summary type="html">
     
-      在Hexo中用HTML标签时务必写成一行，不然文本中的换行会被Markdown解释成br
+      &lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;Hexo说是支持GitHub Flavored Markdown的所有功能，那么Hexo就是支持表格的。&lt;br&gt;通过：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;|项目|数目|&lt;br&gt;|1|2|&lt;br&gt;|2|2|&lt;br&gt;|3|5|&lt;br&gt;
     
     </summary>
     
@@ -99,13 +123,14 @@
     <link href="https://weedt.github.io/2016/04/02/Commonds-Of-Linux-1/"/>
     <id>https://weedt.github.io/2016/04/02/Commonds-Of-Linux-1/</id>
     <published>2016-04-02T08:06:41.000Z</published>
-    <updated>2016-04-10T08:50:36.993Z</updated>
+    <updated>2016-04-12T07:05:47.870Z</updated>
     
     <content type="html">&lt;h3 id=&quot;TIPs&quot;&gt;&lt;a href=&quot;#TIPs&quot; class=&quot;headerlink&quot; title=&quot;TIPs&quot;&gt;&lt;/a&gt;TIPs&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Bash命令基本格式：&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;命令名 [选项] [参数1] [参数2] ……&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Bash命令基本格式：&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;命令名 [选项] [参数1] [参数2] ……&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;命令名小写： DATE，Date和date是不同的，只有date是正确的。&lt;/li&gt;
 &lt;li&gt;如果命令太长，一行放不下，可以在行尾输入“\”字符，shell会返回一个“&amp;gt;”作为提示符，表示命令未结束，允许继续输入有关信息。&lt;/li&gt;
-&lt;li&gt;命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。&lt;/li&gt;
+&lt;li&gt;命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;一些简单命令&quot;&gt;&lt;a href=&quot;#一些简单命令&quot; class=&quot;headerlink&quot; title=&quot;一些简单命令&quot;&gt;&lt;/a&gt;一些简单命令&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;who&lt;/strong&gt;&lt;br&gt;列出所有正在使用 &lt;em&gt;系统的用户&lt;/em&gt;、&lt;em&gt;所用终端名&lt;/em&gt;和 &lt;em&gt;注册到系统的时间&lt;/em&gt;&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/93736429gw1f2ig5p43rpj20b5024q3i.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;who am i 和 whoami：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/93736429gw1f2ig9rqw3rj20ax023q3f.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -118,12 +143,12 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&quot;文件操作命令&quot;&gt;&lt;a href=&quot;#文件操作命令&quot; class=&quot;headerlink&quot; title=&quot;文件操作命令&quot;&gt;&lt;/a&gt;文件操作命令&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;cat&lt;/strong&gt;&lt;br&gt;连接文件并打印到标准输出设备上，经常用来显示内容。主要两个功能：&lt;strong&gt;显示文件，连接两个或多个文件&lt;/strong&gt;。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;cat [选项]… 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-b，--number-noblank     从1对所有非空行编号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--number   从1对所有行编号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s，--squeeze-blank    将多个相邻空行何必成一个空行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--help 用法帮助&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;&lt;strong&gt;cat&lt;/strong&gt;&lt;br&gt;连接文件并打印到标准输出设备上，经常用来显示内容。主要两个功能：&lt;strong&gt;显示文件，连接两个或多个文件&lt;/strong&gt;。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;cat [选项]… 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-b，--number-noblank     从1对所有非空行编号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--number   从1对所有行编号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s，--squeeze-blank    将多个相邻空行何必成一个空行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--help 用法帮助&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;示例：&lt;br&gt;$ cat f1          //显示f1文件&lt;br&gt;$ cat f1 f2       //同时显示f1、f2文件&lt;br&gt;$ cat f1 f2 &amp;gt; f3  //将f1 f2合并放入f3文件&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;more&lt;/strong&gt;&lt;br&gt;分屏显示文件内容，显示满屏后停下。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;more [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-num    指定一屏显示多少行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d   提供更友好的提示信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c/-p   不滚屏，在显示下一屏之前先清屏&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s   将连续空行合并成一行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;+/   模式搜索中向上搜索&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;+num   从第num行开始显示&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;&lt;strong&gt;more&lt;/strong&gt;&lt;br&gt;分屏显示文件内容，显示满屏后停下。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;more [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-num    指定一屏显示多少行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d   提供更友好的提示信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c/-p   不滚屏，在显示下一屏之前先清屏&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s   将连续空行合并成一行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;+/   模式搜索中向上搜索&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;+num   从第num行开始显示&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;操作：&lt;/p&gt;
@@ -136,7 +161,7 @@
 &lt;li&gt;Q：退出more命令&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;less&lt;/strong&gt;&lt;br&gt;和more类似可以分屏显示文件内容，不同是less能向前或向后浏览文件，而more只能向前浏览（？）。总体来说less比more功能强大。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;less [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-e   当文件显示结束后，自动离开&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   强迫打开特殊文件，例如外围设备代号、目录和二进制文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-g   只标志最后搜索的关键词&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i   忽略搜索时的大小写&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-m   显示类似more命令的百分比&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-N   显示每行的行号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-o &amp;lt;文件名&amp;gt;   将less 输出的内容在指定文件中保存起来&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s   显示连续空行为一行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-x &amp;lt;数字&amp;gt;   将“tab”键显示为规定的数字空格&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/字符串   向下搜索“字符串”的功能&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;?字符串   向上搜索“字符串”的功能&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;&lt;strong&gt;less&lt;/strong&gt;&lt;br&gt;和more类似可以分屏显示文件内容，不同是less能向前或向后浏览文件，而more只能向前浏览（？）。总体来说less比more功能强大。格式：&lt;br&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;less [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-e   当文件显示结束后，自动离开&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   强迫打开特殊文件，例如外围设备代号、目录和二进制文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-g   只标志最后搜索的关键词&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i   忽略搜索时的大小写&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-m   显示类似more命令的百分比&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-N   显示每行的行号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-o &amp;lt;文件名&amp;gt;   将less 输出的内容在指定文件中保存起来&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s   显示连续空行为一行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-x &amp;lt;数字&amp;gt;   将“tab”键显示为规定的数字空格&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/字符串   向下搜索“字符串”的功能&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;?字符串   向上搜索“字符串”的功能&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;操作：&lt;/p&gt;
@@ -155,28 +180,28 @@
 &lt;li&gt;Pageup；向上翻动一页&lt;br&gt;Tip：less可以浏览多个文件，输入 &lt;strong&gt;“:p”和”:n”&lt;/strong&gt;向前向后切换文件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;head&lt;/strong&gt;&lt;br&gt;在屏幕上显示指定文件的开头若干行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;head [选项]… 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;head&lt;/strong&gt;&lt;br&gt;在屏幕上显示指定文件的开头若干行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;head [选项]… 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-c，--bytes=SIZE   显示前size个字节&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--lines=NUMBER   指定显示行数，默认10行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-q，-quiet，--silent   不显示文件标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v，--verbose   始终显示标题&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;tail&lt;/strong&gt;&lt;br&gt;在屏幕上显示指定文件的末尾若干行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;tail [选项]… 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;tail&lt;/strong&gt;&lt;br&gt;在屏幕上显示指定文件的末尾若干行。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;tail [选项]… 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-c，--bytes=SIZE   显示前size个字节&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   当文件增长时输出附加的数据&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--lines=NUMBER   指定显示行数，默认10行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-q，-quiet，--silent   不显示文件标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v，--verbose   始终显示标题&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Tip：如果字节或者行数前有一个”+“，则表示从文件开头第N项显示，而不是显示文件最后N项。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;touch&lt;/strong&gt;&lt;br&gt;可以修改指定文件的时间标签或者创建一个空文件。如果文件存在，默认情况下，将时间标签更新为系统当前时间，数据不改变；如果文件不存在，则创建一个空文件。&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;touch [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;touch&lt;/strong&gt;&lt;br&gt;可以修改指定文件的时间标签或者创建一个空文件。如果文件存在，默认情况下，将时间标签更新为系统当前时间，数据不改变；如果文件不存在，则创建一个空文件。&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;touch [选项] 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-a   仅改变存取时间&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c   不创建任何文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-m   仅改变文件修改时间&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-t STAMP   使用STAMP指定的时间标签，而不是系统当前时间，格式为[[CC]YY]MMDDhhmm[.ss]，CC代表年前两位，YY是后两位。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;grep&lt;/strong&gt; = Global Regular Expression Print&lt;br&gt;在文本中查找指定模式的词或短语，并在标准输出上显示包括给定字符串模式的所有行。该命令组包含三个命令：grep，egrep，fgrep。grep一次只能搜索一个指定的模式；egrep相当于gerp -E，可以使用扩展的字符串模式进行搜索；fgrep相当于grep -F，是快速搜索命令，检索固定字符串，不识别正则表达式。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;grep [选项] 模式 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;grep&lt;/strong&gt; = Global Regular Expression Print&lt;br&gt;在文本中查找指定模式的词或短语，并在标准输出上显示包括给定字符串模式的所有行。该命令组包含三个命令：grep，egrep，fgrep。grep一次只能搜索一个指定的模式；egrep相当于gerp -E，可以使用扩展的字符串模式进行搜索；fgrep相当于grep -F，是快速搜索命令，检索固定字符串，不识别正则表达式。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;grep [选项] 模式 文件…&lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-a，--text   不要忽略二进制的数据。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-A NUMBER，--after-context=NUMBER    显示符合范本样式的那一行以及后面NUMBER行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-b，--byte-offset   在显示符合样式的那一行之前，标示出该行第一个字符的编号。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-B NUMBER，--before-context=NUMBER   显示符合样式的那一行及该行之前NUMBER行。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c，--count   计算符合样式的列数。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-C NUMBER    --context=NUMBER或-NUMBER   显示符合样式的行以及该行之前后的NUMBER行。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d &amp;lt;动作&amp;gt;，--directories=&amp;lt;动作&amp;gt;   当指定要查找的是目录而非文件时，必须使用这项参数，否则grep指令将回报信息并停止动作。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-e &amp;lt;范本样式&amp;gt;，--regexp=&amp;lt;范本样式&amp;gt;   指定字符串做为查找文件内容的样式。   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-E,--extended-regexp   将样式为延伸的普通表示法来使用。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f &amp;lt;规则文件&amp;gt;，--file=&amp;lt;规则文件&amp;gt;   从文件中获取模式，每行一个规则样式。空文件不包含模式，不做匹配&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-F，--fixed-regexp   #将样式视为固定字符串的列表。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-G，--basic-regexp   #将样式视为普通的表示法来使用。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-h，--no-filename   #在显示符合样式的那一行之前，不标示该行所属的文件名称。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-H，--with-filename   #在显示符合样式的那一行之前，表示该行所属的文件名称。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i，--ignore-case   #忽略字符大小写的差别。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-l，--file-with-matches   #列出文件内容符合指定的样式的文件名称。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-L，--files-without-match   #列出文件内容不符合指定的样式的文件名称。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n，--line-number   在显示符合样式的那一行之前，标示出该行的列数编号。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-q，--quiet或--silent   不显示任何信息。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-r，--recursive   此参数的效果和指定“-d recurse”参数相同。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s，--no-messages   不显示错误信息。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v，--revert-match   显示不包含匹配文本的所有行。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-w，--word-regexp   只显示全字符合的列。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-x，--line-regexp   只显示全列符合的列。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-y 此参数的效果和指定“-i”参数相同。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Tip：在文件列表中可以使用通配符号“*”。模式中有空格，应该将模式用单引号括起来&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;sort&lt;/strong&gt;&lt;br&gt;对文本文件各行进行排序。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;sort [选项] 文件列表&lt;/p&gt;&lt;br&gt;sort将逐行对文件的所有行进行排序，显示在标准输出上。如果不指定文件或使用“-”表示文件，则排序内容来自标准输入（ctrl+d开始排序）。排序比较是依据从输入文件的每一行提取的一个或者多个关键字进行的。排序关键字定义了，用来排序的最小字符序列。默认情况下，排序关键字的顺序有系统使用的 &lt;strong&gt;字符集&lt;/strong&gt;决定。&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;sort&lt;/strong&gt;&lt;br&gt;对文本文件各行进行排序。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;sort [选项] 文件列表&lt;/p&gt;&lt;br&gt;sort将逐行对文件的所有行进行排序，显示在标准输出上。如果不指定文件或使用“-”表示文件，则排序内容来自标准输入（ctrl+d开始排序）。排序比较是依据从输入文件的每一行提取的一个或者多个关键字进行的。排序关键字定义了，用来排序的最小字符序列。默认情况下，排序关键字的顺序有系统使用的 &lt;strong&gt;字符集&lt;/strong&gt;决定。&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-b   忽略每行前面开始出的空格字符。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c   检查文件是否已经按照顺序排序。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f   排序时，忽略大小写字母。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-M   将前面3个字母依照月份的缩写进行排序。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-n   依照数值的大小排序。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-i   忽略非打印字符。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-o &amp;lt;输出文件&amp;gt;   将排序后的结果存入指定的文件。从重定向符“&amp;gt;”也可以，不过后者不支持输入到源文件。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-r   以相反的顺序来排序。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-t &amp;lt;分隔字符&amp;gt;   指定排序时所用的栏位分隔字符。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-k n1[,n2]   指定从文本的第n1字段开始到n2字段中间的内容作为排序关键字。如果没有n2，则是从n1开始到行结尾的所有字段，n1/n2可以是小数，代表“字段.字符”，都是从1开始计算。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;uniq&lt;/strong&gt;&lt;br&gt;该命令从排好序的文件中去除重复行。比较相邻行，去掉重复行，只留下一行。该命令加工后的结果写到输出文件中，输入文件和输出文件必须不同。如果输入文件用”-“表示，则从标准输入上读取。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold;&quot;&gt;uniq [选项] [输入文件 [输出文件]] &lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;uniq&lt;/strong&gt;&lt;br&gt;该命令从排好序的文件中去除重复行。比较相邻行，去掉重复行，只留下一行。该命令加工后的结果写到输出文件中，输入文件和输出文件必须不同。如果输入文件用”-“表示，则从标准输入上读取。格式：&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;uniq [选项] [输入文件 [输出文件]] &lt;/p&gt;&lt;br&gt;常用选项：&lt;p&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-c，--count   在每列旁边显示该行重复出现的次数。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-d，--repeated   仅显示重复出现的行列。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-f NUMBER，--skip-fields=NUMBER   忽略比较前NUMBER行。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-s UMBER，--skip-chars=NUMBER   忽略比较前NUMBER个字符。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-u或--unique   仅显示出一次的行列。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-w&amp;lt;字符位置&amp;gt;，--check-chars=&amp;lt;字符位置&amp;gt;   指定要比较的字符。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -185,7 +210,11 @@
     
     <summary type="html">
     
-      学习Linux命令中（简单命令和文件操作命令-）
+      &lt;h3 id=&quot;TIPs&quot;&gt;&lt;a href=&quot;#TIPs&quot; class=&quot;headerlink&quot; title=&quot;TIPs&quot;&gt;&lt;/a&gt;TIPs&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Bash命令基本格式：&lt;p style=&quot;text-align: center; font-weight: bold; margin: 0px;&quot;&gt;命令名 [选项] [参数1] [参数2] ……&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;命令名小写： DATE，Date和date是不同的，只有date是正确的。&lt;/li&gt;
+&lt;li&gt;如果命令太长，一行放不下，可以在行尾输入“\”字符，shell会返回一个“&amp;gt;”作为提示符，表示命令未结束，允许继续输入有关信息。&lt;/li&gt;
+&lt;li&gt;命令与选项和参数之间要用空格或者制表符隔开。多个空格会被shell解释为单个空格。
     
     </summary>
     
@@ -201,9 +230,9 @@
     <link href="https://weedt.github.io/2015/12/16/A-Brief-Summary-Of-OpenGL-Texture/"/>
     <id>https://weedt.github.io/2015/12/16/A-Brief-Summary-Of-OpenGL-Texture/</id>
     <published>2015-12-16T14:49:47.000Z</published>
-    <updated>2016-04-08T06:38:21.342Z</updated>
+    <updated>2016-04-12T07:06:07.566Z</updated>
     
-    <content type="html">&lt;p&gt;这些天在做项目时需要修复项目时的纹理问题，特此总结一下OpenGL纹理相关的知识。&lt;/p&gt;
+    <content type="html">&lt;p&gt;这些天在做项目时需要修复项目时的纹理问题，特此总结一下OpenGL纹理相关的知识。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本知识&quot;&gt;&lt;/a&gt;基本知识&lt;/h3&gt;&lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;glTexImage2D&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;void glTexImage2D(GLenum target, GLint level, GLint internalFormat,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    GLsizei width, GLsizei height, GLint border,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    GLenum format, GLenum type, const GLvoid* data);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定义一个二维纹理或者一维纹理数组&lt;/strong&gt;。参数说明：&lt;br&gt;target: 指定纹理单元的类型，必须指定为GL_TEXTURE_2D,GL_PROXY_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, or GL_PROXY_TEXTURE_CUBE_MAP来定义二维纹理，或者指定GL_TEXTURE_1D_ARRAY， GL_PROXY_TEXTURE_1D_ARRAY来定义一维纹理数组。&lt;br&gt;level：如果使用了多种分辨率的纹理（mipmap），可以使用level，如果没有，就要把level设为0。&lt;br&gt;&lt;strong&gt;internalFormat&lt;/strong&gt;：指定OpenGL是如何管理纹理单元中数据格式的，确定那些成分（RGBA、深度、亮度或强度）被选定为图像的纹理单元。（网络上很多解释说这个参数必须和后面的format参数一样，这个说法是不正确的）。&lt;br&gt;width：指定纹理单元的宽度。&lt;br&gt;height：指定纹理单元的高度。&lt;br&gt;border：指定纹理单元的边框，如果包含边框取值为1，不包含边框取值为0。&lt;br&gt;&lt;strong&gt;format&lt;/strong&gt;：指定data所指向的数据的格式。&lt;br&gt;type：指定data所指向的数据的类型。&lt;br&gt;data：纹理数据。&lt;br&gt;对于internalFormat和format，由于取值类型基本上一致，很容易混淆和误解。 &lt;strong&gt;需要说明的是，internalFormat是指生成的纹理单元的格式，而format是指data的格式&lt;/strong&gt;，如果两者格式一样，就不需要转换可以直接传输。否则就要转换，这个过程包含两部分，首先转换为RGBA，在由RGBA转换为internalFormat。format转换为RGBA：&lt;/p&gt;
@@ -229,7 +258,7 @@
     
     <summary type="html">
     
-      这些天在做项目时需要修复项目时的纹理问题，特此总结一下OpenGL纹理相关的知识。
+      &lt;p&gt;这些天在做项目时需要修复项目时的纹理问题，特此总结一下OpenGL纹理相关的知识。&lt;br&gt;
     
     </summary>
     
@@ -245,11 +274,11 @@
     <link href="https://weedt.github.io/2015/06/01/A-solution-of-Qt-builds-error/"/>
     <id>https://weedt.github.io/2015/06/01/A-solution-of-Qt-builds-error/</id>
     <published>2015-06-01T13:54:12.000Z</published>
-    <updated>2016-03-30T07:53:21.056Z</updated>
+    <updated>2016-04-12T07:05:59.654Z</updated>
     
     <content type="html">&lt;p&gt;1.错误：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;错误:C1041: 无法打开程序数据库“mypath\vc120.pdb”；如果要将多个 CL.EXE 写入同一个 .PDB 文件，请使用 /FS&lt;/p&gt;
+&lt;p&gt;错误:C1041: 无法打开程序数据库“mypath\vc120.pdb”；如果要将多个 CL.EXE 写入同一个 .PDB 文件，请使用 /FS&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;解决：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -259,7 +288,9 @@
     
     <summary type="html">
     
-      记录Qt各种错误
+      &lt;p&gt;1.错误：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;错误:C1041: 无法打开程序数据库“mypath\vc120.pdb”；如果要将多个 CL.EXE 写入同一个 .PDB 文件，请使用 /FS&lt;br&gt;
     
     </summary>
     
@@ -275,9 +306,9 @@
     <link href="https://weedt.github.io/2015/05/04/The-solution-of-%22unkown-extern-symbol%22-when-using-Boost/"/>
     <id>https://weedt.github.io/2015/05/04/The-solution-of-"unkown-extern-symbol"-when-using-Boost/</id>
     <published>2015-05-04T13:54:12.000Z</published>
-    <updated>2016-03-30T06:51:05.430Z</updated>
+    <updated>2016-04-12T07:10:13.390Z</updated>
     
-    <content type="html">&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;今天在用&lt;strong&gt;Qt&lt;/strong&gt;可视化&lt;strong&gt;CGAL&lt;/strong&gt;生成的图像的编程过程中遇到以下问题：&lt;br&gt;只要include了CGAL的头文件或者Boost库的头文件，编译就会出现“&lt;strong&gt;无法识别的外部符号&lt;/strong&gt;”，“&lt;strong&gt;无法识别的外部命令&lt;/strong&gt;”等错误。如下（由于我的问题已经解决，以下图片是我找的，并不是我当时出的问题）：&lt;/p&gt;
+    <content type="html">&lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;今天在用&lt;strong&gt;Qt&lt;/strong&gt;可视化&lt;strong&gt;CGAL&lt;/strong&gt;生成的图像的编程过程中遇到以下问题：&lt;br&gt;只要include了CGAL的头文件或者Boost库的头文件，编译就会出现“&lt;strong&gt;无法识别的外部符号&lt;/strong&gt;”，“&lt;strong&gt;无法识别的外部命令&lt;/strong&gt;”等错误。如下（由于我的问题已经解决，以下图片是我找的，并不是我当时出的问题）：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150504215548443&quot; alt=&quot;错误信息&quot;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -295,7 +326,7 @@
     
     <summary type="html">
     
-      今天在用**Qt**可视化**CGAL**生成的图像的编程过程中遇到以下问题：只要include了CGAL的头文件或者Boost库的头文件，编译就会出现“**无法识别的外部符号**”，“**无法识别的外部命令**”等错误。
+      &lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;今天在用&lt;strong&gt;Qt&lt;/strong&gt;可视化&lt;strong&gt;CGAL&lt;/strong&gt;生成的图像的编程过程中遇到以下问题：&lt;br&gt;只要include了CGAL的头文件或者Boost库的头文件，编译就会出现“&lt;strong&gt;无法识别的外部符号&lt;/strong&gt;”，“&lt;strong&gt;无法识别的外部命令&lt;/strong&gt;”等错误。如下（由于我的问题已经解决，以下图片是我找的，并不是我当时出的问题）：&lt;br&gt;
     
     </summary>
     
@@ -311,13 +342,14 @@
     <link href="https://weedt.github.io/2015/04/19/A-solution-of-the%20error-of-%E2%80%9CStart%20Service%E2%80%9Din-mysql-installation/"/>
     <id>https://weedt.github.io/2015/04/19/A-solution-of-the error-of-“Start Service”in-mysql-installation/</id>
     <published>2015-04-19T12:21:12.000Z</published>
-    <updated>2016-03-30T07:52:59.824Z</updated>
+    <updated>2016-04-12T07:11:27.989Z</updated>
     
     <content type="html">&lt;h4 id=&quot;软件&quot;&gt;&lt;a href=&quot;#软件&quot; class=&quot;headerlink&quot; title=&quot;软件&quot;&gt;&lt;/a&gt;软件&lt;/h4&gt;&lt;p&gt;mariadb-5.5.25-winx64&lt;/p&gt;
 &lt;h4 id=&quot;问题产生过程及描述&quot;&gt;&lt;a href=&quot;#问题产生过程及描述&quot; class=&quot;headerlink&quot; title=&quot;问题产生过程及描述&quot;&gt;&lt;/a&gt;&lt;strong&gt;问题产生过程及描述&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;在安装MySql过程中遇到MySql服务启动失败问题，提示信息如下：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Error 1920 service failed to start. Verify that you have sufficient privileges to start system services&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;导致MySql无法安装。软件无法自动启动，我就到&lt;strong&gt;控制面板–&amp;gt;管理工具–&amp;gt;服务&lt;/strong&gt;下找到MySql服务，手动打开，结果too young too simple，无法打开，提示&lt;strong&gt;1067&lt;/strong&gt;错误。 &lt;/p&gt;
 &lt;p&gt;在网上查找资料，很多都是说&lt;em&gt;重新安装来解决&lt;/em&gt;，由于&lt;strong&gt;数据库只能装一次，如果你在你第一次没有装成功的情况下，你必须要卸载干净才能装得上&lt;/strong&gt;，我就清除与mysql相关文件及注册表，再重装，依然失败；Reboot，继续失败。&lt;/p&gt;
 &lt;h4 id=&quot;解决方法&quot;&gt;&lt;a href=&quot;#解决方法&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;&lt;strong&gt;解决方法&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;我在安装过程中发现，可以先安装MySql而不安装MySql服务，我就想应该可以后来手动安装MySql服务。&lt;br&gt;于是将与mysql相关文件及注册表清除干净后，再次重装，在安装引导过程中，不勾选“&lt;strong&gt;install MySql service&lt;/strong&gt;”，…，可以顺利安装完毕。&lt;br&gt;然后手动安装MySql Service：&lt;/p&gt;
@@ -332,7 +364,11 @@
     
     <summary type="html">
     
-      在安装MySql过程中遇到MySql服务启动失败问题，提示信息如下：Error 1920 service failed to start. Verify that you have sufficient privileges to start system services,导致MySql无法安装。软件无法自动启动，我就到**控制面板--&gt;管理工具--&gt;服务**下找到MySql服务，手动打开，结果too young too simple，无法打开，提示**1067**错误。
+      &lt;h4 id=&quot;软件&quot;&gt;&lt;a href=&quot;#软件&quot; class=&quot;headerlink&quot; title=&quot;软件&quot;&gt;&lt;/a&gt;软件&lt;/h4&gt;&lt;p&gt;mariadb-5.5.25-winx64&lt;/p&gt;
+&lt;h4 id=&quot;问题产生过程及描述&quot;&gt;&lt;a href=&quot;#问题产生过程及描述&quot; class=&quot;headerlink&quot; title=&quot;问题产生过程及描述&quot;&gt;&lt;/a&gt;&lt;strong&gt;问题产生过程及描述&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;在安装MySql过程中遇到MySql服务启动失败问题，提示信息如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Error 1920 service failed to start. Verify that you have sufficient privileges to start system services&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -344,46 +380,18 @@
   </entry>
   
   <entry>
-    <title>boost库编译参数小结</title>
-    <link href="https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/"/>
-    <id>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</id>
-    <published>2015-04-18T13:54:12.000Z</published>
-    <updated>2016-03-30T06:53:30.181Z</updated>
-    
-    <content type="html">&lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;toolset&lt;/strong&gt;：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)&lt;br&gt;&lt;strong&gt;stagedir&lt;/strong&gt;:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。&lt;br&gt;&lt;strong&gt;without/with&lt;/strong&gt;：选择不编译/编译哪些库。&lt;br&gt;&lt;strong&gt;address-model&lt;/strong&gt;：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。&lt;br&gt;&lt;strong&gt;threading&lt;/strong&gt;：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。&lt;br&gt;&lt;strong&gt;link&lt;/strong&gt;：静态库版link=shared，动态库link=shared&lt;br&gt;&lt;strong&gt;runtime-link&lt;/strong&gt;：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。&lt;br&gt;&lt;strong&gt;debug/release&lt;/strong&gt;：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。&lt;/p&gt;
-&lt;h4 id=&quot;64位编译：&quot;&gt;&lt;a href=&quot;#64位编译：&quot; class=&quot;headerlink&quot; title=&quot;64位编译：&quot;&gt;&lt;/a&gt;64位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。&lt;br&gt;在编译命令中加入address-model=64属性&lt;/p&gt;
-&lt;h5 id=&quot;windows下boost库的命名特点：&quot;&gt;&lt;a href=&quot;#windows下boost库的命名特点：&quot; class=&quot;headerlink&quot; title=&quot;windows下boost库的命名特点：&quot;&gt;&lt;/a&gt;windows下boost库的命名特点：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;link=static runtime-link=static 得到 libboostxxxxx.lib
-link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;由以上的文件夹层次结构基本就可以得出结论：&lt;br&gt;１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。&lt;br&gt;２、有“d”的为debug版本，没有的则是release版本。&lt;br&gt;３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。&lt;br&gt;４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;本文参考：&lt;a href=&quot;http://m.blog.csdn.net/blog/chenjh213/42265605&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vs2013 boost库编译小结&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat,编译命令（例）：bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&quot;vc12_x86&quot; link=static runtime-link=shared threading=multi debug release
-    
-    </summary>
-    
-      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
-    
-    
-      <category term="Boost" scheme="https://weedt.github.io/tags/Boost/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Visual Studio Command Prompt 工具配置方法</title>
     <link href="https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/"/>
     <id>https://weedt.github.io/2015/04/18/Visual-Studio-Command-Prompt-configure/</id>
     <published>2015-04-18T13:54:12.000Z</published>
-    <updated>2016-03-30T07:52:32.832Z</updated>
+    <updated>2016-04-12T07:04:34.542Z</updated>
     
-    <content type="html">&lt;h4 id=&quot;软件版本：VS2013&quot;&gt;&lt;a href=&quot;#软件版本：VS2013&quot; class=&quot;headerlink&quot; title=&quot;软件版本：VS2013&quot;&gt;&lt;/a&gt;软件版本：VS2013&lt;/h4&gt;&lt;h4 id=&quot;如何打开这个工具？&quot;&gt;&lt;a href=&quot;#如何打开这个工具？&quot; class=&quot;headerlink&quot; title=&quot;如何打开这个工具？&quot;&gt;&lt;/a&gt;如何打开这个工具？&lt;/h4&gt;&lt;ol&gt;
+    <content type="html">&lt;h4 id=&quot;软件版本&quot;&gt;&lt;a href=&quot;#软件版本&quot; class=&quot;headerlink&quot; title=&quot;软件版本&quot;&gt;&lt;/a&gt;软件版本&lt;/h4&gt;&lt;p&gt;VS2013&lt;/p&gt;
+&lt;h4 id=&quot;如何打开这个工具？&quot;&gt;&lt;a href=&quot;#如何打开这个工具？&quot; class=&quot;headerlink&quot; title=&quot;如何打开这个工具？&quot;&gt;&lt;/a&gt;如何打开这个工具？&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;打开VS2013，在“&lt;strong&gt;工具&lt;/strong&gt;“菜单下可以找到。&lt;/li&gt;
 &lt;li&gt;打开”&lt;strong&gt;开始&lt;/strong&gt;“，在程序菜单中找到VS2013，打开”&lt;strong&gt;Visual Studio Tools&lt;/strong&gt;“，可以找到&lt;strong&gt;Visual Studio Command Prompt&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;百度一下，有更多方法。&lt;/li&gt;
+&lt;li&gt;百度一下，有更多方法。&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&quot;如何增加这个工具&quot;&gt;&lt;a href=&quot;#如何增加这个工具&quot; class=&quot;headerlink&quot; title=&quot;如何增加这个工具&quot;&gt;&lt;/a&gt;如何增加这个工具&lt;/h4&gt;&lt;p&gt;如果实在找不到这个工具，那就是没有自动配置，我们可以手动增加这个工具：&lt;/p&gt;
 &lt;ol&gt;
@@ -401,7 +409,11 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     
     <summary type="html">
     
-      介绍在VS2013下Visual Studio Command Prompt 工具配置方法
+      &lt;h4 id=&quot;软件版本&quot;&gt;&lt;a href=&quot;#软件版本&quot; class=&quot;headerlink&quot; title=&quot;软件版本&quot;&gt;&lt;/a&gt;软件版本&lt;/h4&gt;&lt;p&gt;VS2013&lt;/p&gt;
+&lt;h4 id=&quot;如何打开这个工具？&quot;&gt;&lt;a href=&quot;#如何打开这个工具？&quot; class=&quot;headerlink&quot; title=&quot;如何打开这个工具？&quot;&gt;&lt;/a&gt;如何打开这个工具？&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;打开VS2013，在“&lt;strong&gt;工具&lt;/strong&gt;“菜单下可以找到。&lt;/li&gt;
+&lt;li&gt;打开”&lt;strong&gt;开始&lt;/strong&gt;“，在程序菜单中找到VS2013，打开”&lt;strong&gt;Visual Studio Tools&lt;/strong&gt;“，可以找到&lt;strong&gt;Visual Studio Command Prompt&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;百度一下，有更多方法。
     
     </summary>
     
@@ -413,13 +425,43 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
   </entry>
   
   <entry>
+    <title>boost库编译参数小结</title>
+    <link href="https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/"/>
+    <id>https://weedt.github.io/2015/04/18/The-compilling-parameters-of-boost-lib/</id>
+    <published>2015-04-18T13:54:12.000Z</published>
+    <updated>2016-04-12T07:05:12.614Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;toolset&lt;/strong&gt;：指定编译器，可选的如borland、gcc、msvc（VC6）、msvc-10.0（VS2010）(vs2008 : msvc-9.0，vs2010 : msvc-10.0, VS2012、VS2013是msvc-12.0)&lt;br&gt;&lt;strong&gt;stagedir&lt;/strong&gt;:表示编译生成文件的路径。build-dir：编译生成的中间文件的路径。这个本人这里没用到，默认就在根目录（D:\boost\boost_1_57_0）下，目录名为bin.v2（删掉），等编译完成后可将这个目录全部删除（没用了），所以不需要去设置。&lt;br&gt;&lt;strong&gt;without/with&lt;/strong&gt;：选择不编译/编译哪些库。&lt;br&gt;&lt;strong&gt;address-model&lt;/strong&gt;：要有address-model=64属性，如果没有这个属性的话，会默认生成32位的平台库，加入这个选项才能生成64位的DLL。&lt;br&gt;&lt;strong&gt;threading&lt;/strong&gt;：单/多线程编译。一般都写多线程程序，当然要指定multi方式了；如果需要编写单线程程序，那么还需要编译单线程库，可以使用single方式。&lt;br&gt;&lt;strong&gt;link&lt;/strong&gt;：静态库版link=shared，动态库link=shared&lt;br&gt;&lt;strong&gt;runtime-link&lt;/strong&gt;：动态/静态链接C/C++运行时库。同样有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式，各人可以根据自己的需要选择编译。一般link只选static的话，只需要编译2种组合即可，即link=static runtime-link=shared和link=static runtime-link=static。&lt;br&gt;&lt;strong&gt;debug/release&lt;/strong&gt;：编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。&lt;/p&gt;
+&lt;h4 id=&quot;64位编译：&quot;&gt;&lt;a href=&quot;#64位编译：&quot; class=&quot;headerlink&quot; title=&quot;64位编译：&quot;&gt;&lt;/a&gt;64位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 x64兼容工具命令行，然后转到boost根文件夹，运行bootstrap.bat生成x64版的bjam.exe。&lt;br&gt;在编译命令中加入address-model=64属性&lt;/p&gt;
+&lt;h5 id=&quot;windows下boost库的命名特点：&quot;&gt;&lt;a href=&quot;#windows下boost库的命名特点：&quot; class=&quot;headerlink&quot; title=&quot;windows下boost库的命名特点：&quot;&gt;&lt;/a&gt;windows下boost库的命名特点：&lt;/h5&gt;&lt;p&gt;&lt;code&gt;link=static runtime-link=static 得到 libboostxxxxx.lib
+link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;由以上的文件夹层次结构基本就可以得出结论：&lt;br&gt;１、以“lib”开头的是“link-static”版本的，而直接以“boost”开头的是“link-shared”版本的。&lt;br&gt;２、有“d”的为debug版本，没有的则是release版本。&lt;br&gt;３、有“s”的为“runtime-link-static”版本，没有的则是“runtime-link-shared”版本。&lt;br&gt;４、有“mt”的为“threading-multi”版本，没有的则是“threading-single”版本。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;本文参考：&lt;a href=&quot;http://m.blog.csdn.net/blog/chenjh213/42265605&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vs2013 boost库编译小结&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;32位编译：&quot;&gt;&lt;a href=&quot;#32位编译：&quot; class=&quot;headerlink&quot; title=&quot;32位编译：&quot;&gt;&lt;/a&gt;32位编译：&lt;/h4&gt;&lt;p&gt;从开始菜单启动Visual Studio 2013的vs2013 命令行，进入boost所在目录，运行bootstrap.bat&lt;br&gt;编译命令（例）：&lt;br&gt;&lt;code&gt;bjam.exe stage --toolset=msvc-12.0 --without-math  --stagedir=&amp;quot;vc12_x86&amp;quot; link=static runtime-link=shared threading=multi debug release&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://weedt.github.io/categories/Tech/"/>
+    
+    
+      <category term="Boost" scheme="https://weedt.github.io/tags/Boost/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Win8.1 x64 + VS2013 下CGAL安装及配置</title>
     <link href="https://weedt.github.io/2015/04/15/The-installation-and-configuration-of-cgal-under-Win8.1-x64+VS2013/"/>
     <id>https://weedt.github.io/2015/04/15/The-installation-and-configuration-of-cgal-under-Win8.1-x64+VS2013/</id>
     <published>2015-04-15T13:54:12.000Z</published>
-    <updated>2016-03-30T07:51:33.977Z</updated>
+    <updated>2016-04-12T07:04:50.006Z</updated>
     
-    <content type="html">&lt;p&gt;本文基本参考CGAL官网提供的安装方法，但是重点在于在我安装过程中遇到的&lt;strong&gt;问题和解决方法&lt;/strong&gt;。&lt;/p&gt;
+    <content type="html">&lt;p&gt;本文基本参考CGAL官网提供的安装方法，但是重点在于在我安装过程中遇到的&lt;strong&gt;问题和解决方法&lt;/strong&gt;。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;软件&quot;&gt;&lt;a href=&quot;#软件&quot; class=&quot;headerlink&quot; title=&quot;软件&quot;&gt;&lt;/a&gt;软件&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Windows8.1 x64&lt;/li&gt;
 &lt;li&gt;VS2013 x64&lt;/li&gt;
@@ -500,7 +542,7 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     
     <summary type="html">
     
-      本文基本参考CGAL官网提供的安装方法，但是重点在于在我安装过程中遇到的**问题和解决方法**。
+      &lt;p&gt;本文基本参考CGAL官网提供的安装方法，但是重点在于在我安装过程中遇到的&lt;strong&gt;问题和解决方法&lt;/strong&gt;。&lt;br&gt;
     
     </summary>
     
@@ -520,9 +562,10 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     <link href="https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/"/>
     <id>https://weedt.github.io/2014/08/20/The-knowledge-of-Qt-endcoding/</id>
     <published>2014-08-20T14:17:35.000Z</published>
-    <updated>2016-04-07T15:03:33.824Z</updated>
+    <updated>2016-04-12T07:02:47.255Z</updated>
     
     <content type="html">&lt;h4 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;首先看一个简单的程序：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;﻿#include &amp;lt;QCoreApplication&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;QTextStream&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;QTextCodec&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;int main(int argc, char *argv[])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QCoreApplication a(argc, argv);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString str = &amp;quot;我是中文&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QTextStream out(stdout);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    out &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return a.exec();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;输出结果为：&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/93736429gw1f2ohe36n7dj206m039web.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;中文乱码了。&lt;br&gt;我们在之前（&lt;a href=&quot;http://weedt.github.io/2014/08/12/show-Chinese-text-in-Qt/&quot;&gt;点这里&lt;/a&gt;）讨论过解决办法。&lt;br&gt;今天来讨论一下为什么这么解决。&lt;/p&gt;
 &lt;h4 id=&quot;探讨&quot;&gt;&lt;a href=&quot;#探讨&quot; class=&quot;headerlink&quot; title=&quot;探讨&quot;&gt;&lt;/a&gt;探讨&lt;/h4&gt;&lt;hr&gt;
 &lt;p&gt;这是QString对中文字符不支持吗？不是，QString内部使用 &lt;strong&gt;Unicode&lt;/strong&gt; 编码，当然是支持中文的。出现输出乱码问题是编码问题。&lt;br&gt;文本文件都是有编码的，比如GBK，UTF-8，以上例子的源文件编码就是GBK。同一个文件用不同的编码，虽然看上去内容一样，但是物理表示方式不同；同理，用A编码存储的内容来用B编码解析，看到的都是乱码（Ps. Windows下压缩包在Linux下解压后中文文件名都是乱码T.T）。开始慢慢明白了，QString内部是Unicode编码，文件中的“我是中文”这几个字符是GBK编码，编码不一致导致乱码问题。但是还有一个问题，保存文件的编码方式千千万，QString对象如何知道文本的编码呢？你不告诉它，它肯定不知道，就会采取默认的方式——Latin-1，把赋值字符串当做 &lt;strong&gt;Latin-1&lt;/strong&gt; 编码来转换为Unicode。&lt;br&gt;所以在上面的例子中，把GBK编码的“我是中文”当做Latin-1转换为Unicode，输出当然为乱码。&lt;br&gt;&lt;strong&gt;解决方法1&lt;/strong&gt;：就是直接转换为Unicode（Windows中local8Bit就是GBK）：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QString str = QString::fromLocal8Bit(&amp;quot;我是中文&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -542,7 +585,7 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     
     <summary type="html">
     
-      文本文件都是有编码的，比如GBK，UTF-8，以上例子的源文件编码就是GBK。同一个文件用不同的编码，虽然看上去内容一样，但是物理表示方式不同；同理，用A编码存储的内容来用B编码解析，看到的都是乱码
+      &lt;h4 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h4&gt;&lt;p&gt;首先看一个简单的程序：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;﻿#include &amp;lt;QCoreApplication&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;QTextStream&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;QTextCodec&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;int main(int argc, char *argv[])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QCoreApplication a(argc, argv);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString str = &amp;quot;我是中文&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QTextStream out(stdout);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    out &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return a.exec();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -560,17 +603,18 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     <link href="https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/"/>
     <id>https://weedt.github.io/2014/08/12/Show-Chinese-text-in-Qt/</id>
     <published>2014-08-12T07:12:17.000Z</published>
-    <updated>2016-04-08T07:45:56.946Z</updated>
+    <updated>2016-04-12T07:05:29.446Z</updated>
     
     <content type="html">&lt;p&gt;Qt 4:&lt;br&gt;main函数中添加：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForTr(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;需要添加头文件：#include &lt;qtextcodec&gt;&lt;/qtextcodec&gt;&lt;/p&gt;
+&lt;p&gt;需要添加头文件：#include &lt;qtextcodec&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/qtextcodec&gt;&lt;/p&gt;
 &lt;p&gt;Qt 5&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Qt5中取消了setCodecForCStrings和setCodecForTr&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      QTextCodec::setCodecForLocale(QTextCodec::codecForName(&quot;GB2312&quot;));
+      &lt;p&gt;Qt 4:&lt;br&gt;main函数中添加：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForTr(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForLocale(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;QTextCodec::setCodecForCStrings(QTextCodec::codecForName(&amp;quot;GB2312&amp;quot;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;需要添加头文件：#include &lt;QTextCodec&gt;&lt;br&gt;
     
     </summary>
     
@@ -586,11 +630,11 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     <link href="https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/"/>
     <id>https://weedt.github.io/2014/08/02/The-solution-of-QObject-connect-No-such-slot/</id>
     <published>2014-08-02T09:23:29.000Z</published>
-    <updated>2016-04-02T07:38:16.783Z</updated>
+    <updated>2016-04-12T07:04:39.350Z</updated>
     
     <content type="html">&lt;p&gt;参考&lt;a href=&quot;http://blog.csdn.net/changli_90/article/details/8018376&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网上&lt;/a&gt;，有以下解决方法：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;1、看看你的类声明中有没有Q_OBJECT&lt;br&gt;2、你声明的函数要加声明:&lt;br&gt;     private slots:&lt;br&gt;        void xxxx();&lt;br&gt;3、检查槽函数名拼写是否有误，以及对应的signal和slot的参数是否一致&lt;br&gt;如果还不行的话,清理项目,删掉原有的moc_xxx.cpp,重新执行qmake.&lt;br&gt;还有一点要注意的是:signal和slots的参数要一样 &lt;/p&gt;
+&lt;p&gt;1、看看你的类声明中有没有Q_OBJECT&lt;br&gt;2、你声明的函数要加声明:&lt;br&gt;     private slots:&lt;br&gt;        void xxxx();&lt;br&gt;3、检查槽函数名拼写是否有误，以及对应的signal和slot的参数是否一致&lt;br&gt;如果还不行的话,清理项目,删掉原有的moc_xxx.cpp,重新执行qmake.&lt;br&gt;还有一点要注意的是:signal和slots的参数要一样&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;我在实际操作中遇到一下错误：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -601,7 +645,9 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     
     <summary type="html">
     
-      核心qmake一下
+      &lt;p&gt;参考&lt;a href=&quot;http://blog.csdn.net/changli_90/article/details/8018376&quot;&gt;网上&lt;/a&gt;，有以下解决方法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1、看看你的类声明中有没有Q_OBJECT&lt;br&gt;2、你声明的函数要加声明:&lt;br&gt;     private slots:&lt;br&gt;        void xxxx();&lt;br&gt;3、检查槽函数名拼写是否有误，以及对应的signal和slot的参数是否一致&lt;br&gt;如果还不行的话,清理项目,删掉原有的moc_xxx.cpp,重新执行qmake.&lt;br&gt;还有一点要注意的是:signal和slots的参数要一样&lt;br&gt;
     
     </summary>
     
@@ -617,7 +663,7 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     <link href="https://weedt.github.io/2014/06/11/How-to-handle-the-%22new%22-failure/"/>
     <id>https://weedt.github.io/2014/06/11/How-to-handle-the-"new"-failure/</id>
     <published>2014-06-11T07:11:55.000Z</published>
-    <updated>2016-04-02T07:38:42.524Z</updated>
+    <updated>2016-04-12T07:05:36.402Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;http://book.51cto.com/art/201202/317767.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://book.51cto.com/art/201202/317767.htm&lt;/a&gt;&lt;/p&gt;
@@ -626,7 +672,8 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     
     <summary type="html">
     
-      http://book.51cto.com/art/201202/317767.htm
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://book.51cto.com/art/201202/317767.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://book.51cto.com/art/201202/317767
     
     </summary>
     
@@ -642,9 +689,10 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     <link href="https://weedt.github.io/2014/04/01/The-Difference-of-malloc-free-and-new-delete/"/>
     <id>https://weedt.github.io/2014/04/01/The-Difference-of-malloc-free-and-new-delete/</id>
     <published>2014-04-01T06:05:38.000Z</published>
-    <updated>2016-04-01T07:05:21.814Z</updated>
+    <updated>2016-04-12T07:05:19.734Z</updated>
     
     <content type="html">&lt;p&gt;今天在Qt下编写一个解析PCAP文件的小程序时，犯了一个基本错误：&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString openUrl; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString saveDir; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; curFilterIndex; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        saveDir = &lt;span class=&quot;string&quot;&gt;&quot;b&quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        openUrl = &lt;span class=&quot;string&quot;&gt;&quot;a&quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        curFilterIndex = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; Dlg_Attr;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;QString&lt;/strong&gt;是Qt框架下的一个字符串类，和std::string基本类似，然而在这个程序中我却习惯性给struct用了malloc来分配空间，结果导致错误。改用new自然就成功了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;malloc/free：&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;这是两个C/C++的标准库函数，函数原型为：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;void* malloc(int size);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;void free(void* ptr);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;malloc只是进行分配指定大小内存，返回空间的首地址，并且是void类型的。free也只是回收内存。&lt;/p&gt;
@@ -656,7 +704,7 @@ link=shared runtime-link=shared 得到 boostxxxx.lib 和 boostxxxx.dll&lt;/code&
     
     <summary type="html">
     
-      malloc/free是两个C/C++的标准库函数，new/delete是两个C++关键字
+      &lt;p&gt;今天在Qt下编写一个解析PCAP文件的小程序时，犯了一个基本错误：&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString openUrl; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    QString saveDir; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; curFilterIndex; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        saveDir = &lt;span class=&quot;string&quot;&gt;&quot;b&quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        openUrl = &lt;span class=&quot;string&quot;&gt;&quot;a&quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        curFilterIndex = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; Dlg_Attr;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
