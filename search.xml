@@ -10,7 +10,11 @@
 <li><strong>ln</strong><br>创建链接。格式：<br><p style="text-align: center; font-weight: bold; margin: 0px;">ln [选项] 源文件 [目标文件]</p><br>链接文件对象可以是目录也可以是文件。如果链接指向目录，用户就可以直接利用该链接直接进入该链接的目录，不用给出到达该目录的路径，删除该链接，也不会破坏原来的目录。<br>选项：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-s   建立符号链接，而不是硬链接</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>符号链接 <strong>不是一个独立的文件</strong>， 它的属性依赖于源文件，所以给符号链接文件设置存取权限是没有意义的。</p>
+<p>符号链接 <strong>不是一个独立的文件</strong>， 它的属性依赖于源文件，所以给符号链接文件设置存取权限是没有意义的。<br><a id="more"></a></p>
+<h3 id="Extends：软链接和硬链接"><a href="#Extends：软链接和硬链接" class="headerlink" title="Extends：软链接和硬链接"></a>Extends：软链接和硬链接</h3><ol>
+<li>硬链接<br>创建硬链接，在另外的目录或本目录中增加目标文件的一个目录项，这样一个文件就登记在多个目录中。之后，以存在的文件的I节点号会被多个目录文件项使用。默认情况下，ln命令创建硬链接。ln会增加链接数，rm会减少链接数。一个文件除非链接数为0，否则不会从文件系统被物理删除。<br>限制：<br>1） 不能对目录文件创建硬链接。2） 不能在不同的文件系统之间做硬链接。 </li>
+<li>软链接（符号链接）<br>是将一个路径名链接到一个文件，类似Windows中的快捷方式。与硬链接不同，软链接确实是一个文件（文本文件），当然它具有不同的I节点号，而硬链接并没有建立新文件。而且软链接没有硬链接的限制，可以对目录做软链接，也可以在不同的文件系统中做软链接。创建软链接时， <strong>源文件最好用绝对路径</strong>，这样可以在任何工作目录下使用。<br>特性：<br>1） 删除源后，只删除数据，不删除链接，新的同名文件创建后，链接会继续指向新文件。2） <strong>软链接的大小是源文件路径的字节数</strong>。</li>
+</ol>
 ]]></content>
     </entry>
     
