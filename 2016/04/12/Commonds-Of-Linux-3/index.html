@@ -19,7 +19,7 @@ ln创建链接。格式：ln [选项] 源文件 [目标文件]链接文件对象
 
 
 符号链接 不是一个独立的文件， 它的属性依赖于源文件，所以给符号链接文件设置存取权限是没有意义的。">
-<meta property="og:updated_time" content="2016-04-12T13:53:03.387Z">
+<meta property="og:updated_time" content="2016-04-13T13:01:53.162Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 命令 - 3">
 <meta name="twitter:description" content="链接文件
@@ -114,6 +114,33 @@ ln创建链接。格式：ln [选项] 源文件 [目标文件]链接文件对象
 <li>硬链接<br>创建硬链接，在另外的目录或本目录中增加目标文件的一个目录项，这样一个文件就登记在多个目录中。之后，以存在的文件的I节点号会被多个目录文件项使用。默认情况下，ln命令创建硬链接。ln会增加链接数，rm会减少链接数。一个文件除非链接数为0，否则不会从文件系统被物理删除。<br>限制：<br>1） 不能对目录文件创建硬链接。2） 不能在不同的文件系统之间做硬链接。 </li>
 <li>软链接（符号链接）<br>是将一个路径名链接到一个文件，类似Windows中的快捷方式。与硬链接不同，软链接确实是一个文件（文本文件），当然它具有不同的I节点号，而硬链接并没有建立新文件。而且软链接没有硬链接的限制，可以对目录做软链接，也可以在不同的文件系统中做软链接。创建软链接时， <strong>源文件最好用绝对路径</strong>，这样可以在任何工作目录下使用。<br>特性：<br>1） 删除源后，只删除数据，不删除链接，新的同名文件创建后，链接会继续指向新文件。2） <strong>软链接的大小是源文件路径的字节数</strong>。</li>
 </ol>
+<h3 id="专题-find"><a href="#专题-find" class="headerlink" title="专题-find"></a>专题-find</h3><p>find命令在目录结构中搜索文件，并执行指定的操作。Linux下find命令提供了相当多的查找条件，功能很强大。由于find具有强大的功能，所以它的选项也很多，其中大部分选项都值得我们花时间来了解一下。即使系统中含有网络文件系统( NFS)，find命令在该文件系统中同样有效，只你具有相应的权限。在运行一个非常消耗资源的find命令时，很多人都倾向于把它放在后台执行，因为遍历一个大的文件系统可能会花费很长的时间。格式：</p>
+<p></p><p style="text-align: center; font-weight: bold; margin: 0px;">find pathname -options [-print -exec -ok …]</p><br><strong>参数：</strong><br>pathname   find命令所查找的目录路径。例如用.来表示当前目录，用/来表示系统根目录。<br>-print   find命令将匹配的文件输出到标准输出。<br>-exec   find命令对匹配的文件执行该参数所给出的shell命令。相应命令的形式为’command’ {  } \;，注意{   }和\；之间的空格。<br>-ok   和-exec的作用相同，只不过以一种更为安全的模式来执行该参数所给出的shell命令，在执行每一个命令之前，都会给出提示，让用户来确定是否执行。<br><strong>选项</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">-name   按照文件名查找文件。</span><br><span class="line">-perm   按照文件权限来查找文件。</span><br><span class="line">-prune   使用这一选项可以使find命令不在当前指定的目录中查找，如果同时使用-depth选项，那么-prune将被find命令忽略。</span><br><span class="line">-user   按照文件属主来查找文件。</span><br><span class="line">-group   按照文件所属的组来查找文件。</span><br><span class="line">-mtime -n +n  按照文件的更改时间来查找文件， -n表示文件更改时间距现在n天以内，</span><br><span class="line">    +n表示文件更改时间距现在n天以前。find命令还有-atime和-ctime 选项，但它们都和-m time选项。</span><br><span class="line">-nogroup   查找无有效所属组的文件，即该文件所属的组在/etc/groups中不存在。</span><br><span class="line">-nouser   查找无有效属主的文件，即该文件的属主在/etc/passwd中不存在。</span><br><span class="line">-newer file1 ! file2   查找更改时间比文件file1新但比文件file2旧的文件。</span><br><span class="line">-type   查找某一类型的文件，诸如：</span><br><span class="line">    b - 块设备文件。</span><br><span class="line">    d - 目录。</span><br><span class="line">    c - 字符设备文件。</span><br><span class="line">    p - 管道文件。</span><br><span class="line">    l - 符号链接文件。</span><br><span class="line">    f - 普通文件。</span><br><span class="line">-size n：[c]   查找文件长度为n块的文件，带有c时表示文件长度以字节计。</span><br><span class="line">-depth   在查找文件时，首先查找当前目录中的文件，然后再在其子目录中查找。</span><br><span class="line">-fstype   查找位于某一类型文件系统中的文件，这些文件系统类型通常可以在配置文件/etc/fstab中找到，该配置文件中包含了本系统中有关文件系统的信息。</span><br><span class="line">-mount   在查找文件时不跨越文件系统mount点。</span><br><span class="line">-follow   如果find命令遇到符号链接文件，就跟踪至链接所指向的文件。</span><br><span class="line">-cpio   对匹配的文件使用cpio命令，将这些文件备份到磁带设备中。</span><br><span class="line">另外,下面三个的区别:</span><br><span class="line">-amin n   查找系统中最后N分钟访问的文件</span><br><span class="line">-atime n  查找系统中最后n*24小时访问的文件</span><br><span class="line">-cmin n   查找系统中最后N分钟被改变文件状态的文件</span><br><span class="line">-ctime n  查找系统中最后n*24小时被改变文件状态的文件</span><br><span class="line">-mmin n   查找系统中最后N分钟被改变文件数据的文件</span><br><span class="line">-mtime n  查找系统中最后n*24小时被改变文件数据的文件</span><br></pre></td></tr></table></figure><p></p>
+<p>示例：</p>
+<ol>
+<li><p>使用name选项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find ~ -name &quot;*.log&quot; -print   普通文件名</span><br><span class="line">find . -name &quot;[a-z]*[4-9].log&quot; -print   正则表达式</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用perm选项<br>按照文件权限模式用-perm选项,按文件权限模式来查找文件的话。最好使用八进制的权限表示法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find . -perm 755 -print</span><br><span class="line">find . -perm -005   加“-”，表示555，-007表示777</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用-prune选项<br>避开目录，注意，当同时使用“-depth”时，-prune就失效了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find test -path &quot;test/test3&quot; -prune -o -print   避开test/test3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找某一确定文件<br>避开test3 和test4，并查找“*.log”，-name等选项加在-o 之后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find test \(-path test/test4 -o -path test/test3 \) -prune -o -name &quot;*.log&quot; -print</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用size选项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find . -size +1000000c -print   在当前目录下查找文件长度大于1 M字节的文件  </span><br><span class="line">find /home/apache -size 100c -print   查找文件长度恰好为100字节的文件</span><br><span class="line">find . -size +10 -print   查找长度超过10块的文件（一块等于512字节）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用-exec / -ok 参数<br>执行命令。格式：<br>-exec 命令 {} \;<br>{} 代表find的结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find . -type f -exec ls -l &#123;&#125; \;   ls -l命令放在find命令的-exec选项中 </span><br><span class="line">find . -type f -mtime +14 -ok rm &#123;&#125; \;   查找更改时间在n日以前的文件并删除它们，给出提示</span><br><span class="line">find . -name &quot;*.log&quot; -exec mv &#123;&#125; .. \;   查找文件移动到指定目录</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>xargs</strong><br>find命令的-exec选项处理匹配到的文件时， find命令将所有匹配到的文件一起传递给exec执行。但有些系统对能够传递给exec的命令 <strong>长度有限制</strong>，这样在find命令运行几分钟之后，就会出现溢出错误。错误信息通常是“参数列太长”或“参数列溢出”。这就是xargs命令的用处所在，特别是与find命令一起使用。<br>find命令把匹配到的文件传递给xargs命令，而xargs命令每次只获取一部分文件而不是全部，不像-exec选项那样。这样它可以先处理最先获取的一部分文件，然后是下一批，并如此继续下去。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find . -type f -print | xargs file   </span><br><span class="line">    查找系统中的每一个普通文件，然后使用xargs命令来测试它们分别属于哪类文件</span><br><span class="line">find . -perm -7 -print | xargs chmod o-w</span><br><span class="line">    当前目录下查找所有用户具有读、写和执行权限的文件，并收回相应的写权限</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>附：权限表<br>r - 4<br>w - 2<br>x - 1<br>rw - 6<br>rx - 5<br>wx - 3<br>rwx - 7</p>
 
       
     </div>
